@@ -1,0 +1,1249 @@
+# Copyright (C) 2024 Asana Plugins
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Sale Badges and Product Labels for WooCommerce 3.4.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/easy-sale-badges-for-woocommerce\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-09-17T22:29:47+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.9.0\n"
+"X-Domain: easy-sale-badges-for-woocommerce\n"
+
+#. Plugin Name of the plugin
+#. Description of the plugin
+msgid "Sale Badges and Product Labels for WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://www.asanaplugins.com/product/woocommerce-product-labels/"
+msgstr ""
+
+#. Author of the plugin
+msgid "Asana Plugins"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://www.asanaplugins.com/"
+msgstr ""
+
+#. translators: 1: composer command. 2: plugin directory
+#: easy-sale-badges.php:44
+msgid "Your installation of the Easy Sale Badges For Woocommerce plugin is incomplete. Please run %1$s within the %2$s directory."
+msgstr ""
+
+#. translators: 1: composer command. 2: plugin directory
+#: easy-sale-badges.php:62
+msgid "Your installation of Easy Sale Badges For Woocommerce plugin is incomplete. Please run %1$s within the %2$s directory."
+msgstr ""
+
+#: src/Admin/Admin.php:63
+#: src/Admin/Admin.php:88
+#: assets/js/admin/admin/index.js:2
+msgid "Go Pro"
+msgstr ""
+
+#: src/Admin/Admin.php:85
+#: assets/js/admin/admin/index.js:2
+msgid "Settings"
+msgstr ""
+
+#: src/Admin/Admin.php:123
+msgid "<strong>Black Friday Exclusive:</strong> SAVE up to 50% & access to <strong>Sale Badges for WooCommerce PRO</strong> features."
+msgstr ""
+
+#: src/Admin/Admin.php:123
+msgid "Grab The Offer"
+msgstr ""
+
+#: src/Admin/Menu.php:27
+#: src/Admin/Menu.php:28
+msgid "Product Badges"
+msgstr ""
+
+#: src/API/Badge.php:40
+#: src/API/Badge.php:68
+msgid "Unique identifier for the resource."
+msgstr ""
+
+#: src/API/Badge.php:120
+msgid "Invalid item ID."
+msgstr ""
+
+#: src/API/Badge.php:126
+#: src/API/Badge.php:165
+#: src/API/Badge.php:190
+msgid "Badge not found."
+msgstr ""
+
+#: src/API/Badge.php:159
+#: src/API/Badge.php:184
+#: src/API/Badge.php:213
+msgid "Invalid ID."
+msgstr ""
+
+#: src/API/Badge.php:195
+msgid "Cannot delete the item."
+msgstr ""
+
+#: src/API/Badge.php:219
+msgid "Cannot duplicate the item."
+msgstr ""
+
+#: src/API/Badge.php:236
+#: src/API/Items.php:101
+msgid "Invalid items."
+msgstr ""
+
+#: src/API/Badge.php:242
+msgid "Cannot reorder the items."
+msgstr ""
+
+#: src/API/Badge.php:274
+msgid "Badge"
+msgstr ""
+
+#: src/API/Badge.php:287
+msgid "Error occurred in saving item."
+msgstr ""
+
+#: src/API/BaseController.php:31
+msgid "Sorry, you cannot list resources."
+msgstr ""
+
+#: src/API/BaseController.php:47
+msgid "Sorry, you cannot view this resource."
+msgstr ""
+
+#: src/API/BaseController.php:61
+msgid "Sorry, you cannot create an item."
+msgstr ""
+
+#: src/API/BaseController.php:75
+msgid "Sorry, you cannot update the item."
+msgstr ""
+
+#: src/API/BaseController.php:89
+msgid "Sorry, you are not allowed to delete this resource."
+msgstr ""
+
+#: src/API/BaseController.php:103
+msgid "Sorry, you are not allowed to duplicate this resource."
+msgstr ""
+
+#: src/API/BaseController.php:117
+msgid "Sorry, you are not allowed to reorder items."
+msgstr ""
+
+#: src/API/Ch.php:30
+msgid "Action is required."
+msgstr ""
+
+#: src/API/Ch.php:43
+msgid "Action not found."
+msgstr ""
+
+#: src/API/Items.php:42
+#: src/API/Items.php:51
+msgid "Search term is required."
+msgstr ""
+
+#: src/API/Items.php:46
+#: src/API/Items.php:91
+msgid "Type is required."
+msgstr ""
+
+#: src/API/Items.php:87
+msgid "Items are required."
+msgstr ""
+
+#: src/API/Settings.php:54
+#: src/API/Settings.php:91
+msgid "Settings data is required."
+msgstr ""
+
+#: src/Placeholder.php:155
+msgid "%d day"
+msgstr ""
+
+#: src/Placeholder.php:157
+msgid "%d days"
+msgstr ""
+
+#. translators: 1: URL of WooCommerce plugin, 2: The minimum WooCommerce version number
+#: src/Plugin.php:208
+msgid "The Sale Badges and Product Labels plugin requires <a href=\"%1$s\">WooCommerce</a> %2$s or greater to be installed and active."
+msgstr ""
+
+#. translators: 1: URL of WordPress.org, 2: The minimum WordPress version number
+#: src/Plugin.php:217
+msgid "The Sale Badges and Product Labels plugin requires <a href=\"%1$s\">WordPress</a> %2$s or greater to be installed and active."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "There was an error on gettings items."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "ID is required to get an item."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "There was an error on getting the item."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Data is required."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Data is required to create an item."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "There was an error on creating the item."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Data is required to update an item."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Item ID is required to update it."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "There was an error on updating the item."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "ID is required to delete an item."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "There was an error on deleting the item."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "ID is required to duplicate an item."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "There was an error on duplicating the item."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Are you sure to delete?"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Warning!"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Yes"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Cancel"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Duplicated Successfully."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Error occurred on duplicating the item."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Deleted Successfully."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Error occurred on deleting the item."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Updated Successfully."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Error occurred on updating the item."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Badges"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Add New"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "There is not any Item."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Info!"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "ID"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Name"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Shortcode"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Preview"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Position"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Status"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Actions"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Out of Image"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "On Image"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Duplicate"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Delete"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Prev"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Next"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Translate Label"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Add Translate Label."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Add"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Edit Translate Label."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Label"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Use the following placeholders to display dynamic values. For example:<br/><strong className='asnp-text-[#483d8b]'>'Sale {saved_percent}'</strong> will be rendered as <strong className='asnp-text-[#483d8b]'>'Sale 20%'</strong>"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Placeholders:"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Translate"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Percentage Discount amount"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Instead of displaying the label, showcase the percentage discount amount for products that are on sale."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Text Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Font Size (Pixel)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Line Height (Pixel)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Font Weight"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "500"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "600"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Normal"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Bold"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Bolder"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Lighter"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Label Styles"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Label Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Border Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Width (Pixel)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Height (Pixel)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Border Width"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Border Radius (Pixel)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Top Left"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Top Right"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Bottom Left"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Bottom Right"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Extra Styles"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "z-index"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Opacity"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Rotation"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Reverse Text"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Horizontal"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Vertical"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Label Position"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Top"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Bottom"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Left"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Right"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Label Position (Pixel)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Center"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Shadow Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Shadow"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Or"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "All Products"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Products"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Stock status"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Is on sale"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Categories"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Tags"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Discount rules (Pro)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Recently Added (Pro)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Featured Products (Pro)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Included"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Excluded"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "In stock"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Out of stock"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "On backorder"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "No"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "And"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "%s Or Group"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "To select the"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "“Discount Rules and Dynamic Pricing for WooCommerce“"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "rule, you can utilize the “Discount rule” condition."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Size (Pixel)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Modern Badges"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "(Pro)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Main Badge Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Secondary Badge Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Modern Badge Styles"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Image Labels"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "+300 Image Labels Available on Pro Version"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Start:"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "End:"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Schedule"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Date"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Date Time"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Time"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Days"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "From Date"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "To Date"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "From Date / Time"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "To Date / Time"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Add Schedule"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Countdown Timer"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Enable or disable it."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Pick A Start / End Date"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Timer Styles"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Background Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Padding Top/Bottom"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Padding Right/Left"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Timer Position"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Timer Position (Pixel)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Labels"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Hours"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Minutes"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Seconds"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Animation Effects (Pro Version)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Animation"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "None"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Iteration Count"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Infinite"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Duration"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "CSS Label Position"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Custom Image"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Upload Image"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Animation Effects"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "CSS Labels"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Timer"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "$100"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "$80"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Saved Successfully."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Error occurred on saving the Badge."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Save"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Hide WooCommerce On Sale Badges"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Enable/Disable"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Negative Sign"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Add Negative Sign Before Percentage Discount."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Preload Dynamic Styles on Archive Pages"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Load all dynamic styles on product archive pages during the first load. Useful when using AJAX requests or infinite scroll to ensure consistent styling as products are dynamically loaded."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Badge "
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid " Position On "
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Archive Page"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Product get image"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Before product thumbnail"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "After product thumbnail"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Before product title"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "After product title"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Before product rating"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "After product rating"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Before product price"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "After product price"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "After shop loop item"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Shop loop"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Post thumbnail html"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "badge position for bulk, tiered, purchase, products group rules in the archive page."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Out Of Image"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Archive Loop Custom Hooks"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "comma separated hooks."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Product Page"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Before product images"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "After product images"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Elementor product images"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "badge position for bulk, tiered, purchase, products group rules in the product page."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Elementor before product images"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Elementor after product title"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Elementor before product price"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Elementor before add to cart"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Single Product Custom Hooks"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Save Changes"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "There was an error on getting settings."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "There was an error on saving settings."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Show Badge on Product Page"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Product Image Container CSS Selector"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Images container CSS selector on single product page."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "There was an error on saving the settings."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "General "
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Content"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Colors"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Targeting"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Text"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Add X Button"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Add Button"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Text Button"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Text Button URL"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Styles"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Banner Position"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Text Position"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Banner Fixed"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Show Bar (Sec)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Z-Index"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Countdown Timer Mode"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Till End Date"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Evergreen"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Countdown Timer Label"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Position & Style"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Countdown Timer Style"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Style 1"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Style 2"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Style 3"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Style 4"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Countdown Timer Position"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Bar Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Button Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Countdown Timer Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Devices"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Desktop"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Mobile"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Pages & Products"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Pages"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "All Pages"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Cart page"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Checkout page"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Shop page"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Product page"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Product category page"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Home page"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Front page"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Posts"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Discount rules"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Recently Added"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Animation Effect"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Banner Animation"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Zoom In"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Fade In"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Fade Out"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Slide In Left"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Slide In Right"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Flip Animation"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Text Animation"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Typing"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Uplift"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Notification Bar"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Bar Templates"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Announcement Bar"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Action Bar"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Countdown Timer Bar 1"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Countdown Timer Bar 2"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "5-Star Review"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Need help?"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Go PRO UP to 75% OFF"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Try Pro"
+msgstr ""
