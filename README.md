@@ -1,0 +1,1 @@
+# plugins-easy-sale-badges-for-woocommerce
