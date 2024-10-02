@@ -201,10 +201,18 @@ abstract class BaseProductValidator {
 
 		$ids = [];
 		foreach ( $items as $item ) {
-			if ( is_array( $item ) && ! empty( $item['value'] ) && 0 < absint( $item['value'] ) ) {
-				$ids[] = absint( $item['value'] );
-			} elseif ( is_object( $item ) && ! empty( $item->value ) && 0 < absint( $item->value ) ) {
-				$ids[] = absint( $item->value );
+			if ( is_array( $item ) && ! empty( $item['value'] ) ) {
+				if ( is_numeric( $item['value'] ) ) {
+					$ids[] = absint( $item['value'] );
+				} else {
+					$ids[] = sanitize_text_field( $item['value'] );
+				}
+			} elseif ( is_object( $item ) && ! empty( $item->value ) ) {
+				if ( is_numeric( $item->value ) ) {
+					$ids[] = absint( $item->value );
+				} else {
+					$ids[] = sanitize_text_field( $item->value );
+				}
 			} elseif ( is_numeric( $item ) && 0 < absint( $item ) ) {
 				$ids[] = absint( $item );
 			}

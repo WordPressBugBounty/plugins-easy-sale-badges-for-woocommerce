@@ -491,3 +491,24 @@ function maybe_get_exact_product( $product ) {
 
 	return $product;
 }
+
+function maybe_get_exact_attribute_id( $attribute ) {
+	if ( empty( $attribute ) ) {
+		return $attribute;
+	}
+
+	if ( ! empty( $attribute ) ) {
+		$attribute = explode( ',', $attribute );
+		if (
+			2 === count( $attribute ) &&
+			! empty( $attribute[0] ) &&
+			! empty( $attribute[1] ) &&
+			is_numeric( $attribute[1] ) &&
+			0 < (int) $attribute[1]
+		) {
+			return maybe_get_exact_item_id( (int) $attribute[1], $attribute[0] );
+		}
+	}
+
+	return (int) $attribute;
+}
