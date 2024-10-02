@@ -136,7 +136,11 @@ function css_badge_dynamic_styles( $badge, $hide = false, $out_of_image = false 
 	$inset_property = '';
 	if ( ! empty( $badge->badgePositionX ) && ! empty( $badge->badgePositionY ) ) {
 		if ( 'top' === $badge->badgePositionY ) {
-			if ( 'left' === $badge->badgePositionX ) {
+			if ( isset( $badge->badgeStyles ) && 'badge11' === $badge->badgeStyles ) {
+				if ( isset( $badge->badgePositionTop ) ) {
+					$inset_property = $badge->badgePositionTop . 'px auto auto 0px';
+				}
+			} elseif ( 'left' === $badge->badgePositionX ) {
 				if ( isset( $badge->badgePositionTop ) && isset( $badge->badgePositionLeft ) ) {
 					$inset_property = $badge->badgePositionTop . 'px auto auto ' . $badge->badgePositionLeft . 'px';
 				}
@@ -150,7 +154,11 @@ function css_badge_dynamic_styles( $badge, $hide = false, $out_of_image = false 
 				}
 			}
 		} elseif ( 'bottom' === $badge->badgePositionY ) {
-			if ( 'left' === $badge->badgePositionX ) {
+			if ( isset( $badge->badgeStyles ) && 'badge11' === $badge->badgeStyles ) {
+				if ( isset( $badge->badgePositionBottom ) ) {
+					$inset_property = 'auto 0px ' . $badge->badgePositionBottom . 'px auto';
+				}
+			} elseif ( 'left' === $badge->badgePositionX ) {
 				if ( isset( $badge->badgePositionBottom ) && isset( $badge->badgePositionLeft ) ) {
 					$inset_property = 'auto auto ' . $badge->badgePositionBottom . 'px ' . $badge->badgePositionLeft . 'px';
 				}
