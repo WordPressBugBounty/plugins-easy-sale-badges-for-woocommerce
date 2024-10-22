@@ -7,19 +7,20 @@ defined( 'ABSPATH' ) || exit;
 class Placeholder {
 
     public static function init() {
-        add_filter( 'asnp_wesb_css_badge_label', array( __CLASS__, 'css_label' ), 10, 2 );
-		add_filter( 'asnp_wesb_advanced_badge_label', array( __CLASS__, 'advanced_label' ), 10, 2 );
+        add_filter( 'asnp_wesb_css_badge_label', array( __CLASS__, 'css_label' ), 10, 3 );
+		add_filter( 'asnp_wesb_advanced_badge_label', array( __CLASS__, 'advanced_label' ), 10, 3 );
     }
 
-	public static function css_label( $label, $badge ) {
+	public static function css_label( $label, $badge, $product ) {
 		if ( empty( $label ) || ! $badge ) {
 			return $label;
 		}
 
-		$product = get_current_product();
 		if ( ! $product ) {
 			return $label;
 		}
+
+		$product = is_numeric( $product ) ? wc_get_product( $product ) : $product;
 
 		if ( ! empty( $badge->percentageDiscount ) ) {
 			$percent = static::percentage_label( $label, $product );
@@ -31,18 +32,19 @@ class Placeholder {
 		return static::replace( $label, $product );
 	}
 
-	public static function advanced_label( $label, $badge ) {
+	public static function advanced_label( $label, $badge, $product ) {
 		if ( empty( $label ) || ! $badge ) {
 			return $label;
 		}
 
-		$product = get_current_product();
 		if ( ! $product ) {
 			return $label;
 		}
 
+		$product = is_numeric( $product ) ? wc_get_product( $product ) : $product;
+
 		if ( ! empty( $badge->percentageDiscountAdv ) ) {
-			$percent = static::percentage_label( $label, $product );
+			$percent = static::percentage_label_adv( $label, $product );
 			if ( ! empty( $percent ) ) {
 				return $percent;
 			}
@@ -204,6 +206,20 @@ class Placeholder {
 			$label,
 			$product
 		);
+	}
+
+	public static function percentage_label_adv( $label, $product ) {
+		$percent = get_saved_percent( $product );
+		if ( empty( $percent ) ) {
+			return false;
+		}
+
+		$prefix = '';
+		if ( (int) get_plugin()->settings->get_setting( 'negativeSign', 1 ) ) {
+			$prefix = '-';
+		}
+
+		return $prefix . round( $percent ) . '%';
 	}
 
 }

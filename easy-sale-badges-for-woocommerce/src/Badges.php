@@ -33,7 +33,7 @@ class Badges {
 			return '';
 		}
 
-		return output_badges( $badges, $hide, $return, $out_of_image );
+		return output_badges( $product, $badges, $hide, $return, $out_of_image );
 	}
 
 	public function get_valid_badges( $product ) {

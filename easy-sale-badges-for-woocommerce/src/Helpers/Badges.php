@@ -8,14 +8,14 @@ use function AsanaPlugins\WooCommerce\SaleBadges\add_custom_style;
 use function AsanaPlugins\WooCommerce\SaleBadges\is_pro_active;
 use function AsanaPlugins\WooCommerce\SaleBadges\translate;
 
-function output_badges( $badges, $hide = false, $return = false, $out_of_image = false ) {
+function output_badges( $product, $badges, $hide = false, $return = false, $out_of_image = false ) {
 	if ( empty( $badges ) ) {
 		return '';
 	}
 
 	$output = '';
 	foreach ( $badges as $badge ) {
-		$out = output_badge( $badge, $hide, $return, $out_of_image );
+		$out = output_badge( $product, $badge, $hide, $return, $out_of_image );
 		if ( ! empty( $out ) ) {
 			$output .= $out;
 		}
@@ -23,21 +23,21 @@ function output_badges( $badges, $hide = false, $return = false, $out_of_image =
 	return $output;
 }
 
-function output_badge( $badge, $hide = false, $return = false, $out_of_image = false ) {
+function output_badge( $product, $badge, $hide = false, $return = false, $out_of_image = false ) {
 	if ( isset( $badge->imgbadge ) && $badge->imgbadge == 1 ) {
 		if ( is_pro_active() ) {
-			return \AsanaPlugins\WooCommerce\SaleBadgesPro\Helpers\Badges\output_image_badge( $badge, $hide, $return, $out_of_image );
+			return \AsanaPlugins\WooCommerce\SaleBadgesPro\Helpers\Badges\output_image_badge( $product, $badge, $hide, $return, $out_of_image );
 		}
 	} elseif ( isset( $badge->imgbadgeAdv ) && $badge->imgbadgeAdv == 1 ) {
 		if ( is_pro_active() ) {
-			return \AsanaPlugins\WooCommerce\SaleBadgesPro\Helpers\Badges\output_image_adv_badge( $badge, $hide, $return, $out_of_image );
+			return \AsanaPlugins\WooCommerce\SaleBadgesPro\Helpers\Badges\output_image_adv_badge( $product, $badge, $hide, $return, $out_of_image );
 		}
 	} elseif ( isset( $badge->useTimerBadge ) && $badge->useTimerBadge == 1 ) {
 		if ( is_pro_active() ) {
-			return \AsanaPlugins\WooCommerce\SaleBadgesPro\Helpers\Badges\output_timer_badge( $badge, $hide, $return, $out_of_image );
+			return \AsanaPlugins\WooCommerce\SaleBadgesPro\Helpers\Badges\output_timer_badge( $product, $badge, $hide, $return, $out_of_image );
 		}
 	} elseif ( ! empty( $badge->badgeStyles ) ) {
-		return output_css_badge( $badge, $hide, $return, $out_of_image );
+		return output_css_badge( $product, $badge, $hide, $return, $out_of_image );
 	}
 
 	if ( $return ) {
@@ -45,7 +45,7 @@ function output_badge( $badge, $hide = false, $return = false, $out_of_image = f
 	}
 }
 
-function output_css_badge( $badge, $hide = false, $return = false, $out_of_image = false ) {
+function output_css_badge( $product, $badge, $hide = false, $return = false, $out_of_image = false ) {
 	if ( ! $badge ) {
 		return '';
 	}
@@ -90,7 +90,7 @@ function output_css_badge( $badge, $hide = false, $return = false, $out_of_image
 	$class_names = apply_filters( 'asnp_wesb_css_badge_class_names', $class_names, $badge, $hide );
 
 	$label = translate( $badge->badgeLabel, 'labelTranslate', $badge );
-	$label = apply_filters( 'asnp_wesb_css_badge_label', $label, $badge );
+	$label = apply_filters( 'asnp_wesb_css_badge_label', $label, $badge, $product );
 
 	add_filter( 'safe_style_css', 'AsanaPlugins\WooCommerce\SaleBadges\allowed_inline_styles' );
 
@@ -104,7 +104,7 @@ function output_css_badge( $badge, $hide = false, $return = false, $out_of_image
 	$output .= '</div>';
 	$output .= '</div>';
 
-	$output = apply_filters( 'asnp_wesb_css_badge', $output, $badge, $hide );
+	$output = apply_filters( 'asnp_wesb_css_badge', $output, $badge, $hide, $product );
 	$output = wp_kses_post( $output );
 
 	remove_filter( 'safe_style_css', 'AsanaPlugins\WooCommerce\SaleBadges\allowed_inline_styles' );

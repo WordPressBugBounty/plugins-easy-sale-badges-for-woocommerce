@@ -175,7 +175,7 @@ function display_sale_badge( $id, $product, $hide = false, $return = false, $out
 		return '';
 	}
 
-	return output_badge( $badge, $hide, $return, $out_of_image );
+	return output_badge( $product, $badge, $hide, $return, $out_of_image );
 }
 
 function has_active_sale_badges() {

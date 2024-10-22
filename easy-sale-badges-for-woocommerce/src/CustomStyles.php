@@ -11,13 +11,7 @@ class CustomStyles {
 	protected $badges = [];
 
 	public function init() {
-		if ( has_action( 'woocommerce_after_shop_loop' ) ) {
-			add_action( 'woocommerce_after_shop_loop', [ $this, 'load_dynamic_styles' ] );
-		} elseif ( has_action( 'woocommerce_before_shop_loop' ) ) {
-			add_action( 'woocommerce_before_shop_loop', [ $this, 'load_dynamic_styles' ] );
-		} else {
-			add_action( 'wp_footer', [ $this, 'load_dynamic_styles' ], 5 );
-		}
+		add_action( 'wp_footer', [ $this, 'load_dynamic_styles' ], 5 );
 		add_action( 'wp_footer', array( $this, 'output_styles' ) );
 	}
 
