@@ -64,7 +64,10 @@ class Badges {
 				continue;
 			}
 
-			$badges[] = $badge;
+			$valid = apply_filters( 'asnp_wesb_is_valid_badge', true, $badge, $product, $this );
+			if ( $valid ) {
+				$badges[] = $badge;
+			}
 		}
 
 		$this->valid_badges[ $product ] = $badges;
