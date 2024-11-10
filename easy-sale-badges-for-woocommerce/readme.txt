@@ -5,7 +5,7 @@ Tags: woocommerce badge, product label, woocommerce, badge, sale badge, notifica
 Requires at least: 5.0
 Tested up to: 6.6
 Requires PHP: 5.6
-Stable tag: 3.7.0
+Stable tag: 3.8.0
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,7 +25,7 @@ https://youtu.be/1d-ICc1tVTc
 
 https://youtu.be/aTHFT3ovCaw
 
-== ✅ BADGE AND PRODUCT LABEL FOR WOOCOMMERCE FEATURES ==
+== ✅ Badge And Product Label For WooCommerce Features ==
 
 - **Create Custom labels on Products**
 - **Add 15 CSS Label**
@@ -51,12 +51,14 @@ https://youtu.be/aTHFT3ovCaw
 
 **[PRO WITH 50% DISCOUNT FOR $30](https://www.asanaplugins.com/product/woocommerce-sale-badges-and-product-labels/)**
 
-== ✅ BADGE AND PRODUCT LABEL FOR WOOCOMMERCE PRO FEATURES ==
+== ✅ Badge And Product Label For WooCommerce PRO Features ==
 
 - **Add Notification Bar**
 - **Over 200 Image Labels**
 - **Over 15 CSS Labels**
 - **Over 5 Modern Badges**
+- **Conditions based on user login status, user roles, and total money spent**
+- **Product conditions to include quantity, regular price, sale price, and total price**
 - **8 Timers Template**
 - **Out of Image Position Option For Timers Countdown**
 - **Over 10 Animation Effects**
@@ -78,7 +80,7 @@ https://youtu.be/aTHFT3ovCaw
 - **Shipping Image Labels**
 - **Sold Out Image Labels**
 
-== TESTED WITH MORE THAN 40+ THEMES ==
+== Tested With More Than 40+ Themes ==
 
 - **Avada** 
 - **WoodMart**
@@ -98,29 +100,29 @@ https://youtu.be/aTHFT3ovCaw
 - **OceanWP**
 - **And Much More**
 
-== BADGE AND PRODUCT LABEL FOR WOOCOMMERCE ==
+== Badge And Product Label For WooCommerce ==
 
 The badge and product label tool for WooCommerce is crucial for e-commerce businesses. It helps grab customers' attention and boost sales by highlighting special offers, discounts, new arrivals, or limited-time promotions. Placing them strategically on product images and Encouraging customers to make a purchase can be achieved by creating a sense of urgency. With the ability to customize their appearance and placement, online businesses can enhance their visibility and drive conversions effectively using WooCommerce.
 
-== BOOST SALES WITH AN EYE-CATCHING BADGE AND PRODUCT LABEL IN WOOCOMMERCE ==
+== Boost Sales With An Eye-catching Badge And Product Label In WooCommerce ==
 
 In today's competitive market, businesses need to find effective ways to boost sales and grab the attention of potential customers. A striking product label can be a powerful tool that can significantly impact. These visually appealing labels have the power to captivate consumers and create a lasting impression. By incorporating eye-catching designs, vibrant colors, and compelling imagery, businesses can differentiate their products from competitors and attract more customers. Striking product labels enhances the product's overall appearance and conveys information about its features and benefits. With their ability to instantly grab attention and leave a lasting impression, striking product labels can undoubtedly contribute to a significant increase in business sales.
 
-== CUSTOMIZATION OPTIONS FOR THE BADGE AND PRODUCT LABEL IN WOOCOMMERCE ==
+== Customization Options For The Badge And Product Label In WooCommerce ==
 
 In WooCommerce, numerous customization options are available for badges and product labels. Store owners can customize the appearance and functionality of their stores to suit their specific needs. These options typically include changing the color, size, font, and position of badges and labels, providing flexibility in aligning them with the store's branding and design aesthetics. Additionally, store owners can often customize the text displayed on badges and labels, including promotional messages, product statuses, or other relevant information. With these customization options, users can create attractive badges and labels that communicate essential product information and enhance the customer shopping experience.
 
-== CUSTOMIZABLE NOTIFICATION BAR FOR WOOCOMMERCE (PRO VERSION) ==
+== Customizable Notification Bar For WooCommerce (PRO VERSION) ==
 
 Enhance your WooCommerce store with the Customizable Notification Bar, a powerful tool designed to boost user engagement and drive sales. This versatile notification bar allows you to create personalized messages tailored to your customers, promoting special offers, new arrivals, and important updates in real-time. Featuring a Countdown Timer, you can create a sense of urgency, encouraging quicker purchases and increasing conversions. With a variety of design options and seamless integration, the Customizable Notification Bar ensures your notifications stand out without disrupting the shopping experience. Easy to set up and fully responsive, this tool is essential for capturing your audience's attention effectively and fostering a better connection with your customers.
 
-== COMPATIBILITY WITH WOOCOMMERCE PLUGINS ==
+== Compatibility With WooCommerce Plugins ==
 
 Badge and Product Label are fully compatible with the following WooCommerce plugins, which you can easily integrate into your website :
 
 * <strong>[Discount Rules and Dynamic Pricing for WooCommerce](https://wordpress.org/plugins/easy-woocommerce-discounts/)
 
-== HOW TO ADD THE BADGE AND PRODUCT LABEL PLUGIN TO WOOCOMMERCE PRODUCTS ==
+== How To Add The Badge And Product Label Plugin To WooCommerce Products ==
 
 Install and activate the plugin, then follow these steps to create a product badge.
 1. Choose between CSS Label, Image Label, Advanced Label, or Timer.
@@ -193,6 +195,11 @@ The plugin is rich in features, while it is lightweight and fast.
 11. Percentage Discount amount.
 
 == Changelog ==
+
+= 3.8.0 =
+* Added two countdown timer options outside of the image (Pro version).
+* Added conditions based on user login status, user roles, and total money spent.
+* Added product conditions to include quantity, regular price, sale price, and total price.
 
 = 3.7.0 =
 * Updated the notification bar design with minor adjustments.

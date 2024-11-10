@@ -3,7 +3,7 @@
         'name' => 'asanaplugins/easy-sale-badges',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'd4ff614b0da8afa44ae1ca7bd76cca71148dfa21',
+        'reference' => 'ea12e77de8c8c82e18a9f52191511c4964fc1947',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'asanaplugins/easy-sale-badges' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'd4ff614b0da8afa44ae1ca7bd76cca71148dfa21',
+            'reference' => 'ea12e77de8c8c82e18a9f52191511c4964fc1947',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

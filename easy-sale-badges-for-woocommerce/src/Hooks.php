@@ -480,7 +480,7 @@ class Hooks {
 		}
 
 		if ( false === strpos( $image, '<div' ) ) {
-			$image = '<div class="asnp-sale-badge-image-wrapper" style="display: inline-block; position:relative;">' . $image . $badge . '</div>';
+			$image = '<div class="asnp-sale-badge-image-wrapper" style="display:block; position:relative;">' . $image . $badge . '</div>';
 		}
 
 		return $image;
