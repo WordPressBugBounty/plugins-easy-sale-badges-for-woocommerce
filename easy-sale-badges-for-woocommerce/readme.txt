@@ -3,9 +3,9 @@ Contributors: asanaplugins
 Donate link: https://www.asanaplugins.com/
 Tags: woocommerce badge, product label, woocommerce, badge, sale badge, notification bar, label
 Requires at least: 5.0
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 3.8.0
+Stable tag: 3.9.0
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,6 +54,7 @@ https://youtu.be/aTHFT3ovCaw
 == ✅ Badge And Product Label For WooCommerce PRO Features ==
 
 - **Add Notification Bar**
+- **Add Free Shipping Bar**
 - **Over 200 Image Labels**
 - **Over 15 CSS Labels**
 - **Over 5 Modern Badges**
@@ -195,6 +196,10 @@ The plugin is rich in features, while it is lightweight and fast.
 11. Percentage Discount amount.
 
 == Changelog ==
+
+= 3.9.0 =
+* Added Free Shipping Bar (Pro version).
+* Compatibility with WooCommerce 9.4.1
 
 = 3.8.0 =
 * Added two countdown timer options outside of the image (Pro version).

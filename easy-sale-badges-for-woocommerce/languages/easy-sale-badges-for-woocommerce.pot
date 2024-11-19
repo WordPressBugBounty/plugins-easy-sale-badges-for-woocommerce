@@ -2,14 +2,14 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sale Badges and Product Labels for WooCommerce 3.8.0\n"
+"Project-Id-Version: Sale Badges and Product Labels for WooCommerce 3.9.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/easy-sale-badges-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-10T22:28:21+00:00\n"
+"POT-Creation-Date: 2024-11-18T20:10:28+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: easy-sale-badges-for-woocommerce\n"
@@ -981,6 +981,10 @@ msgid "After product images"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
+msgid "Product Thumbnails"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
 msgid "Elementor product images"
 msgstr ""
 
@@ -1294,6 +1298,10 @@ msgstr ""
 
 #: assets/js/admin/admin/index.js:2
 msgid "Countdown Timer Bar 2"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Free Shipping Bar"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
