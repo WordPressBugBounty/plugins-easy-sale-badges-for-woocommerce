@@ -341,6 +341,9 @@ class Badge extends BaseController {
 				case 'animationCountTimer':
 				case 'selectedDateFrom':
 				case 'selectedDateTo':
+				case 'evergreen':
+				case 'evergreenOption':
+				case 'timerMode':
 				case 'fontWeightLabelAdv':
 				case 'widthAdvLabel':
 				case 'fontSizeAdvLabel':
