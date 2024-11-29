@@ -5,7 +5,7 @@ Tags: woocommerce badge, product label, woocommerce, badge, sale badge, notifica
 Requires at least: 5.0
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 3.9.2
+Stable tag: 3.9.3
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,14 +60,14 @@ https://youtu.be/aTHFT3ovCaw
 - **Over 5 Modern Badges**
 - **Conditions based on user login status, user roles, and total money spent**
 - **Product conditions to include quantity, regular price, sale price, and total price**
-- **8 Timers Template**
-- **Out of Image Position Option For Timers Countdown**
+- **8 Countdown Timers Template**
+- **Out of Image Position Option For Countdown Timers**
 - **Over 10 Animation Effects**
 - **Incorporate Gradient Colors**
 - **[Compatible with Discount Rules and Dynamic Pricing for WooCommerce](https://wordpress.org/plugins/easy-woocommerce-discounts/)**
 - **Rotate CSS Labels, Image Labels, and Advanced Labels**
 - **Adjust the Position of CSS Labels, Image Labels, and Advanced Labels**
-- **Include both Vertical and Horizontal Timers**
+- **Include both Vertical and Horizontal Countdown Timers**
 - **Sale Image Labels**
 - **Percentage Off Image Labels**
 - **Coming Soon Image Labels**
@@ -197,8 +197,14 @@ The plugin is rich in features, while it is lightweight and fast.
 
 == Changelog ==
 
+= 3.9.3 =
+* Added Cyber Monday offer.
+
 = 3.9.2 =
 * Compatibility with WooCommerce 9.4.2
+
+= 3.9.1 =
+* Fixed issue Free Shipping Bar (Pro version).
 
 = 3.9.0 =
 * Added Free Shipping Bar (Pro version).
