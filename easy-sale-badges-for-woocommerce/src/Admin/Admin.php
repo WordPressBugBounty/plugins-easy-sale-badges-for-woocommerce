@@ -96,7 +96,7 @@ class Admin {
 			return;
 		}
 
-		$name = 'asnp_wepb_' . $offer_name . '_' . date( 'Y' );
+		$name = 'asnp_wesb_' . $offer_name . '_' . date( 'Y' );
 		if ( (int) get_option( $name . '_added' ) ) {
 			// Is the offer expired.
 			if ( time() > strtotime( $end_date . ' 23:59:59' ) ) {
