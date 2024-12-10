@@ -2,14 +2,14 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sale Badges and Product Labels for WooCommerce 3.10.0\n"
+"Project-Id-Version: Sale Badges and Product Labels for WooCommerce 3.11.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/easy-sale-badges-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-12-02T18:47:31+00:00\n"
+"POT-Creation-Date: 2024-12-09T18:40:56+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: easy-sale-badges-for-woocommerce\n"
@@ -1305,11 +1305,11 @@ msgid "Free Shipping Bar"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
-msgid "Boost Your Black Friday & Cyber Monday Sales with Powerful Tools!"
+msgid "Boost Your Christmas Sales with Powerful Tools!"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
-msgid "Drive higher visibility and sales impact this Black Friday and Cyber Monday with eye-catching sale badges and notification bars, crafted to capture attention and boost conversion rates for WooCommerce."
+msgid "Drive higher visibility and sales impact this Christmas with eye-catching sale badges and notification bars, crafted to capture attention and boost conversion rates for WooCommerce."
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
@@ -1433,7 +1433,7 @@ msgid "Apps"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
-msgid "Cyber Monday!"
+msgid "CHRISTMAS!"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2

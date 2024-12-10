@@ -33,11 +33,19 @@ class Assets {
 			$container = get_plugin()->settings->get_setting( 'singleContainer', '' );
 		}
 
+		$stylesheet = empty( $stylesheet ) ? get_stylesheet() : $stylesheet;
+		$template   = empty( $template ) ? get_template() : $template;
+
+		$stylesheet = ! empty( $stylesheet ) ? strtolower( $stylesheet ) : $stylesheet;
+		$template   = ! empty( $template ) ? strtolower( $template ) : $template;
+
 		wp_localize_script(
 			'asnp-wesb-badge',
 			'asnpWesbBadgeData',
 			[
 				'singleContainer' => $container,
+				'stylesheet' => $stylesheet,
+				'template' => $template,
 			]
 		);
 	}
