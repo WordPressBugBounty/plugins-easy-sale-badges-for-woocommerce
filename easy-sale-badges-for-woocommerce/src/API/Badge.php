@@ -343,6 +343,7 @@ class Badge extends BaseController {
 				case 'selectedDateTo':
 				case 'evergreen':
 				case 'evergreenOption':
+				case 'paddingTimerStyle':
 				case 'timerMode':
 				case 'fontWeightLabelAdv':
 				case 'widthAdvLabel':

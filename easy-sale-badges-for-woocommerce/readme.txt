@@ -5,7 +5,7 @@ Tags: woocommerce badge, product label, woocommerce, badge, sale badge, notifica
 Requires at least: 5.0
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 3.11.0
+Stable tag: 3.12.0
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,7 +60,7 @@ https://youtu.be/aTHFT3ovCaw
 - **Over 5 Modern Badges**
 - **Conditions based on user login status, user roles, and total money spent**
 - **Product conditions to include quantity, regular price, sale price, and total price**
-- **8 Countdown Timers Template**
+- **Over 10 Countdown Timers Template**
 - **Out of Image Position Option For Countdown Timers**
 - **Over 10 Animation Effects**
 - **Incorporate Gradient Colors**
@@ -196,6 +196,10 @@ The plugin is rich in features, while it is lightweight and fast.
 11. Percentage Discount amount.
 
 == Changelog ==
+
+= 3.12.0 =
+* Added 5 new templates to the Countdown Timer (Pro version).
+Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback. 🌹
 
 = 3.11.0 =
 * Fixed an issue with product labels and badges on the product gallery page.
