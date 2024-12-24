@@ -433,6 +433,8 @@ class Badge extends BaseController {
 				case 'imgbadgeAdv':
 				case 'alwaysOnline':
 				case 'percentageDiscountAdv':
+				case 'showOnArchivePage':
+				case 'showOnProductPage':
 				case 'useTimerBadge':
 					if ( isset( $value ) ) {
 						$options[ $key ] = SaleBadges\string_to_bool( $value ) ? 1 : 0;

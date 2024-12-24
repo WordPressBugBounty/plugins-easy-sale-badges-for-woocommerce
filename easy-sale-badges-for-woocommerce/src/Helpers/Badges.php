@@ -24,6 +24,21 @@ function output_badges( $product, $badges, $hide = false, $return = false, $out_
 }
 
 function output_badge( $product, $badge, $hide = false, $return = false, $out_of_image = false ) {
+
+	if ( $hide ) {
+    	if ( isset( $badge->showOnProductPage ) && 0 === $badge->showOnProductPage ) {
+        	if ( $return ) {
+            	return '';
+        	}
+        	return;
+    	}
+	} elseif ( isset( $badge->showOnArchivePage ) && 0 === $badge->showOnArchivePage ) {
+    	if ( $return ) {
+        	return '';
+    	}
+    	return;
+	}
+
 	if ( isset( $badge->imgbadge ) && $badge->imgbadge == 1 ) {
 		if ( is_pro_active() ) {
 			return \AsanaPlugins\WooCommerce\SaleBadgesPro\Helpers\Badges\output_image_badge( $product, $badge, $hide, $return, $out_of_image );
