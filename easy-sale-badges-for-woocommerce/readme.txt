@@ -5,7 +5,7 @@ Tags: woocommerce badge, product label, woocommerce, badge, sale badge, notifica
 Requires at least: 5.0
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 3.13.0
+Stable tag: 3.14.0
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -197,11 +197,14 @@ The plugin is rich in features, while it is lightweight and fast.
 
 == Changelog ==
 
+= 3.14.0 =
+* Added an option to customize the size of CSS badges and image labels directly on the product page and archive page.
+Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
+
 = 3.13.0 =
 * Added an option to display badges on product pages or archive pages (Pro version).
 * Fixed a formatting issue with the countdown timer (Pro version).
 * Compatibility with WooCommerce 9.5.1
-Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback. 🌹
 
 = 3.12.0 =
 * Added 5 new templates to the Countdown Timer (Pro version).

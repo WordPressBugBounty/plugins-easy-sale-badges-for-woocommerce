@@ -361,6 +361,12 @@ class Badge extends BaseController {
 				case 'fontFamily':
 				case 'borderColor':
 				case 'borderWidth':
+				case 'singleWidthBadge':
+				case 'singleHeightBadge':
+				case 'singleFontSizeText':
+				case 'singleLineHeightText':
+				case 'singleFontWeightLabel':
+				case 'singleWidthImageBadge':
 				case 'badgeTimer':
 				case 'fontSizeLabelTimerStyle1':
 				case 'fontSizeMessageTimerStyle1':
