@@ -239,4 +239,31 @@ abstract class BaseModel {
 		return $this->table_exists( $this->table_name );
 	}
 
+	public function count( $where = array() ) {
+        global $wpdb;
+
+        $where_clause = '';
+        $placeholders = array();
+
+        if ( ! empty( $where ) && is_array( $where ) ) {
+            $conditions = array();
+
+            foreach ( $where as $column => $value ) {
+                $conditions[]    = "{$column} = %s";
+                $placeholders[]  = $value;
+            }
+
+            $where_clause = 'WHERE ' . implode( ' AND ', $conditions );
+        }
+
+        // Construct the SQL query.
+        $sql = $wpdb->prepare(
+            "SELECT COUNT(*) FROM {$this->table_name} {$where_clause}",
+            $placeholders
+        );
+
+        // Execute the query and return the count.
+        return (int) $wpdb->get_var( $sql );
+    }
+
 }

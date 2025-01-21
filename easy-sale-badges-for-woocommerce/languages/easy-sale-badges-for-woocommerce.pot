@@ -2,14 +2,14 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sale Badges and Product Labels for WooCommerce 3.14.0\n"
+"Project-Id-Version: Sale Badges and Product Labels for WooCommerce 4.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/easy-sale-badges-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-01-07T20:08:38+00:00\n"
+"POT-Creation-Date: 2025-01-21T20:41:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: easy-sale-badges-for-woocommerce\n"
@@ -154,7 +154,7 @@ msgid "Items are required."
 msgstr ""
 
 #: src/API/Settings.php:54
-#: src/API/Settings.php:92
+#: src/API/Settings.php:99
 msgid "Settings data is required."
 msgstr ""
 
@@ -1237,7 +1237,19 @@ msgid "Conditions"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
+msgid "Themes"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
 msgid "+15 Theme on Pro Version"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Custom Theme"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Upload"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
@@ -1317,7 +1329,7 @@ msgid "Boost Your Sales with Powerful Tools!"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
-msgid "Boost visibility and drive sales with eye-catching sale badges and notification bars designed to grab attention and maximize conversion rates for your WooCommerce store."
+msgid "Boost visibility and drive sales with eye-catching sale badges, sales popup, and notification bars designed to grab attention and maximize conversion rates for your WooCommerce store."
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
@@ -1326,6 +1338,10 @@ msgstr ""
 
 #: assets/js/admin/admin/index.js:2
 msgid "Pro Version - Unlock Full Potential!"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Sales Pop up"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
@@ -1429,6 +1445,198 @@ msgid "Buy Pro"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
+msgid "Random Order"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Loop Popup"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Add Close Icon"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Open Link In New Tab"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Order Status"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Completed"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Product Filter"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Display The Last"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Display from the last (days)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Group Text for Multiple Orders"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Timing"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Display time (seconds)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Show the popup display time on the screen."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Delay before first Popup shows (seconds)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Delay before first pop shows."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Delay time between 2 Popup (seconds)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Interval between two popups appearing on the screen."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Position in Desktop"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Position in Mobile"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Link"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Link Options"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Add Buy Button"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Sales Popup"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Templates"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Theme & Styles"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Top Message"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Use the following placeholders to display dynamic values."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Content Message"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Image"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Product Image"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Library"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Gradient Palette"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Font Size Top Message (Pixel)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Font Size Content Message (Pixel)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Font Weight Top Message"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "400"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "700"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "800"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Font Weight Content Message"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Fade"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Slide Right"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Slide Left"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Slide Bottom"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Title Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Product Text Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Close Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Time Text Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Button Text Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
 msgid "5-Star Review"
 msgstr ""
 
@@ -1445,5 +1653,5 @@ msgid "PRO VERSION!"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
-msgid "Go PRO UP to 75% OFF"
+msgid "Go PRO"
 msgstr ""
