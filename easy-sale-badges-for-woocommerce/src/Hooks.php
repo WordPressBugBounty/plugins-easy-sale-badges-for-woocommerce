@@ -4,6 +4,8 @@ namespace AsanaPlugins\WooCommerce\SaleBadges;
 
 defined( 'ABSPATH' ) || exit;
 
+use function AsanaPlugins\WooCommerce\SaleBadges\add_custom_hooks;
+
 class Hooks {
 
 	public static function init() {
@@ -106,7 +108,7 @@ class Hooks {
 		$custom_hooks = apply_filters( 'asnp_wesb_single_custom_hooks', $custom_hooks );
 		$custom_hooks = trim( $custom_hooks );
 
-		static::add_custom_hooks( $custom_hooks, array( __CLASS__, 'single_dispaly_sale_badge' ) );
+		add_custom_hooks( $custom_hooks, array( __CLASS__, 'single_dispaly_sale_badge' ) );
 
 		return $custom_hooks;
 	}
@@ -397,24 +399,9 @@ class Hooks {
 		$custom_hooks = apply_filters( 'asnp_wesb_loop_custom_hooks', $custom_hooks );
 		$custom_hooks = trim( $custom_hooks );
 
-		static::add_custom_hooks( $custom_hooks, array( __CLASS__, 'display_sale_badge' ) );
+		add_custom_hooks( $custom_hooks, array( __CLASS__, 'display_sale_badge' ) );
 
 		return $custom_hooks;
-	}
-
-	public static function add_custom_hooks( $custom_hooks, $callback ) {
-		if ( empty( $custom_hooks ) || ! strlen( trim( $custom_hooks ) ) ) {
-			return;
-		}
-
-		if ( ! $callback || ! is_callable( $callback ) ) {
-			return;
-		}
-
-		$custom_hooks = array_map( 'trim', explode( ',', trim( $custom_hooks ) ) );
-		foreach ( $custom_hooks as $hook ) {
-			add_action( $hook, $callback, apply_filters( 'asnp_wesb_sale_badge_custom_hook_priority', 99, $hook ) );
-		}
 	}
 
 	public static function single_dispaly_sale_badge() {

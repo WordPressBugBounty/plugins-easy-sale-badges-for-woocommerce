@@ -5,7 +5,7 @@ Tags: woocommerce badge, product label, woocommerce, badge, sale badge, notifica
 Requires at least: 5.0
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 4.0.0
+Stable tag: 5.0.0
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,9 @@ https://youtu.be/aTHFT3ovCaw
 
 == ✅ Badge And Product Label For WooCommerce PRO Features ==
 
+- **Add Countdown timer for embeds**
+- **Add Countdown stock for embeds**
+- **Add Announcement feature for embeds**
 - **Add Sales Pop up**
 - **Add Notification Bar**
 - **Add Free Shipping Bar**
@@ -198,10 +201,16 @@ The plugin is rich in features, while it is lightweight and fast.
 
 == Changelog ==
 
+= 5.0.0 =
+* Added Countdown timer for embeds (Pro Version).
+* Added Countdown stock for embeds (Pro Version).
+* Added Announcement feature for embeds (Pro Version).
+* Fixed issue in quantity.
+Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
+
 = 4.0.0 =
 * Added Sales Pop up (Pro Version).
 * Compatibility with WooCommerce 9.6.0
-Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
 
 = 3.14.0 =
 * Added an option to customize the size of CSS badges and image labels directly on the product page and archive page.

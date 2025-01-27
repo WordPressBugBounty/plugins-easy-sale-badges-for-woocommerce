@@ -512,3 +512,18 @@ function maybe_get_exact_attribute_id( $attribute ) {
 
 	return (int) $attribute;
 }
+
+function add_custom_hooks( $custom_hooks, $callback ) {
+	if ( empty( $custom_hooks ) || ! strlen( trim( $custom_hooks ) ) ) {
+		return;
+	}
+
+	if ( ! $callback || ! is_callable( $callback ) ) {
+		return;
+	}
+
+	$custom_hooks = array_map( 'trim', explode( ',', trim( $custom_hooks ) ) );
+	foreach ( $custom_hooks as $hook ) {
+		add_action( $hook, $callback, apply_filters( 'asnp_wesb_custom_hook_priority', 99, $hook ) );
+	}
+}
