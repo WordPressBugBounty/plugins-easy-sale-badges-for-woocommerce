@@ -179,6 +179,27 @@ class Hooks {
 				}
 				break;
 
+			case 'before_add_to_cart_button':
+			case 'after_add_to_cart_button':
+				$priority = has_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart' );
+				if ( 'before_add_to_cart_button' === $single_position ) {
+					$priority ?
+						add_action( 'woocommerce_single_product_summary', array( __CLASS__, 'single_dispaly_out_of_image_sale_badge' ), $priority - 1 ) :
+						add_action( 'woocommerce_single_product_summary', array( __CLASS__, 'single_dispaly_out_of_image_sale_badge' ), 29 );
+				} elseif ( 'after_add_to_cart_button' === $single_position ) {
+					$priority ?
+						add_action( 'woocommerce_single_product_summary', array( __CLASS__, 'single_dispaly_out_of_image_sale_badge' ), $priority + 1 ) :
+						add_action( 'woocommerce_single_product_summary', array( __CLASS__, 'single_dispaly_out_of_image_sale_badge' ), 31 );
+				}
+				break;
+			case 'before_add_to_cart_form':
+				add_action( 'woocommerce_before_add_to_cart_form', array( __CLASS__, 'single_dispaly_out_of_image_sale_badge' ) );
+				break;
+
+			case 'after_add_to_cart_form':
+				add_action( 'woocommerce_after_add_to_cart_form', array( __CLASS__, 'single_dispaly_out_of_image_sale_badge' ) );
+				break;
+						
 			default:
 				add_action( $single_position, array( __CLASS__, 'single_dispaly_out_of_image_sale_badge' ), 99 );
 				break;
