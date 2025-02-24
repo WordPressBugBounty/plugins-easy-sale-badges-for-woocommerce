@@ -96,7 +96,7 @@ class Hooks {
 			case 'post_thumbnail_html':
 				add_filter( 'post_thumbnail_html', array( __CLASS__, 'post_thumbnail_html' ), 10, 4 );
 				break;
-				
+
 			default:
 				add_action( $single_position, array( __CLASS__, 'single_dispaly_sale_badge' ), 99 );
 				break;
@@ -114,11 +114,7 @@ class Hooks {
 	}
 
 	public static function single_out_of_image_hooks() {
-		$single_position = get_theme_out_of_image_single_position();
-
-		if ( empty( $single_position ) ) {
-			$single_position = get_plugin()->settings->get_setting( 'singleOutOfImagePosition', 'before_single_item_title' );
-		}
+		$single_position = get_plugin()->settings->get_setting( 'singleOutOfImagePosition', 'before_single_item_title' );
 
 		if ( empty( $single_position ) || 'none' === $single_position ) {
 			return;
@@ -199,7 +195,7 @@ class Hooks {
 			case 'after_add_to_cart_form':
 				add_action( 'woocommerce_after_add_to_cart_form', array( __CLASS__, 'single_dispaly_out_of_image_sale_badge' ) );
 				break;
-						
+
 			default:
 				add_action( $single_position, array( __CLASS__, 'single_dispaly_out_of_image_sale_badge' ), 99 );
 				break;
