@@ -5,7 +5,7 @@ Tags: woocommerce badge, product label, woocommerce, badge, sale badge, notifica
 Requires at least: 5.0
 Tested up to: 6.7
 Requires PHP: 5.6
-Stable tag: 5.2.0
+Stable tag: 5.3.0
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -201,11 +201,15 @@ The plugin is rich in features, while it is lightweight and fast.
 
 == Changelog ==
 
+= 5.3.0 =
+* Added Banner for embeds (Pro Version).
+* Compatibility with WooCommerce 9.7.1
+Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
+
 = 5.2.0 =
 * Added a new sale popup design (Pro Version).
 * Added a stylish new countdown stock display (Pro Version).
 * Compatibility with WooCommerce 9.6.2
-Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
 
 = 5.1.0 =
 * Added new hooks for better customization (before add to cart and after add to cart) to out of image position.
