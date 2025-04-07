@@ -50,10 +50,12 @@ class Assets {
 			);
 
 			if ( function_exists( 'wp_set_script_translations' ) ) {
+				$domain    = SaleBadges\is_pro_active() ? 'easy-sale-badges-for-woocommerce-pro' : 'easy-sale-badges-for-woocommerce';
+				$lang_path = defined( 'ASNP_WESB_PRO_ABSPATH' ) ? ASNP_WESB_PRO_ABSPATH : ASNP_WESB_ABSPATH;
 				wp_set_script_translations(
 					'asnp-easy-sale-badge-admin',
-					'asnp-easy-sale-badge',
-					apply_filters( 'asnp_wesb_sale_badge_admin_script_translations', ASNP_WESB_ABSPATH . 'languages' )
+					$domain,
+					apply_filters( 'asnp_wesb_sale_badge_admin_script_translations', $lang_path . 'languages' )
 				);
 			}
 		}
