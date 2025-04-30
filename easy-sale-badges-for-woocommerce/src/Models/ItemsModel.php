@@ -53,12 +53,20 @@ class ItemsModel {
 			if ( is_numeric( $product ) ) {
 				$product = wc_get_product( $product );
 			}
+			if ( ! $product ) {
+				continue;
+			}
 
 			if ( ! SaleBadges\wc_products_array_filter_readable( $product ) ) {
 				continue;
 			}
 
 			if ( ! empty( $allowed_types ) && ! in_array( $product->get_type(), $allowed_types ) ) {
+				continue;
+			}
+
+			$id = SaleBadges\maybe_get_exact_item_id( $product->get_id() );
+			if ( isset( $products_select[ $id ] ) ) {
 				continue;
 			}
 
@@ -75,13 +83,13 @@ class ItemsModel {
 				$text = sprintf( '%2$s (%1$s)', $identifier, $product->get_title() );
 			}
 
-			$products_select[] = (object) array(
+			$products_select[ $id ] = (object) array(
 				'value' => $product->get_id(),
 				'label' => $text,
 			);
 		}
 
-		return $products_select;
+		return array_values( $products_select );
 	}
 
 	public static function get_categories( array $args = array() ) {

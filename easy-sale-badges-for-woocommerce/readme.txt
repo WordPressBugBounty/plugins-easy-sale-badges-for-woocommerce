@@ -3,9 +3,9 @@ Contributors: asanaplugins
 Donate link: https://www.asanaplugins.com/
 Tags: woocommerce badge, product label, woocommerce, badge, sale badge, notification bar, label
 Requires at least: 5.0
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 5.5.0
+Stable tag: 5.6.0
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,23 @@ https://youtu.be/1d-ICc1tVTc
 == Video Tutorial ==
 
 https://youtu.be/aTHFT3ovCaw
+
+== Examples of Badges and Product Labels for WooCommerce ==
+
+* <strong>[Product Label Displaying Percentage Discount](https://pricing-and-discounts.asanaplugins.com/demo/product/album/)</strong>
+* <strong>[Product Label](https://pricing-and-discounts.asanaplugins.com/demo/product/album/)</strong>
+* <strong>[Image Badge (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/hoodie/)</strong>
+* <strong>[Countdown Timer (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/beanie/)</strong>
+* <strong>[Countdown Timer with Progress Bar (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/cooling-pc-fans/)</strong>
+* <strong>[Countdown Stock (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/beanie/)</strong>
+* <strong>[Countdown Timer Bar (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/hoodie/)</strong>
+* <strong>[Multi Bar (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/beanie/)</strong>
+* <strong>[Infinity Bar (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/belt/)</strong>
+* <strong>[Sales Popup (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/shop/)</strong>
+* <strong>[Banner (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/beanie/)</strong>
+* <strong>[Announcement (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/belt/)</strong>
+* <strong>[Payment Icons (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/cap/)</strong>
+* <strong>[Social Media Icons (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/belt/)</strong>
 
 == ✅ Badge And Product Label For WooCommerce Features ==
 
@@ -53,6 +70,7 @@ https://youtu.be/aTHFT3ovCaw
 
 == ✅ Badge And Product Label For WooCommerce PRO Features ==
 
+- **Add Discount Popup**
 - **Add Trust Badges for embeds**
 - **Add Social Media Icons for embeds**
 - **Add Payment Icons for embeds**
@@ -205,12 +223,17 @@ The plugin is rich in features, while it is lightweight and fast.
 
 == Changelog ==
 
+= 5.6.0 =
+* Added Discount Popup (Pro Version).
+* Ensured compatibility with WordPress version 6.8
+* Compatibility with WooCommerce 9.8.2
+Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
+
 = 5.5.0 =
 * Added Trust Badges to the Embeds options (Pro Version).
 * Added payment icons to the Embeds options (Pro Version).
 * Added social media icons to the Embeds options (Pro Version).
 * Fixed the br placeholder display issue in the admin panel.
-Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
 
 = 5.4.1 =
 * Fixed Multi Bar issue.
