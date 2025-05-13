@@ -373,12 +373,12 @@ function get_current_lang() {
 	return $current_lang;
 }
 
-function translate( $label, $prop, $badge ) {
+function translate( $label, $prop, $badge, $current_lang = '' ) {
 	if ( empty( $label ) || empty( $prop ) ) {
 		return $label;
 	}
 
-	$current_lang = get_current_lang();
+	$current_lang = ! empty( $current_lang ) ? $current_lang : get_current_lang();
 	if ( ! $current_lang ) {
 		return $label;
 	}
