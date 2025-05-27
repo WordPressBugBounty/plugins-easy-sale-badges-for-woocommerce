@@ -6,6 +6,8 @@ defined( 'ABSPATH' ) || exit;
 
 class Assets {
 
+	protected $timers = [];
+
 	public function init() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'load_scripts' ), 15 );
 		add_action( 'wp_footer', array( $this, 'localize_scripts' ), 15 );
@@ -46,8 +48,25 @@ class Assets {
 				'singleContainer' => $container,
 				'stylesheet' => $stylesheet,
 				'template' => $template,
+				'timers' => array_values( $this->timers ),
 			]
 		);
+	}
+
+	public function add_timer( $timer ) {
+		if ( ! $timer || ! isset( $timer->id ) ) {
+			return;
+		}
+
+		$this->timers[ (int) $timer->id ] = $timer;
+	}
+
+	public function has_timer( $id ) {
+		if ( empty( $this->timers ) || empty( $id ) ) {
+			return false;
+		}
+
+		return isset( $this->timers[ (int) $id ] );
 	}
 
 	public function get_url( $file, $ext ) {

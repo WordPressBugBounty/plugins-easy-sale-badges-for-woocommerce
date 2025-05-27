@@ -527,3 +527,39 @@ function add_custom_hooks( $custom_hooks, $callback ) {
 		add_action( $hook, $callback, apply_filters( 'asnp_wesb_custom_hook_priority', 99, $hook ) );
 	}
 }
+
+
+function localize_timer_badge( $badge ) {
+	if ( ! $badge ) {
+		return;
+	}
+
+	if ( empty( $badge->selectedDateTo ) && empty( $badge->evergreen ) ) {
+		return;
+	}
+
+	$assets = get_plugin()->container()->get( Assets::class );
+	if ( ! $assets ) {
+		return;
+	}
+
+	if ( $assets->has_timer( (int) $badge->id ) ) {
+		return;
+	}
+
+	$now = current_time( 'timestamp' );
+	$timer = [
+		'id'                    => absint( $badge->id ),
+		'dateFrom'              => ! empty( $badge->selectedDateFrom ) ? sanitize_text_field( $badge->selectedDateFrom ) : '',
+		'dateTo'                => ! empty( $badge->selectedDateTo ) ? sanitize_text_field( $badge->selectedDateTo ) : '',
+		'remainingTimeProgress' => ( $now - strtotime( $badge->selectedDateFrom, $now ) ) * 1000,
+		'remainingTime'         => ! empty( $badge->selectedDateTo ) ? ( strtotime( $badge->selectedDateTo, $now ) - $now ) * 1000 : 0,
+        'evergreen'             => ! empty( $badge->evergreen ) ? absint( $badge->evergreen ) * 60 * 1000 : 0,
+        'timerMode'             => ! empty( $badge->timerMode ) ? sanitize_text_field( $badge->timerMode ) : 'fromToDate',
+        'evergreenOption'       => ! empty( $badge->evergreenOption ) ? sanitize_text_field( $badge->evergreenOption ) : 'endClose',
+    ];
+
+    if ( $timer['remainingTime'] > 0 || $timer['evergreen'] > 0 ) {
+		$assets->add_timer( (object) $timer );
+	}
+}

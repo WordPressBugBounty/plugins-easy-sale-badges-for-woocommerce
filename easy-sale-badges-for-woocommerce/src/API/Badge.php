@@ -379,6 +379,8 @@ class Badge extends BaseController {
 				case 'labelMinTimer':
 				case 'labelSecTimer':
 				case 'bgColorTimer':
+				case 'timerFullWidthBgColor':
+				case 'posOutTimerStyle1':
 					if ( isset( $value ) ) {
 						$options[ $key ] = sanitize_text_field( $value );
 					} elseif ( isset( $defaults[ $key ] ) ) {
@@ -401,6 +403,9 @@ class Badge extends BaseController {
 				case 'boxShadowWidth':
 				case 'bottomLeftRadius':
 				case 'bottomRightRadius':
+				case 'timerFullWidthStyleHeight':
+				case 'timerFullWidthStyleHeight2':
+				case 'fontSizeLabelTimerFullWidthProductPage':
 					if ( isset( $value ) ) {
 						$options[ $key ] = absint( $value );
 					} elseif ( isset( $defaults[ $key ] ) ) {
