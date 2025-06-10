@@ -5,7 +5,7 @@ Tags: woocommerce badge, product label, woocommerce, badge, sale badge, Countdow
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 5.7.0
+Stable tag: 5.7.1
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -210,24 +210,27 @@ The plugin is rich in features, while it is lightweight and fast.
 
 == Screenshots ==
 
-1. Animation.
-2. Modern Badges.
-3. Notification Bar.
-4. Product Labels.
-5. Sale Badges.
-6. Out of Image.
-7. CSS Labels.
-8. Image Labels.
-9. Timer.
-10. Countdown Timer.
-11. Percentage Discount amount.
+1. Product Badges.
+2. Product Badges with Percentage Discount.
+3. Countdown Timer.
+4. Product Labels Out of Image.
+5. Notification Bar.
+6. Animation.
+7. Sale Badges.
+8. Modern Badges.
+9. Css Label.
+10. Image Label.
+11. Timer.
 
 == Changelog ==
+
+= 5.7.1 =
+* Added translation support for the Notification Bar (Pro version)
+Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
 
 = 5.7.0 =
 * Introduced Countdown Timer feature in the Free version.
 * Added a new style for the Countdown Timer positioned on the image (Pro version).
-Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
 
 = 5.6.1 =
 * Translation support added for Sales Popup and Discount Popup (Pro version).
