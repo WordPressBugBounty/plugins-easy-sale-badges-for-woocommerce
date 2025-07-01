@@ -1,11 +1,11 @@
-=== Badge and Product Label for WooCommerce ===
+=== Product Badge, Label, Countdown Timer for WooCommerce - Sale Booster ===
 Contributors: asanaplugins
 Donate link: https://www.asanaplugins.com/
 Tags: woocommerce badge, product label, woocommerce, badge, sale badge, Countdown Timer, notification bar, label
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 5.7.1
+Stable tag: 5.8.0
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,7 +19,7 @@ WooCommerce Badge and Product Label elevate your store's appeal with customized 
 
 == Features ==
 
-https://youtu.be/1d-ICc1tVTc
+https://youtu.be/nlsyWujYmlk
 
 == Video Tutorial ==
 
@@ -42,7 +42,7 @@ https://youtu.be/aTHFT3ovCaw
 * <strong>[Payment Icons (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/cap/)</strong>
 * <strong>[Social Media Icons (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/belt/)</strong>
 
-== ✅ Badge And Product Label For WooCommerce Features ==
+== ✅ Product Badge, Label, Countdown Timer for WooCommerce Features ==
 
 - **Create Custom labels on Products**
 - **Add 15 CSS Label**
@@ -69,7 +69,7 @@ https://youtu.be/aTHFT3ovCaw
 
 **[BUY PRO WITH UP TO 75% DISCOUNT](https://www.asanaplugins.com/product/woocommerce-sale-badges-and-product-labels/)**
 
-== ✅ Badge And Product Label For WooCommerce PRO Features ==
+== ✅ Product Badge, Label, Countdown Timer for WooCommerce PRO Features ==
 
 - **Add Discount Popup**
 - **Add Trust Badges for embeds**
@@ -128,7 +128,7 @@ https://youtu.be/aTHFT3ovCaw
 - **OceanWP**
 - **And Much More**
 
-== Badge And Product Label For WooCommerce ==
+== Product Badge, Label, Countdown Timer for WooCommerce ==
 
 The badge and product label tool for WooCommerce is crucial for e-commerce businesses. It helps grab customers' attention and boost sales by highlighting special offers, discounts, new arrivals, or limited-time promotions. Placing them strategically on product images and Encouraging customers to make a purchase can be achieved by creating a sense of urgency. With the ability to customize their appearance and placement, online businesses can enhance their visibility and drive conversions effectively using WooCommerce.
 
@@ -224,9 +224,14 @@ The plugin is rich in features, while it is lightweight and fast.
 
 == Changelog ==
 
-= 5.7.1 =
-* Added translation support for the Notification Bar (Pro version)
+= 5.8.0 =
+* Added template options to the Notification Bar (Pro version).
+* Added border customization for the Notification Bar (Pro version).
+* Added button customization options, including font size and border radius, for the Notification Bar (Pro version).
 Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
+
+= 5.7.1 =
+* Added translation support for the Notification Bar (Pro version).
 
 = 5.7.0 =
 * Introduced Countdown Timer feature in the Free version.
