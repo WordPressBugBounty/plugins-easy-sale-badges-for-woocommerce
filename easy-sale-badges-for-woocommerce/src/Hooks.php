@@ -114,7 +114,7 @@ class Hooks {
 	}
 
 	public static function single_out_of_image_hooks() {
-		$single_position = get_plugin()->settings->get_setting( 'singleOutOfImagePosition', 'before_single_item_title' );
+		$single_position = get_plugin()->settings->get_setting( 'singleOutOfImagePosition', 'after_single_item_title' );
 
 		if ( empty( $single_position ) || 'none' === $single_position ) {
 			return;
@@ -317,7 +317,7 @@ class Hooks {
 	public static function loop_out_of_image_hooks() {
 		$loop_position = get_theme_out_of_image_loop_position();
 		if ( empty( $loop_position ) ) {
-			$loop_position = get_plugin()->settings->get_setting( 'loopOutOfImagePosition', 'before_shop_loop_item_title' );
+			$loop_position = get_plugin()->settings->get_setting( 'loopOutOfImagePosition', 'after_shop_loop_item_title' );
 		}
 
 		if ( empty( $loop_position ) || 'none' === $loop_position ) {

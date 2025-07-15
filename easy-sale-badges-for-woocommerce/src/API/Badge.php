@@ -381,6 +381,11 @@ class Badge extends BaseController {
 				case 'bgColorTimer':
 				case 'timerFullWidthBgColor':
 				case 'posOutTimerStyle1':
+				case 'borderProgressBg':
+				case 'textTimerBorderPosArch':
+				case 'textTimerBorderPosPro':
+				case 'timerBorderPosPro':
+				case 'timerBorderPosArch':
 					if ( isset( $value ) ) {
 						$options[ $key ] = sanitize_text_field( $value );
 					} elseif ( isset( $defaults[ $key ] ) ) {
@@ -406,6 +411,8 @@ class Badge extends BaseController {
 				case 'timerFullWidthStyleHeight':
 				case 'timerFullWidthStyleHeight2':
 				case 'fontSizeLabelTimerFullWidthProductPage':
+				case 'sizeCtBorderArch':
+				case 'sizeCtBorderPro':
 					if ( isset( $value ) ) {
 						$options[ $key ] = absint( $value );
 					} elseif ( isset( $defaults[ $key ] ) ) {
