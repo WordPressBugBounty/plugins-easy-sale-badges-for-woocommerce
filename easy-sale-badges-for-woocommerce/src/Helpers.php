@@ -563,3 +563,28 @@ function localize_timer_badge( $badge ) {
 		$assets->add_timer( (object) $timer );
 	}
 }
+
+function get_product_image_src( $product, $size = 'woocommerce_single', $placeholder = true ) {
+	$product = is_numeric( $product ) ? wc_get_product( $product ) : $product;
+	if ( ! $product ) {
+		return '';
+	}
+
+	$src = '';
+	if ( $product->get_image_id() ) {
+		$image = wp_get_attachment_image_src( $product->get_image_id(), $size );
+		$src   = ! empty( $image ) && ! empty( $image[0] ) ? $image[0] : '';
+	} elseif ( $product->get_parent_id() ) {
+		$parent_product = wc_get_product( $product->get_parent_id() );
+		if ( $parent_product ) {
+			$src = get_product_image_src( $parent_product, $size );
+		}
+	}
+
+	if ( empty( $src ) && $placeholder ) {
+		$image = wc_placeholder_img_src( $size );
+		$src   = ! empty( $image ) && ! empty( $image[0] ) ? $image[0] : '';
+	}
+
+	return apply_filters( 'asnp_wesb_get_product_image_src', $src, $product, $size, $placeholder );
+}

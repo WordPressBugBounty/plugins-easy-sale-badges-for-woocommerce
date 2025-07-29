@@ -83,10 +83,38 @@ class ItemsModel {
 				$text = sprintf( '%2$s (%1$s)', $identifier, $product->get_title() );
 			}
 
+			$data_name = $product->get_title();
+			if ( $product->is_type( 'variation' ) ) {
+				$data_name = $product->get_title();
+				$data_name .= ' ' . wc_get_formatted_variation( $product, true );
+			}
+
+			$regular_price = '' !== $product->get_regular_price() ? wc_get_price_to_display( $product, [ 'price' => $product->get_regular_price() ] ) : '';
+			$sale_price    = $product->get_sale_price();
+
+			if ( '' !== $sale_price ) {
+				$sale_price = wc_get_price_to_display( $product, [ 'price' => $sale_price ] );
+				if ( '' !== $regular_price ) {
+					$display_price = wc_format_sale_price( $regular_price, $sale_price ) . $product->get_price_suffix();
+				} else {
+					$display_price = wc_price( $sale_price ) . $product->get_price_suffix();
+				}
+			} else {
+				$display_price = $product->get_price_html();
+			}
+
 			$products_select[ $id ] = (object) array(
-				'value' => $product->get_id(),
-				'label' => $text,
-			);
+				'value'         => $product->get_id(),
+				'label'         => $text,
+				'name'          => $data_name, // Use customized name
+				'image'         => SaleBadges\get_product_image_src( $product ),
+				'is_variable'   => $product->is_type( 'variable' ) ? 'true' : 'false',
+				'is_in_stock'   => $product->is_in_stock() ? 'true' : 'false',
+				'link'          => $product->get_permalink(),
+				'sale_price'    => $sale_price,
+				'regular_price' => $regular_price,
+				'display_price' => $display_price,
+			);			
 		}
 
 		return array_values( $products_select );

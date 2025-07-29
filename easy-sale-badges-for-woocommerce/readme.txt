@@ -5,17 +5,17 @@ Tags: woocommerce badge, product label, woocommerce, badge, sale badge, Countdow
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 5.9.0
+Stable tag: 6.0.0
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-WooCommerce Badge and Product Label, Sale Badge, Sold Out Badge, Countdown Timer, Notification Bar (PRO), Onsale, out-of-stock badge.
+WooCommerce Product Badge and Label, Sale Badge, Sold Out Badge, Countdown Timer, Notification Bar (PRO), Onsale, out-of-stock badge.
 
 == Description ==
 
-WooCommerce Badge and Product Label elevate your store's appeal with customized badges and countdown timers and notification bar (PRO Version). Enhance your WooCommerce store with sale badges, product labels, and countdown timers to drive sales. This all-in-one plugin empowers you to create eye-catching labels and scheduled badges for products, categories, and tags. Highlighting discount values, product quantities, ratings, shipping classes, stock status, and sale status, these labels provide valuable information to your customers. Plus, leverage the power of countdown timers to create urgency and drive conversions. With an intuitive interface, easily customize labels and replace default on-sale badges. Take your WooCommerce store to new heights with visually appealing badges, labels, and countdown timers tailored to your unique offerings.
+WooCommerce Product Badge and Label elevate your store's appeal with customized badges and countdown timers and notification bar (PRO Version). Enhance your WooCommerce store with sale badges, product labels, and countdown timers to drive sales. This all-in-one plugin empowers you to create eye-catching labels and scheduled badges for products, categories, and tags. Highlighting discount values, product quantities, ratings, shipping classes, stock status, and sale status, these labels provide valuable information to your customers. Plus, leverage the power of countdown timers to create urgency and drive conversions. With an intuitive interface, easily customize labels and replace default on-sale badges. Take your WooCommerce store to new heights with visually appealing badges, labels, and countdown timers tailored to your unique offerings.
 
-[FRONT-END DEMO](https://pricing-and-discounts.asanaplugins.com/demo/shop/) | [BACK-END DEMO](https://pricing-and-discounts.asanaplugins.com/?asnp_demo_plugin=easy-sale-badges-for-woocommerce) | [Ask Questions](https://wordpress.org/support/plugin/easy-sale-badges-for-woocommerce/) | **[PRO WITH UP TO 75% DISCOUNT](https://www.asanaplugins.com/product/woocommerce-sale-badges-and-product-labels/)** | [Github](https://github.com/codewp/easy-sale-badges-for-woocommerce)
+[FRONT-END DEMO](https://pricing-and-discounts.asanaplugins.com/demo/shop/) | [BACK-END DEMO](https://pricing-and-discounts.asanaplugins.com/?asnp_demo_plugin=easy-sale-badges-for-woocommerce) | [Ask Questions](https://wordpress.org/support/plugin/easy-sale-badges-for-woocommerce/) | **[PRO WITH UP TO 75% DISCOUNT](https://www.asanaplugins.com/product/woocommerce-sale-badges-and-product-labels/)**
 
 == Features ==
 
@@ -25,7 +25,7 @@ https://youtu.be/nlsyWujYmlk
 
 https://youtu.be/aTHFT3ovCaw
 
-== Examples of Badges and Product Labels for WooCommerce ==
+== Examples of Product Badge, Label, Countdown Timer for WooCommerce ==
 
 * <strong>[Product Label Displaying Percentage Discount](https://pricing-and-discounts.asanaplugins.com/demo/shop/)</strong>
 * <strong>[Product Label](https://pricing-and-discounts.asanaplugins.com/demo/product/album/)</strong>
@@ -71,6 +71,7 @@ https://youtu.be/aTHFT3ovCaw
 
 == ✅ Product Badge, Label, Countdown Timer for WooCommerce PRO Features ==
 
+- **Add Free Shipping on Product Page**
 - **Add Discount Popup**
 - **Add Trust Badges for embeds**
 - **Add Social Media Icons for embeds**
@@ -130,27 +131,70 @@ https://youtu.be/aTHFT3ovCaw
 
 == Product Badge, Label, Countdown Timer for WooCommerce ==
 
-The badge and product label tool for WooCommerce is crucial for e-commerce businesses. It helps grab customers' attention and boost sales by highlighting special offers, discounts, new arrivals, or limited-time promotions. Placing them strategically on product images and Encouraging customers to make a purchase can be achieved by creating a sense of urgency. With the ability to customize their appearance and placement, online businesses can enhance their visibility and drive conversions effectively using WooCommerce.
+**WooCommerce Product Badge, Label, and Countdown Timer** tool is an essential asset for any WooCommerce-powered store. It helps capture customer attention and increase sales by showcasing special offers, discounts, new arrivals, and time-sensitive promotions. By strategically placing eye-catching badges and labels on product images—and adding countdown timers to create urgency—store owners can effectively motivate shoppers to act quickly. With full customization options for design and placement, this tool enhances product visibility and drives higher conversions across your online store.
 
-== Boost Sales With An Eye-catching Badge And Product Label In WooCommerce ==
+== Supercharge Your Store With WooCommerce Product Badge, Label & Countdown Timer ==
 
-In today's competitive market, businesses need to find effective ways to boost sales and grab the attention of potential customers. A striking product label can be a powerful tool that can significantly impact. These visually appealing labels have the power to captivate consumers and create a lasting impression. By incorporating eye-catching designs, vibrant colors, and compelling imagery, businesses can differentiate their products from competitors and attract more customers. Striking product labels enhances the product's overall appearance and conveys information about its features and benefits. With their ability to instantly grab attention and leave a lasting impression, striking product labels can undoubtedly contribute to a significant increase in business sales.
+**WooCommerce Product Badge, Label, and Countdown Timer** is your all-in-one tool for driving urgency and increasing sales in your online store. With customizable product badges, dynamic discount labels, and eye-catching countdown timers, you can instantly draw attention to your best offers. Whether you’re launching limited-time deals, showcasing hot products, or announcing free shipping—this plugin ensures your promotions are impossible to ignore.
 
-== Customization Options For The Badge And Product Label In WooCommerce ==
+Designed for store owners who want to maximize conversions, this plugin brings powerful sales triggers right to your product pages, improving visibility and click-through rates using proven WooCommerce marketing strategies.
 
-In WooCommerce, numerous customization options are available for badges and product labels. Store owners can customize the appearance and functionality of their stores to suit their specific needs. These options typically include changing the color, size, font, and position of badges and labels, providing flexibility in aligning them with the store's branding and design aesthetics. Additionally, store owners can often customize the text displayed on badges and labels, including promotional messages, product statuses, or other relevant information. With these customization options, users can create attractive badges and labels that communicate essential product information and enhance the customer shopping experience.
+== Boost Visibility with WooCommerce Product Badges and Discount Labels ==
 
-== Customizable Notification Bar For WooCommerce (PRO VERSION) ==
+Highlight your top-performing products and special deals with WooCommerce product badges and custom product labels. Use:
 
-Enhance your WooCommerce store with the Customizable Notification Bar, a powerful tool designed to boost user engagement and drive sales. This versatile notification bar allows you to create personalized messages tailored to your customers, promoting special offers, new arrivals, and important updates in real-time. Featuring a Countdown Timer, you can create a sense of urgency, encouraging quicker purchases and increasing conversions. With a variety of design options and seamless integration, the Customizable Notification Bar ensures your notifications stand out without disrupting the shopping experience. Easy to set up and fully responsive, this tool is essential for capturing your audience's attention effectively and fostering a better connection with your customers.
+- Custom Text Badges (e.g., "New Arrival", "Best Seller")
+- Discount Percentage Badges (e.g., "-30% Off")
+- Image Badges (upload your own graphics)
+
+These attention-grabbing visuals help your products stand out in the crowded online marketplace, drawing shoppers’ eyes and increasing product discoverability.
+
+== Drive Urgency with a WooCommerce Countdown Timer on Product Images ==
+
+Boost your WooCommerce store’s conversion rates with real-time countdown timers. Add urgency and encourage action with:
+
+- Countdown Timer Overlay on Product Images  
+- Stock Countdown on Product Pages  
+- Free Shipping Countdown Bars  
+
+These time-sensitive elements tap into urgency and FOMO, prompting customers to act fast—perfect for flash sales, limited-stock items, and expiring promotions.
+
+== Engage Customers with Notification Bars and Popups (Pro Version) ==
+
+Create eye-catching, customizable notification bars and sales popups to inform and convert users without interrupting their shopping experience. Includes:
+
+- Announcement Bar with Countdown Timer  
+- Free Shipping Progress Bar  
+- Order Confirmation Popups  
+- Coupon & Discount Offer Popups  
+
+Embed these features across product pages, homepages, or campaign-specific locations to boost engagement and conversions.
+
+== Fully Customizable Elements for Seamless WooCommerce Integration  ==
+
+This plugin offers total design control, ensuring all visual elements align with your store's branding and layout:
+
+- Customize badge text, color, font, size, and position  
+- Set flexible countdown timer durations and formats  
+- Embed trust badges, payment icons, banners, and social sharing buttons  
+- 100% responsive and optimized for all screen sizes  
+
+Whether you're looking for subtle enhancements or bold visual promotions, this plugin adapts to your goals and WooCommerce theme.
+
+== Why Choose This WooCommerce Product Badge & Countdown Timer Plugin? ==
+
+- Easy setup with no coding needed  
+- Lightweight and performance-optimized  
+- Compatible with all WooCommerce themes  
+- Regular updates and dedicated support  
 
 == Compatibility With WooCommerce Plugins ==
 
-Badge and Product Label are fully compatible with the following WooCommerce plugins, which you can easily integrate into your website :
+Product Badge, Label, and Countdown Timer are fully compatible with the following WooCommerce plugins, which you can easily integrate into your website :
 
 * <strong>[Discount Rules and Dynamic Pricing for WooCommerce](https://wordpress.org/plugins/easy-woocommerce-discounts/)
 
-== How To Add The Badge And Product Label Plugin To WooCommerce Products ==
+== How To Add The Product Badge, Label, and Countdown Timer Plugin To WooCommerce Products ==
 
 Install and activate the plugin, then follow these steps to create a product badge.
 1. Choose between CSS Label, Image Label, Advanced Label, or Timer.
@@ -183,7 +227,7 @@ If you would like to show a specific product sale badges, then use the below sho
 * <strong>[YouTube](https://www.youtube.com/@asanaplugins4913)</strong>
 * <strong>[Twitter](https://twitter.com/AsanaPlugins/)</strong>
 
-== 🚀 BADGE AND PRODUCT LABEL PERFORMANCE ==
+== 🚀 Product BADGE AND Countdown Timer PERFORMANCE ==
 
 The plugin is rich in features, while it is lightweight and fast.
 
@@ -208,6 +252,20 @@ The plugin is rich in features, while it is lightweight and fast.
 * <strong>[Shipping Discount](https://www.asanaplugins.com/product/shipping-discount-woocommerce/?utm_source=wp-org&utm_campaign=easy-product-bundles-free&utm_medium=link)</strong>
 * <strong>[URL Coupons](https://www.asanaplugins.com/product/url-coupons-for-woocommerce/?utm_source=wp-org&utm_campaign=easy-product-bundles-free&utm_medium=link)</strong>
 
+== Frequently Asked Questions ==
+
+= Does this plugin slow down my site? =  
+No. It’s optimized for performance and tested with major caching plugins.
+
+= Can I use it with any WooCommerce theme? =  
+Yes, it’s fully compatible with all WooCommerce-ready themes.
+
+= Can I show countdown timers only on certain products? =  
+Yes. You can enable or disable timers per product.
+
+= Is it mobile responsive? =  
+Absolutely. All features work perfectly on all devices.
+
 == Screenshots ==
 
 1. Product Badges.
@@ -224,10 +282,16 @@ The plugin is rich in features, while it is lightweight and fast.
 
 == Changelog ==
 
+= 6.0.0 =
+* Added Free Shipping display on the product page (Pro version).
+* Introduced a new countdown timer template for embeds (Pro version).
+* Fixed an issue with the Free Shipping Bar (Pro version).
+* Compatibility with WooCommerce 10.0.4
+Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
+
 = 5.9.0 =
 * Added a new style to the Countdown Timer (Pro version).
 * Compatibility with WooCommerce 10.0.2
-Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
 
 = 5.8.0 =
 * Added template options to the Notification Bar (Pro version).
