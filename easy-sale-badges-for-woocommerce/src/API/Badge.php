@@ -336,6 +336,9 @@ class Badge extends BaseController {
 				case 'animationSelect':
 				case 'animateDuration':
 				case 'animationCount':
+				case 'animationSelectAdv':
+				case 'animateDurationAdv':
+				case 'animationCountAdv':
 				case 'animationSelectTimer':
 				case 'animateDurationTimer':
 				case 'animationCountTimer':
@@ -386,6 +389,8 @@ class Badge extends BaseController {
 				case 'textTimerBorderPosPro':
 				case 'timerBorderPosPro':
 				case 'timerBorderPosArch':
+				case 'dynamicBadgeBgColor':
+				case 'badgeLabelAdvTwo':
 					if ( isset( $value ) ) {
 						$options[ $key ] = sanitize_text_field( $value );
 					} elseif ( isset( $defaults[ $key ] ) ) {
@@ -413,6 +418,11 @@ class Badge extends BaseController {
 				case 'fontSizeLabelTimerFullWidthProductPage':
 				case 'sizeCtBorderArch':
 				case 'sizeCtBorderPro':
+				case 'heightDynamicBadge':
+				case 'widthDynamicBadge':
+				case 'heightSingleDynamicBadge':
+				case 'widthSingleDynamicBadge':
+				case 'iconSize':
 					if ( isset( $value ) ) {
 						$options[ $key ] = absint( $value );
 					} elseif ( isset( $defaults[ $key ] ) ) {
@@ -454,6 +464,9 @@ class Badge extends BaseController {
 				case 'showOnArchivePage':
 				case 'showOnProductPage':
 				case 'useTimerBadge':
+				case 'useDynamicBadges':
+				case 'enableIcon':
+				case 'enableAnimateIcon':
 					if ( isset( $value ) ) {
 						$options[ $key ] = SaleBadges\string_to_bool( $value ) ? 1 : 0;
 					} elseif ( ! $id && isset( $defaults[ $key ] ) ) {

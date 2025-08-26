@@ -5,7 +5,7 @@ Tags: woocommerce badge, product label, woocommerce, badge, sale badge, Countdow
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 6.1.0
+Stable tag: 6.2.0
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -282,11 +282,15 @@ Absolutely. All features work perfectly on all devices.
 
 == Changelog ==
 
+= 6.2.0 =
+* Added 5 new modern badges (Pro version).
+* Compatibility with WooCommerce 10.1.1
+Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
+
 = 6.1.0 =
 * Fixed an issue with the Free Shipping Bar (Pro version).
 * Fixed an issue with the Free Shipping Embed (Pro version).
 * Added an option to close the sale popup (Pro version).
-Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
 
 = 6.0.1 =
 * Fixed an issue with the Free Shipping Embed (Pro version).
