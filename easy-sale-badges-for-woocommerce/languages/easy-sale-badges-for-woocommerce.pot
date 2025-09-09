@@ -2,14 +2,14 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sale Badges and Product Labels for WooCommerce 6.2.0\n"
+"Project-Id-Version: Sale Badges and Product Labels for WooCommerce 6.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/easy-sale-badges-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-08-25T21:17:46+00:00\n"
+"POT-Creation-Date: 2025-09-08T21:13:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: easy-sale-badges-for-woocommerce\n"
@@ -573,6 +573,14 @@ msgid "Featured Products (Pro)"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
+msgid "Brands (Pro)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Best Seller (Pro)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
 msgid "Product Attributes (Pro)"
 msgstr ""
 
@@ -654,6 +662,10 @@ msgstr ""
 
 #: assets/js/admin/admin/index.js:2
 msgid "User role (Pro)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Geolocation (Pro)"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
@@ -1337,6 +1349,42 @@ msgid "Recently Added"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
+msgid "Featured Products"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Brands"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Best Seller"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Product Attributes"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Product Custom Attributes"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Quantity"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Price"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Sale Price"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Regular Price"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
 msgid "Conditions"
 msgstr ""
 
@@ -1906,6 +1954,10 @@ msgstr ""
 
 #: assets/js/admin/admin/index.js:2
 msgid "User role"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Geolocation"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2

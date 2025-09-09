@@ -467,6 +467,7 @@ class Badge extends BaseController {
 				case 'useDynamicBadges':
 				case 'enableIcon':
 				case 'enableAnimateIcon':
+				case 'enableAnimateIconTwo':
 					if ( isset( $value ) ) {
 						$options[ $key ] = SaleBadges\string_to_bool( $value ) ? 1 : 0;
 					} elseif ( ! $id && isset( $defaults[ $key ] ) ) {
