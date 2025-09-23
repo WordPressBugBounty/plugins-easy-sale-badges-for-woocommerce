@@ -238,7 +238,6 @@ function get_theme_loop_position( $stylesheet = null, $template = null ) {
 	$themes = [
 		'avada'    	  => 'after_shop_loop_item_thumbnail',
 		'woodmart' 	  => 'after_shop_loop_item_thumbnail',
-		'porto'    	  => 'after_shop_loop_item_thumbnail',
 		'oceanwp'     => 'ocean_before_archive_product_image',
 		'basel'   	  => 'after_shop_loop_item_thumbnail',
 		'thegem'      => 'after_shop_loop_item_thumbnail',
