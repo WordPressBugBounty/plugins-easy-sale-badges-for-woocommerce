@@ -1,15 +1,15 @@
-# Copyright (C) 2025 Asana Plugins
+# Copyright (C) 2026 Asana Plugins
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sale Badges and Product Labels for WooCommerce 6.4.0\n"
+"Project-Id-Version: Sale Badges and Product Labels for WooCommerce 6.8.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/easy-sale-badges-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-22T21:24:33+00:00\n"
+"POT-Creation-Date: 2026-01-27T20:55:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: easy-sale-badges-for-woocommerce\n"
@@ -62,44 +62,52 @@ msgstr ""
 msgid "Unique identifier for the resource."
 msgstr ""
 
-#: src/API/Badge.php:120
+#: src/API/Badge.php:132
 msgid "Invalid item ID."
 msgstr ""
 
-#: src/API/Badge.php:126
-#: src/API/Badge.php:165
-#: src/API/Badge.php:190
+#: src/API/Badge.php:138
+#: src/API/Badge.php:177
+#: src/API/Badge.php:202
 msgid "Badge not found."
 msgstr ""
 
-#: src/API/Badge.php:159
-#: src/API/Badge.php:184
-#: src/API/Badge.php:213
+#: src/API/Badge.php:171
+#: src/API/Badge.php:196
+#: src/API/Badge.php:253
 msgid "Invalid ID."
 msgstr ""
 
-#: src/API/Badge.php:195
+#: src/API/Badge.php:207
 msgid "Cannot delete the item."
 msgstr ""
 
-#: src/API/Badge.php:219
+#: src/API/Badge.php:227
+msgid "Invalid IDs."
+msgstr ""
+
+#: src/API/Badge.php:235
+msgid "No items were deleted."
+msgstr ""
+
+#: src/API/Badge.php:259
 msgid "Cannot duplicate the item."
 msgstr ""
 
-#: src/API/Badge.php:236
+#: src/API/Badge.php:276
 #: src/API/Items.php:101
 msgid "Invalid items."
 msgstr ""
 
-#: src/API/Badge.php:242
+#: src/API/Badge.php:282
 msgid "Cannot reorder the items."
 msgstr ""
 
-#: src/API/Badge.php:274
+#: src/API/Badge.php:314
 msgid "Badge"
 msgstr ""
 
-#: src/API/Badge.php:287
+#: src/API/Badge.php:327
 msgid "Error occurred in saving item."
 msgstr ""
 
@@ -229,6 +237,14 @@ msgid "There was an error on duplicating the item."
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
+msgid "IDs are required."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "There was an error deleting the selected items."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
 msgid "Are you sure to delete?"
 msgstr ""
 
@@ -242,6 +258,10 @@ msgstr ""
 
 #: assets/js/admin/admin/index.js:2
 msgid "Cancel"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Maybe Later"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
@@ -266,6 +286,14 @@ msgstr ""
 
 #: assets/js/admin/admin/index.js:2
 msgid "Error occurred on updating the item."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Selected badges deleted successfully."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Error occurred while deleting selected badges."
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
@@ -1621,6 +1649,10 @@ msgid "Apps you might like"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
+msgid "New"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
 msgid "Active Installations"
 msgstr ""
 
@@ -1993,7 +2025,7 @@ msgid "Apps"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
-msgid "PRO VERSION!"
+msgid "PRO!"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2

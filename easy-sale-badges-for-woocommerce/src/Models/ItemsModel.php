@@ -76,11 +76,17 @@ class ItemsModel {
 				$identifier = '#' . $product->get_id();
 			}
 
+			$title = $product->get_title();
+
+			if ( mb_strlen( $title ) > 20 ) {
+				$title = mb_substr( $title, 0, 20 ) . '...';
+			}
+
 			if ( 'variation' === $product->get_type() ) {
 				$formatted_variation_list = wc_get_formatted_variation( $product, true );
-				$text                     = sprintf( '%2$s (%1$s)', $identifier, $product->get_title() ) . ' ' . $formatted_variation_list;
+				$text = sprintf( '%2$s (%1$s)', $identifier, $title ) . ' ' . $formatted_variation_list;
 			} else {
-				$text = sprintf( '%2$s (%1$s)', $identifier, $product->get_title() );
+				$text = sprintf( '%2$s (%1$s)', $identifier, $title );
 			}
 
 			$data_name = $product->get_title();

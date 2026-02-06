@@ -462,7 +462,15 @@ class Hooks {
 			return $image;
 		}
 
-		if ( is_cart() || is_checkout() ) {
+		if ( is_cart() || is_checkout() || is_order_received_page() ) {
+			return $image;
+		}
+
+		if (
+			is_callable( '\WC_Blocks_Utils::has_block_in_page' ) &&
+			( \WC_Blocks_Utils::has_block_in_page( get_the_ID(), 'woocommerce/checkout' ) ||
+				\WC_Blocks_Utils::has_block_in_page( get_the_ID(), 'woocommerce/cart' ) )
+		) {
 			return $image;
 		}
 

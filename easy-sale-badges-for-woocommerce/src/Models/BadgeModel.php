@@ -14,9 +14,9 @@ class BadgeModel extends BaseModel {
 	public function __construct() {
 		global $wpdb;
 
-		$this->table_name  = $wpdb->prefix . 'asnp_wesb_badge';
+		$this->table_name = $wpdb->prefix . 'asnp_wesb_badge';
 		$this->primary_key = 'id';
-		$this->version     = '1.0';
+		$this->version = '1.0';
 	}
 
 	/**
@@ -28,10 +28,10 @@ class BadgeModel extends BaseModel {
 	 */
 	public function get_columns() {
 		return array(
-			'id'      => '%d',
-			'title'   => '%s',
-			'type'    => '%s',
-			'status'  => '%d',
+			'id' => '%d',
+			'title' => '%s',
+			'type' => '%s',
+			'status' => '%d',
 			'options' => '%s',
 		);
 	}
@@ -58,7 +58,7 @@ class BadgeModel extends BaseModel {
 		}
 
 		$args = wp_parse_args( $args, $this->get_column_defaults() );
-		$id   = $this->insert( $args, 'badge' );
+		$id = $this->insert( $args, 'badge' );
 
 		return $id ? $id : false;
 	}
@@ -91,26 +91,26 @@ class BadgeModel extends BaseModel {
 		$args = wp_parse_args(
 			$args,
 			array(
-				'number'   => 20,
-				'offset'   => 0,
-				'orderby'  => 'id',
-				'order'    => 'ASC',
-				'output'   => OBJECT,
+				'number' => 20,
+				'offset' => 0,
+				'orderby' => 'id',
+				'order' => 'ASC',
+				'output' => OBJECT,
 				'paginate' => true,
 			)
 		);
 
 		if ( $args['number'] < 1 ) {
-			$args['number']   = 999999999999;
+			$args['number'] = 999999999999;
 			$args['paginate'] = false;
 		}
 
 		$args['orderby'] = ! array_key_exists( $args['orderby'], $this->get_columns() ) ? 'id' : $args['orderby'];
 		$args['orderby'] = esc_sql( $args['orderby'] );
-		$args['order']   = esc_sql( $args['order'] );
+		$args['order'] = esc_sql( $args['order'] );
 
 		$select_args = array();
-		$where       = ' WHERE 1=1';
+		$where = ' WHERE 1=1';
 
 		// Specific conditions.
 		if ( ! empty( $args['id'] ) ) {
@@ -124,7 +124,7 @@ class BadgeModel extends BaseModel {
 
 		// Search by title.
 		if ( ! empty( $args['title'] ) ) {
-			$where        .= ' AND LOWER(`title`) LIKE %s';
+			$where .= ' AND LOWER(`title`) LIKE %s';
 			$select_args[] = '%' . $wpdb->esc_like( strtolower( sanitize_text_field( $args['title'] ) ) ) . '%';
 		}
 
@@ -184,6 +184,21 @@ class BadgeModel extends BaseModel {
 		}
 
 		return false;
+	}
+
+	public function bulk_delete( array $ids ) {
+		global $wpdb;
+
+		$ids = array_filter( array_map( 'absint', $ids ) );
+		if ( empty( $ids ) ) {
+			return 0;
+		}
+
+		$placeholders = implode( ',', array_fill( 0, count( $ids ), '%d' ) );
+
+		$result = $wpdb->query( $wpdb->prepare( "DELETE FROM {$this->table_name} WHERE id IN ($placeholders)", $ids ) );
+
+		return $result;
 	}
 
 	public function duplicate( $id ) {

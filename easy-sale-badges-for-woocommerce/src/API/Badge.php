@@ -18,14 +18,14 @@ class Badge extends BaseController {
 			'/' . $this->rest_base,
 			array(
 				array(
-					'methods'             => \WP_REST_Server::READABLE,
-					'callback'            => array( $this, 'get_items' ),
+					'methods' => \WP_REST_Server::READABLE,
+					'callback' => array( $this, 'get_items' ),
 					'permission_callback' => array( $this, 'get_items_permissions_check' ),
-					'args'                => $this->get_collection_params(),
+					'args' => $this->get_collection_params(),
 				),
 				array(
-					'methods'             => \WP_REST_Server::CREATABLE,
-					'callback'            => array( $this, 'create_item' ),
+					'methods' => \WP_REST_Server::CREATABLE,
+					'callback' => array( $this, 'create_item' ),
 					'permission_callback' => array( $this, 'create_item_permissions_check' ),
 				),
 			)
@@ -38,22 +38,22 @@ class Badge extends BaseController {
 				'args' => array(
 					'id' => array(
 						'description' => __( 'Unique identifier for the resource.', 'easy-sale-badges-for-woocommerce' ),
-						'type'        => 'integer',
+						'type' => 'integer',
 					),
 				),
 				array(
-					'methods'             => \WP_REST_Server::READABLE,
-					'callback'            => array( $this, 'get_item' ),
+					'methods' => \WP_REST_Server::READABLE,
+					'callback' => array( $this, 'get_item' ),
 					'permission_callback' => array( $this, 'get_item_permissions_check' ),
 				),
 				array(
-					'methods'             => \WP_REST_Server::EDITABLE,
-					'callback'            => array( $this, 'update_item' ),
+					'methods' => \WP_REST_Server::EDITABLE,
+					'callback' => array( $this, 'update_item' ),
 					'permission_callback' => array( $this, 'update_item_permissions_check' ),
 				),
 				array(
-					'methods'             => \WP_REST_Server::DELETABLE,
-					'callback'            => array( $this, 'delete_item' ),
+					'methods' => \WP_REST_Server::DELETABLE,
+					'callback' => array( $this, 'delete_item' ),
 					'permission_callback' => array( $this, 'delete_item_permissions_check' ),
 				),
 			)
@@ -66,12 +66,12 @@ class Badge extends BaseController {
 				'args' => array(
 					'id' => array(
 						'description' => __( 'Unique identifier for the resource.', 'easy-sale-badges-for-woocommerce' ),
-						'type'        => 'integer',
+						'type' => 'integer',
 					),
 				),
 				array(
-					'methods'             => \WP_REST_Server::CREATABLE,
-					'callback'            => array( $this, 'duplicate_item' ),
+					'methods' => \WP_REST_Server::CREATABLE,
+					'callback' => array( $this, 'duplicate_item' ),
 					'permission_callback' => array( $this, 'duplicate_item_permissions_check' ),
 				),
 			)
@@ -82,9 +82,21 @@ class Badge extends BaseController {
 			'/' . $this->rest_base . '/reorder',
 			array(
 				array(
-					'methods'             => \WP_REST_Server::EDITABLE,
-					'callback'            => array( $this, 'reorder_items' ),
+					'methods' => \WP_REST_Server::EDITABLE,
+					'callback' => array( $this, 'reorder_items' ),
 					'permission_callback' => array( $this, 'reorder_items_permissions_check' ),
+				),
+			)
+		);
+
+		register_rest_route(
+			$this->namespace,
+			'/' . $this->rest_base . '/bulk-delete',
+			array(
+				array(
+					'methods' => \WP_REST_Server::DELETABLE,
+					'callback' => array( $this, 'bulk_delete_items' ),
+					'permission_callback' => array( $this, 'delete_item_permissions_check' ),
 				),
 			)
 		);
@@ -98,17 +110,17 @@ class Badge extends BaseController {
 	 */
 	public function get_items( $request ) {
 		try {
-			$page  = ! empty( $request['page'] ) ? absint( $request['page'] ) : 1;
-			$model = get_plugin()->container()->get( BadgeModel::class );
+			$page = ! empty( $request['page'] ) ? absint( $request['page'] ) : 1;
+			$model = get_plugin()->container()->get( BadgeModel::class);
 			$items = $model->get_items( [
 				'offset' => $page * 20 - 20,
 				'number' => 20,
-				'title'  => ! empty( $request['search'] ) ? sanitize_text_field( $request['search'] ) : '',
-				'order'  => 'DESC',
+				'title' => ! empty( $request['search'] ) ? sanitize_text_field( $request['search'] ) : '',
+				'order' => 'DESC',
 			] );
 
 			return rest_ensure_response( $items );
-		} catch ( \Exception $e ) {
+		} catch (\Exception $e) {
 			return new \WP_Error( 'asnp_wesb_rest_badge_error', $e->getMessage(), array( 'status' => 400 ) );
 		}
 	}
@@ -120,8 +132,8 @@ class Badge extends BaseController {
 				throw new \Exception( __( 'Invalid item ID.', 'easy-sale-badges-for-woocommerce' ) );
 			}
 
-			$model = get_plugin()->container()->get( BadgeModel::class );
-			$item  = $model->get_item( $id );
+			$model = get_plugin()->container()->get( BadgeModel::class);
+			$item = $model->get_item( $id );
 			if ( ! $item ) {
 				throw new \Exception( __( 'Badge not found.', 'easy-sale-badges-for-woocommerce' ) );
 			}
@@ -129,7 +141,7 @@ class Badge extends BaseController {
 			return rest_ensure_response( [
 				'item' => $item,
 			] );
-		} catch ( \Exception $e ) {
+		} catch (\Exception $e) {
 			return new \WP_Error( 'asnp_wesb_rest_badge_error', $e->getMessage(), array( 'status' => 400 ) );
 		}
 	}
@@ -147,7 +159,7 @@ class Badge extends BaseController {
 			return rest_ensure_response( [
 				'item' => $item,
 			] );
-		} catch ( \Exception $e ) {
+		} catch (\Exception $e) {
 			return new \WP_Error( 'asnp_wesb_rest_badge_error', $e->getMessage(), array( 'status' => 400 ) );
 		}
 	}
@@ -159,8 +171,8 @@ class Badge extends BaseController {
 				throw new \Exception( __( 'Invalid ID.', 'easy-sale-badges-for-woocommerce' ) );
 			}
 
-			$model = get_plugin()->container()->get( BadgeModel::class );
-			$item  = $model->get_item( $id );
+			$model = get_plugin()->container()->get( BadgeModel::class);
+			$item = $model->get_item( $id );
 			if ( ! $item ) {
 				throw new \Exception( __( 'Badge not found.', 'easy-sale-badges-for-woocommerce' ) );
 			}
@@ -172,7 +184,7 @@ class Badge extends BaseController {
 			return rest_ensure_response( [
 				'item' => $item,
 			] );
-		} catch ( \Exception $e ) {
+		} catch (\Exception $e) {
 			return new \WP_Error( 'asnp_wesb_rest_badge_error', $e->getMessage(), array( 'status' => 400 ) );
 		}
 	}
@@ -184,8 +196,8 @@ class Badge extends BaseController {
 				throw new \Exception( __( 'Invalid ID.', 'easy-sale-badges-for-woocommerce' ) );
 			}
 
-			$model = get_plugin()->container()->get( BadgeModel::class );
-			$item  = $model->get_item( $id );
+			$model = get_plugin()->container()->get( BadgeModel::class);
+			$item = $model->get_item( $id );
 			if ( ! $item ) {
 				throw new \Exception( __( 'Badge not found.', 'easy-sale-badges-for-woocommerce' ) );
 			}
@@ -199,10 +211,38 @@ class Badge extends BaseController {
 
 			return rest_ensure_response( [
 				'success' => 1,
-				'id'      => $id,
+				'id' => $id,
 			] );
-		} catch ( \Exception $e ) {
+		} catch (\Exception $e) {
 			return new \WP_Error( 'asnp_wesb_rest_badge_error', $e->getMessage(), array( 'status' => 400 ) );
+		}
+	}
+
+	public function bulk_delete_items( $request ) {
+		try {
+			$ids = isset( $request['ids'] ) ? (array) wp_unslash( $request['ids'] ) : [];
+			$ids = array_filter( array_map( 'absint', $ids ) );
+
+			if ( empty( $ids ) ) {
+				throw new \Exception( __( 'Invalid IDs.', 'easy-sale-badges-for-woocommerce' ) );
+			}
+
+			$model = get_plugin()->container()->get( BadgeModel::class);
+
+			$deleted_count = $model->bulk_delete( $ids );
+
+			if ( ! $deleted_count ) {
+				throw new \Exception( __( 'No items were deleted.', 'easy-sale-badges-for-woocommerce' ) );
+			}
+
+			do_action( 'asnp_wesb_badges_bulk_deleted', $ids, $request );
+
+			return rest_ensure_response( [
+				'success' => 1,
+				'deleted' => $ids,
+			] );
+		} catch (\Exception $e) {
+			return new \WP_Error( 'asnp_wesb_rest_badge_error', $e->getMessage(), [ 'status' => 400 ] );
 		}
 	}
 
@@ -213,7 +253,7 @@ class Badge extends BaseController {
 				throw new \Exception( __( 'Invalid ID.', 'easy-sale-badges-for-woocommerce' ) );
 			}
 
-			$model   = get_plugin()->container()->get( BadgeModel::class );
+			$model = get_plugin()->container()->get( BadgeModel::class);
 			$item_id = $model->duplicate( $id );
 			if ( ! $item_id ) {
 				throw new \Exception( __( 'Cannot duplicate the item.', 'easy-sale-badges-for-woocommerce' ) );
@@ -224,7 +264,7 @@ class Badge extends BaseController {
 			return rest_ensure_response( [
 				'id' => $item_id,
 			] );
-		} catch ( \Exception $e ) {
+		} catch (\Exception $e) {
 			return new \WP_Error( 'asnp_wesb_rest_badge_error', $e->getMessage(), array( 'status' => 400 ) );
 		}
 	}
@@ -236,7 +276,7 @@ class Badge extends BaseController {
 				throw new \Exception( __( 'Invalid items.', 'easy-sale-badges-for-woocommerce' ) );
 			}
 
-			$model   = get_plugin()->container()->get( BadgeModel::class );
+			$model = get_plugin()->container()->get( BadgeModel::class);
 			$reorder = $model->update_ordering( $items );
 			if ( ! $reorder ) {
 				throw new \Exception( __( 'Cannot reorder the items.', 'easy-sale-badges-for-woocommerce' ) );
@@ -245,7 +285,7 @@ class Badge extends BaseController {
 			return rest_ensure_response( [
 				'success' => 1,
 			] );
-		} catch ( \Exception $e ) {
+		} catch (\Exception $e) {
 			return new \WP_Error( 'asnp_wesb_rest_badge_error', $e->getMessage(), array( 'status' => 400 ) );
 		}
 	}
@@ -271,11 +311,11 @@ class Badge extends BaseController {
 			if ( ! empty( $request['id'] ) && 0 < (int) $request['id'] ) {
 				$data['id'] = (int) $request['id'];
 			} else {
-				$data['title']  = ! empty( $data['title'] ) ? $data['title'] : __( 'Badge', 'easy-sale-badges-for-woocommerce' );
+				$data['title'] = ! empty( $data['title'] ) ? $data['title'] : __( 'Badge', 'easy-sale-badges-for-woocommerce' );
 				$data['status'] = isset( $data['status'] ) ? $data['status'] : 1;
 			}
 
-			$model = get_plugin()->container()->get( BadgeModel::class );
+			$model = get_plugin()->container()->get( BadgeModel::class);
 
 			$options = $this->get_options( $request );
 			if ( ! empty( $options ) ) {
@@ -292,7 +332,7 @@ class Badge extends BaseController {
 			do_action( 'asnp_wesb_badge_saved', $item, $request );
 
 			return $item;
-		} catch ( \Exception $e ) {
+		} catch (\Exception $e) {
 			throw $e;
 		}
 	}
@@ -303,7 +343,7 @@ class Badge extends BaseController {
 		$options = array();
 
 		$defaults = array(
-			'zIndex'    => '',
+			'zIndex' => '',
 			'zIndexImg' => '',
 			'zIndexAdv' => '',
 			'zIndexTimer' => '',
@@ -374,8 +414,8 @@ class Badge extends BaseController {
 				case 'fontSizeLabelTimerStyle1':
 				case 'fontSizeMessageTimerStyle1':
 				case 'textColorTimerStyle1':
-				case 'textTimerStyle1':	
-				case 'iconTimerStyle1':	
+				case 'textTimerStyle1':
+				case 'iconTimerStyle1':
 				case 'badgeLabelAdv':
 				case 'labelDayTimer':
 				case 'labelHoursTimer':
@@ -423,6 +463,7 @@ class Badge extends BaseController {
 				case 'heightSingleDynamicBadge':
 				case 'widthSingleDynamicBadge':
 				case 'iconSize':
+				case 'iconSizeTwo':
 					if ( isset( $value ) ) {
 						$options[ $key ] = absint( $value );
 					} elseif ( isset( $defaults[ $key ] ) ) {
@@ -466,8 +507,10 @@ class Badge extends BaseController {
 				case 'useTimerBadge':
 				case 'useDynamicBadges':
 				case 'enableIcon':
+				case 'enableIconTwo':
 				case 'enableAnimateIcon':
 				case 'enableAnimateIconTwo':
+				case 'enableAnimateIconThree':
 					if ( isset( $value ) ) {
 						$options[ $key ] = SaleBadges\string_to_bool( $value ) ? 1 : 0;
 					} elseif ( ! $id && isset( $defaults[ $key ] ) ) {

@@ -131,7 +131,7 @@ class Admin {
 			'black_friday',
 			date( 'Y' ) . '-11-20',
 			date( 'Y' ) . '-11-30',
-			'<strong>Black Friday Exclusive:</strong> SAVE up to 75% & get access to <strong>WooCommerce Sale Badges and Product Labels</strong> features.',
+			'<strong>Black Friday Exclusive:</strong> SAVE up to 75% & get access to <strong>WooCommerce Product Badges & Sale Booster – Countdown Timer, Order Notifications, Free Shipping Bar</strong> features.',
 			'Grab The Offer',
 			'https://asanaplugins.com/product/woocommerce-sale-badges-and-product-labels/?utm_source=woocommerce-sale-badges-and-product-labels&utm_campaign=black-friday&utm_medium=link',
 			'#5614d5'
@@ -140,7 +140,7 @@ class Admin {
 			'cyber_monday',
 			date( 'Y' ) . '-12-01',
 			date( 'Y' ) . '-12-10',
-			'<strong>Cyber Monday Exclusive:</strong> Save up to 75% on <strong>WooCommerce Sale Badges and Product Labels</strong>. Limited Time Only!',
+			'<strong>Cyber Monday Exclusive:</strong> Save up to 75% on <strong>WooCommerce Product Badges & Sale Booster – Countdown Timer, Order Notifications, Free Shipping Bar</strong>. Limited Time Only!',
 			'Claim Your Deal',
 			'https://asanaplugins.com/product/woocommerce-sale-badges-and-product-labels/?utm_source=woocommerce-sale-badges-and-product-labels&utm_campaign=cyber-monday&utm_medium=link',
 			'#00aaff'
@@ -149,7 +149,7 @@ class Admin {
 			'holiday_discount',
 			date( 'Y' ) . '-12-11',
 			date( 'Y' ) . '-12-31',
-			'<strong>Holiday Cheer:</strong> Get up to 75% OFF <strong>WooCommerce Sale Badges and Product Labels</strong> this festive season.',
+			'<strong>Holiday Cheer:</strong> Get up to 75% OFF <strong>WooCommerce Product Badges & Sale Booster – Countdown Timer, Order Notifications, Free Shipping Bar</strong> this festive season.',
 			'Shop Now',
 			'https://asanaplugins.com/product/woocommerce-sale-badges-and-product-labels/?utm_source=woocommerce-sale-badges-and-product-labels&utm_campaign=holiday-discount&utm_medium=link',
 			'#28a745'
@@ -158,7 +158,7 @@ class Admin {
 			'new_year_sale',
 			date( 'Y' ) . '-01-01',
 			date( 'Y' ) . '-01-10',
-			'<strong>New Year Sale:</strong> Kickstart your projects with up to 75% OFF <strong>WooCommerce Sale Badges and Product Labels</strong>!',
+			'<strong>New Year Sale:</strong> Kickstart your projects with up to 75% OFF <strong>WooCommerce Product Badges & Sale Booster – Countdown Timer, Order Notifications, Free Shipping Bar</strong>!',
 			'Get The Deal',
 			'https://asanaplugins.com/product/woocommerce-sale-badges-and-product-labels/?utm_source=woocommerce-sale-badges-and-product-labels&utm_campaign=new-year-sale&utm_medium=link',
 			'#ff5733'
@@ -167,7 +167,7 @@ class Admin {
 			'spring_sale',
 			date( 'Y' ) . '-03-20',
 			date( 'Y' ) . '-03-30',
-			'<strong>Spring Into Savings:</strong> Get up to 75% OFF <strong>WooCommerce Sale Badges and Product Labels</strong>. Refresh your store this season!',
+			'<strong>Spring Into Savings:</strong> Get up to 75% OFF <strong>WooCommerce Product Badges & Sale Booster – Countdown Timer, Order Notifications, Free Shipping Bar</strong>. Refresh your store this season!',
 			'Spring Deals',
 			'https://asanaplugins.com/product/woocommerce-sale-badges-and-product-labels/?utm_source=woocommerce-sale-badges-and-product-labels&utm_campaign=spring-sale&utm_medium=link',
 			'#5cb85c'
@@ -176,7 +176,7 @@ class Admin {
 			'summer_sale',
 			date( 'Y' ) . '-06-15',
 			date( 'Y' ) . '-06-25',
-			'<strong>Sizzling Summer Sale:</strong> Save up to 75% on <strong>WooCommerce Sale Badges and Product Labels</strong>. Limited time only!',
+			'<strong>Sizzling Summer Sale:</strong> Save up to 75% on <strong>WooCommerce Product Badges & Sale Booster – Countdown Timer, Order Notifications, Free Shipping Bar</strong>. Limited time only!',
 			'Cool Deals',
 			'https://asanaplugins.com/product/woocommerce-sale-badges-and-product-labels/?utm_source=woocommerce-sale-badges-and-product-labels&utm_campaign=summer-sale&utm_medium=link',
 			'#ff5733'
@@ -185,7 +185,7 @@ class Admin {
 			'halloween_sale',
 			date( 'Y' ) . '-10-25',
 			date( 'Y' ) . '-10-31',
-			'<strong>Halloween Spooktacular:</strong> Scare away high prices! Get up to 75% OFF <strong>WooCommerce Sale Badges and Product Labels</strong>. No tricks, just treats!',
+			'<strong>Halloween Spooktacular:</strong> Scare away high prices! Get up to 75% OFF <strong>WooCommerce Product Badges & Sale Booster – Countdown Timer, Order Notifications, Free Shipping Bar</strong>. No tricks, just treats!',
 			'Shop Spooky Deals',
 			'https://asanaplugins.com/product/woocommerce-sale-badges-and-product-labels/?utm_source=woocommerce-sale-badges-and-product-labels&utm_campaign=halloween-sale&utm_medium=link',
 			'#ff4500'

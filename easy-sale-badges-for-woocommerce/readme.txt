@@ -3,9 +3,9 @@ Contributors: asanaplugins
 Donate link: https://www.asanaplugins.com/
 Tags: woocommerce badge, product label, woocommerce, badge, sale badge, Countdown Timer, notification bar, label
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 6.4.0
+Stable tag: 6.8.0
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -241,11 +241,13 @@ The plugin is rich in features, while it is lightweight and fast.
 == 🎉 Our Other Free Plugins ==
 * <strong>[Discount Rules and Dynamic Pricing for WooCommerce](https://wordpress.org/plugins/easy-woocommerce-discounts/)
 * <strong>[WooCommerce Product Bundles](https://wordpress.org/plugins/easy-product-bundles-for-woocommerce/)
+* <strong>[WooCommerce Upsells, Related Products & Product Recommendations](https://wordpress.org/plugins/easy-upsells-for-woocommerce/)
 * <strong>[ChatGPT AI Content Writing and WhatsApp](https://wordpress.org/plugins/live-chat-button/)</strong>
 
 == 💡 Our Other Pro Plugins ==
 * <strong>[Discount Rules and Dynamic Pricing for WooCommerce Pro](https://www.asanaplugins.com/product/woocommerce-dynamic-pricing-and-discounts-plugin/?utm_source=wp-org&utm_campaign=live-chat-button-free&utm_medium=link)
 * <strong>[WooCommerce Product Bundles Pro](https://www.asanaplugins.com/product/woocommerce-product-bundles/?utm_source=wp-org&utm_campaign=easy-woocommerce-discounts-free&utm_medium=link)
+* <strong>[WooCommerce Upsells, Related Products & Product Recommendations Pro](https://www.asanaplugins.com/product/woocommerce-upsells-related-products/)
 * <strong>[ChatGPT AI Content Writing and WhatsApp Chat Pro for WordPress](https://www.asanaplugins.com/product/whatsapp-chat-wordpress/?utm_source=wp-org&utm_campaign=easy-product-bundles-free&utm_medium=link)</strong>
 * <strong>[Advanced Coupons](https://www.asanaplugins.com/advanced-discounts-woocommerce/?utm_source=wp-org&utm_campaign=easy-product-bundles-free&utm_medium=link)</strong>
 * <strong>[Auto Add Products to Cart](https://www.asanaplugins.com/product/auto-add-products-to-cart-woocommerce/?utm_source=wp-org&utm_campaign=easy-product-bundles-free&utm_medium=link)</strong>
@@ -282,11 +284,44 @@ Absolutely. All features work perfectly on all devices.
 
 == Changelog ==
 
+= 6.8.0 =
+* Improved the Sale popup styling in the Pro version.
+* Compatibility with WooCommerce 10.4.3
+Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
+
+= 6.7.1 =
+* Added a Christmas-themed design to the Countdown Timer in the Pro version.
+* Added translation support for embeds in the Pro version.
+
+= 6.7.0 =
+* Added a Christmas-themed design to the notification bar in the Pro version.
+* Added a Christmas-themed design to the discount popup in the Pro version.
+* Compatibility with WooCommerce 10.4.2
+
+= 6.6.3 =
+* Fixed a discount popup bug in the Pro version.
+
+= 6.6.2 =
+* Improved CSS styling (Pro version).
+* Compatibility with WooCommerce 10.3.5
+
+= 6.6.1 =
+* Improved CSS styling for the notification bar.
+
+= 6.6.0 =
+* Added bulk delete functionality to the table badge.
+* Fixed Configure Timer to support multiple languages.
+* Compatibility with WooCommerce 10.3.3
+
+= 6.5.0 =
+* Added a new Visibility animation effect (Pro version).
+* Added 2 new modern badges (Pro version).
+* Compatibility with WooCommerce 10.2.2
+
 = 6.4.0 =
 * Fixed issue with icons not displaying for free shipping in embeds (Pro version).
 * Added 3 new modern badges (Pro version).
 * Compatibility with WooCommerce 10.2.1
-Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
 
 = 6.3.0 =
 * Added brands and best Seller options to (badges, notification bars, embeds, sale popups) (Pro version).
@@ -493,7 +528,6 @@ Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free t
 * Added Position Option To Badges List.
 * Added 20 New Image Badge.
 * Added 15 Special Offer Image Badge.
-Note: Please help us spread the word with your 5-star review. ❤️😍 You can include your ideas in 5-star reviews as we always read them. 🌹
 
 = 2.0.2 =
 * Fixed Product Page Issue.
@@ -505,7 +539,6 @@ Note: Please help us spread the word with your 5-star review. ❤️😍 You can
 * Added Out Of Image Position Option For Badges.
 * Added Out Of Image Position Option For Timer Countdown (Pro Version).
 * Compatibility with WooCommerce 8.7.0
-Note: Please help us spread the word with your 5-star review. ❤️😍 You can include your ideas in 5-star reviews as we always read them. 🌹
 
 = 1.9.0 =
 * Added more than 5 Modern Badges.
