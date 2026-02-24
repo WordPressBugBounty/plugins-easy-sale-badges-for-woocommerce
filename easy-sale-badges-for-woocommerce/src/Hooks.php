@@ -5,6 +5,7 @@ namespace AsanaPlugins\WooCommerce\SaleBadges;
 defined( 'ABSPATH' ) || exit;
 
 use function AsanaPlugins\WooCommerce\SaleBadges\add_custom_hooks;
+use function AsanaPlugins\WooCommerce\SaleBadges\is_pro_active;
 
 class Hooks {
 
@@ -14,6 +15,12 @@ class Hooks {
 				static::single_hooks();
 			}
 			static::loop_hooks();
+
+			$quick_view = get_plugin()->settings->get_store_features_setting( 'quick_view', 'quick_view', 0 );
+			if ( $quick_view ) {
+				static::loop_hooks_quick_view();
+			}
+
 			if ( (int) get_plugin()->settings->get_setting( 'hideWooCommerceBadges', 0 ) ) {
 				add_filter( 'woocommerce_sale_flash', '__return_empty_string', 9999999 );
 				add_custom_style( '.onsale{display:none !important;}' );
@@ -314,8 +321,116 @@ class Hooks {
 		}
 	}
 
+	public static function loop_hooks_quick_view() {
+		$position = get_plugin()->settings->get_store_features_setting( 'quick_view', 'quick_view_position', 'out_of_image' );
+
+		$custom_hooks_qv = static::loop_custom_hooks_quick_view();
+		if ( ! empty( $custom_hooks_qv ) ) {
+			return;
+		}
+
+		if ( $position == 'out_of_image' ) {
+			return static::loop_out_of_image_hooks_quick_view();
+		}
+
+		if ( empty( $qv_position ) ) {
+			$qv_position = get_plugin()->settings->get_store_features_setting( 'quick_view', 'quick_view_on_image', 'woocommerce_product_get_image' );
+		}
+
+		if ( empty( $qv_position ) || 'none' === $qv_position ) {
+			return;
+		}
+
+		switch ( $qv_position ) {
+			case 'before_shop_loop_item_thumbnail':
+				$priority = has_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
+				if ( $priority ) {
+					add_action( 'woocommerce_before_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), $priority - 1 );
+				} else {
+					add_action( 'woocommerce_before_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), 9 );
+				}
+				break;
+
+			case 'after_shop_loop_item_thumbnail':
+				$priority = has_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
+				if ( $priority ) {
+					add_action( 'woocommerce_before_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), $priority + 1 );
+				} else {
+					add_action( 'woocommerce_before_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), 11 );
+				}
+				break;
+
+			case 'before_shop_loop_item_title':
+				$priority = has_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title' );
+				if ( $priority ) {
+					add_action( 'woocommerce_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), $priority - 1 );
+				} else {
+					add_action( 'woocommerce_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), 9 );
+				}
+				break;
+
+			case 'after_shop_loop_item_title':
+				$priority = has_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title' );
+				if ( $priority ) {
+					add_action( 'woocommerce_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), $priority + 1 );
+				} else {
+					add_action( 'woocommerce_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), 10 );
+				}
+				break;
+
+			case 'before_shop_loop_item_rating':
+				$priority = has_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating' );
+				if ( $priority ) {
+					add_action( 'woocommerce_after_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), $priority - 1 );
+				} else {
+					add_action( 'woocommerce_after_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), 4 );
+				}
+				break;
+
+			case 'after_shop_loop_item_rating':
+				$priority = has_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating' );
+				if ( $priority ) {
+					add_action( 'woocommerce_after_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), $priority + 1 );
+				} else {
+					add_action( 'woocommerce_after_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), 6 );
+				}
+				break;
+
+			case 'before_shop_loop_item_price':
+				$priority = has_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price' );
+				if ( $priority ) {
+					add_action( 'woocommerce_after_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), $priority - 1 );
+				} else {
+					add_action( 'woocommerce_after_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), 9 );
+				}
+				break;
+
+			case 'after_shop_loop_item_price':
+				$priority = has_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price' );
+				if ( $priority ) {
+					add_action( 'woocommerce_after_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), $priority + 1 );
+				} else {
+					add_action( 'woocommerce_after_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), 11 );
+				}
+				break;
+
+			case 'woocommerce_product_get_image':
+				add_filter( 'woocommerce_product_get_image', array( __CLASS__, 'woocommerce_product_get_image_quick_view' ), 10, 2 );
+				break;
+
+			case 'post_thumbnail_html':
+				add_filter( 'post_thumbnail_html', array( __CLASS__, 'post_thumbnail_html_qv' ), 10, 4 );
+				break;
+
+			default:
+				add_action( $qv_position, array( __CLASS__, 'display_quick_view_button' ), 99 );
+				break;
+		}
+	}
+
 	public static function loop_out_of_image_hooks() {
 		$loop_position = get_theme_out_of_image_loop_position();
+
 		if ( empty( $loop_position ) ) {
 			$loop_position = get_plugin()->settings->get_setting( 'loopOutOfImagePosition', 'after_shop_loop_item_title' );
 		}
@@ -411,12 +526,110 @@ class Hooks {
 		}
 	}
 
+	public static function loop_out_of_image_hooks_quick_view() {
+		if ( empty( $qv_position ) ) {
+			$qv_position = get_plugin()->settings->get_store_features_setting( 'quick_view', 'quick_view_out_of_image', 'woocommerce_after_shop_loop_item' );
+		}
+
+		if ( empty( $qv_position ) || 'none' === $qv_position ) {
+			return;
+		}
+
+		switch ( $qv_position ) {
+			case 'before_shop_loop_item_thumbnail':
+				$priority = has_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
+				if ( $priority ) {
+					add_action( 'woocommerce_before_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), $priority - 1 );
+				} else {
+					add_action( 'woocommerce_before_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), 9 );
+				}
+				break;
+
+			case 'after_shop_loop_item_thumbnail':
+				$priority = has_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
+				if ( $priority ) {
+					add_action( 'woocommerce_before_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), $priority + 1 );
+				} else {
+					add_action( 'woocommerce_before_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), 11 );
+				}
+				break;
+
+			case 'before_shop_loop_item_title':
+				$priority = has_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title' );
+				if ( $priority ) {
+					add_action( 'woocommerce_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), $priority - 1 );
+				} else {
+					add_action( 'woocommerce_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), 9 );
+				}
+				break;
+
+			case 'after_shop_loop_item_title':
+				$priority = has_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title' );
+				if ( $priority ) {
+					add_action( 'woocommerce_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), $priority + 1 );
+				} else {
+					add_action( 'woocommerce_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), 10 );
+				}
+				break;
+
+			case 'before_shop_loop_item_rating':
+				$priority = has_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating' );
+				if ( $priority ) {
+					add_action( 'woocommerce_after_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), $priority - 1 );
+				} else {
+					add_action( 'woocommerce_after_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), 4 );
+				}
+				break;
+
+			case 'after_shop_loop_item_rating':
+				$priority = has_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating' );
+				if ( $priority ) {
+					add_action( 'woocommerce_after_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), $priority + 1 );
+				} else {
+					add_action( 'woocommerce_after_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), 6 );
+				}
+				break;
+
+			case 'before_shop_loop_item_price':
+				$priority = has_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price' );
+				if ( $priority ) {
+					add_action( 'woocommerce_after_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), $priority - 1 );
+				} else {
+					add_action( 'woocommerce_after_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), 9 );
+				}
+				break;
+
+			case 'after_shop_loop_item_price':
+				$priority = has_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price' );
+				if ( $priority ) {
+					add_action( 'woocommerce_after_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), $priority + 1 );
+				} else {
+					add_action( 'woocommerce_after_shop_loop_item_title', array( __CLASS__, 'display_quick_view_button' ), 11 );
+				}
+				break;
+
+			default:
+				add_action( $qv_position, array( __CLASS__, 'display_quick_view_button' ), 99 );
+				break;
+		}
+	}
+
 	public static function loop_custom_hooks() {
 		$custom_hooks = get_plugin()->settings->get_setting( 'loopCustomHooks', '' );
 		$custom_hooks = apply_filters( 'asnp_wesb_loop_custom_hooks', $custom_hooks );
 		$custom_hooks = trim( $custom_hooks );
 
 		add_custom_hooks( $custom_hooks, array( __CLASS__, 'display_sale_badge' ) );
+
+		return $custom_hooks;
+	}
+
+	public static function loop_custom_hooks_quick_view() {
+		$custom_hooks = get_plugin()->settings->get_store_features_setting( 'quick_view', 'loopCustomHooksQuickView', '' );
+		$custom_hooks = apply_filters( 'asnp_wesb_loop_custom_hooks_quick_view', $custom_hooks );
+		$custom_hooks = trim( $custom_hooks );
+
+		add_custom_hooks( $custom_hooks, array( __CLASS__, 'display_quick_view_button' ) );
 
 		return $custom_hooks;
 	}
@@ -498,6 +711,40 @@ class Hooks {
 		return $image;
 	}
 
+	public static function woocommerce_product_get_image_quick_view( $image ) {
+		if ( is_admin() && ! is_ajax() ) {
+			return $image;
+		}
+
+		if ( is_cart() || is_checkout() || is_order_received_page() ) {
+			return $image;
+		}
+
+		if (
+			is_callable( '\WC_Blocks_Utils::has_block_in_page' ) &&
+			( \WC_Blocks_Utils::has_block_in_page( get_the_ID(), 'woocommerce/checkout' ) ||
+				\WC_Blocks_Utils::has_block_in_page( get_the_ID(), 'woocommerce/cart' ) )
+		) {
+			return $image;
+		}
+
+		if ( ! empty( $_GET['wc-ajax'] ) ) {
+			return $image;
+		}
+
+		ob_start();
+		static::display_quick_view_button();
+		$qv = ob_get_clean();
+
+		if ( empty( $qv ) ) {
+			return $image;
+		}
+
+		$image = '<div class="asnp-wesb-qv-image-wrapper" style="display:block; position:relative;">' . $image . $qv . '</div>';
+
+		return $image;
+	}
+
 	public static function post_thumbnail_html( $image, $post_id, $post_thumbnail_id, $size ) {
 		if ( 'shop_catalog' !== $size && ! is_product_page() ) {
 			return $image;
@@ -516,6 +763,65 @@ class Hooks {
 		}
 
 		return $image . $badge;
+	}
+
+	public static function post_thumbnail_html_qv( $image, $post_id, $post_thumbnail_id, $size ) {
+		if ( 'shop_catalog' !== $size && ! is_product_page() ) {
+			return $image;
+		}
+
+		if ( is_product_page() ) {
+			$product = wc_get_product( $post_id );
+			if ( ! is_a( $product, 'WC_Product' ) ) {
+				return $image;
+			}
+		}
+
+		ob_start();
+		static::display_quick_view_button();
+		$qv = ob_get_clean();
+
+		if ( empty( $qv ) ) {
+			return $image;
+		}
+
+		return $image . $qv;
+	}
+
+	public static function display_quick_view_button() {
+		$settings = get_plugin()->settings;
+		$quick_view_position = $settings->get_store_features_setting( 'quick_view', 'quick_view_position', 'out_of_image' );
+		$quick_view_mobile = $settings->get_store_features_setting( 'quick_view', 'quick_view_mobile', 0 );
+		$quick_view_text = $settings->get_store_features_setting( 'quick_view', 'quick_view_text', __( 'Quick View', 'easy-sale-badges-for-woocommerce' ) );
+
+		if ( function_exists( 'wp_is_mobile' ) && wp_is_mobile() && ! $quick_view_mobile ) {
+			return;
+		}
+
+		$product = get_current_product();
+		if ( ! $product ) {
+			return;
+		}
+
+		if ( 'on_image' === $quick_view_position ) {
+			if (
+				is_pro_active() &&
+				function_exists(
+					'\AsanaPlugins\WooCommerce\SaleBadgesPro\Helpers\QuickView\display_quick_view_icon'
+				)
+			) {
+				return \AsanaPlugins\WooCommerce\SaleBadgesPro\Helpers\QuickView\display_quick_view_icon(
+					$product, $settings
+				);
+			}
+		}
+
+		echo '<a href="#"
+			class="button asnp-wesb-quick-view-btn" 
+			data-product-id="' . esc_attr( $product->get_id() ) . '"
+			>
+			' . esc_html( $quick_view_text ) . '
+			</a>';
 	}
 
 }

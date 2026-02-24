@@ -9,6 +9,8 @@ class ComposerStaticInit853a2847bad9f52783cabb6a081e1105
     public static $files = array (
         'f01f3124ff17b61f705eb8e9e7f7bd36' => __DIR__ . '/../..' . '/src/Helpers.php',
         'e3efe5bd37f066622f2ad3e67215feff' => __DIR__ . '/../..' . '/src/Helpers/Badges.php',
+        'e18f2fa516cedb28071b0e5959d50c1b' => __DIR__ . '/../..' . '/src/Helpers/QuickView.php',
+        'e0da2d9fca9b62a4b3b684407cfa8253' => __DIR__ . '/../..' . '/src/Helpers/Cart.php',
     );
 
     public static $prefixLengthsPsr4 = array (

@@ -27,6 +27,27 @@ class Assets {
 				true
 			);
 		}
+
+		wp_enqueue_style(
+			'asnp-wesb-store-features',
+			apply_filters( 'asnp_wesb_store_features_style', $this->get_url( 'storeFeatures/style', 'css' ) ),
+			[ 'dashicons' ],
+		);
+		wp_enqueue_script(
+			'asnp-wesb-store-features',
+			apply_filters( 'asnp_wesb_store_features_script', $this->get_url( 'storeFeatures/index', 'js' ) ),
+			[
+				'react-dom',
+				'wp-i18n',
+				'wp-api-fetch',
+				'wp-hooks',
+				'wp-data',
+				'jquery',
+			],
+			ASNP_WESB_VERSION,
+			true
+		);
+		wp_enqueue_script( 'wc-add-to-cart-variation' );
 	}
 
 	public function localize_scripts() {
@@ -36,10 +57,10 @@ class Assets {
 		}
 
 		$stylesheet = empty( $stylesheet ) ? get_stylesheet() : $stylesheet;
-		$template   = empty( $template ) ? get_template() : $template;
+		$template = empty( $template ) ? get_template() : $template;
 
 		$stylesheet = ! empty( $stylesheet ) ? strtolower( $stylesheet ) : $stylesheet;
-		$template   = ! empty( $template ) ? strtolower( $template ) : $template;
+		$template = ! empty( $template ) ? strtolower( $template ) : $template;
 
 		wp_localize_script(
 			'asnp-wesb-badge',
@@ -49,6 +70,15 @@ class Assets {
 				'stylesheet' => $stylesheet,
 				'template' => $template,
 				'timers' => array_values( $this->timers ),
+			]
+		);
+
+		wp_localize_script(
+			'asnp-wesb-store-features',
+			'asnpWesbStoreFeatures',
+			[
+				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+				'nonce' => wp_create_nonce( 'asnp_wesb_store_features' ),
 			]
 		);
 	}

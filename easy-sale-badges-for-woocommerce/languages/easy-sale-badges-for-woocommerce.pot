@@ -2,14 +2,14 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sale Badges and Product Labels for WooCommerce 6.8.0\n"
+"Project-Id-Version: Sale Badges and Product Labels for WooCommerce 7.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/easy-sale-badges-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-27T20:55:59+00:00\n"
+"POT-Creation-Date: 2026-02-23T20:56:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: easy-sale-badges-for-woocommerce\n"
@@ -55,6 +55,14 @@ msgstr ""
 #: src/Admin/Menu.php:27
 #: src/Admin/Menu.php:28
 msgid "Sale Booster"
+msgstr ""
+
+#: src/Ajax.php:24
+msgid "Product ID is required."
+msgstr ""
+
+#: src/Ajax.php:33
+msgid "Product not found."
 msgstr ""
 
 #: src/API/Badge.php:40
@@ -139,14 +147,6 @@ msgstr ""
 msgid "Sorry, you are not allowed to reorder items."
 msgstr ""
 
-#: src/API/Ch.php:30
-msgid "Action is required."
-msgstr ""
-
-#: src/API/Ch.php:43
-msgid "Action not found."
-msgstr ""
-
 #: src/API/Items.php:42
 #: src/API/Items.php:51
 msgid "Search term is required."
@@ -163,7 +163,31 @@ msgstr ""
 
 #: src/API/Settings.php:54
 #: src/API/Settings.php:99
+#: src/API/StoreFeatures.php:72
+#: src/API/StoreFeatures.php:129
 msgid "Settings data is required."
+msgstr ""
+
+#: src/API/StoreFeatures.php:54
+#: src/API/StoreFeatures.php:77
+#: assets/js/admin/admin/index.js:2
+msgid "Feature is required."
+msgstr ""
+
+#: src/Helpers/Cart.php:17
+msgid "Invalid Product ID."
+msgstr ""
+
+#: src/Helpers/Cart.php:36
+msgid "Could not add product to cart."
+msgstr ""
+
+#: src/Helpers/Cart.php:43
+msgid "Product validation failed."
+msgstr ""
+
+#: src/Hooks.php:795
+msgid "Quick View"
 msgstr ""
 
 #: src/Placeholder.php:157
@@ -175,12 +199,12 @@ msgid "%d days"
 msgstr ""
 
 #. translators: 1: URL of WooCommerce plugin, 2: The minimum WooCommerce version number
-#: src/Plugin.php:208
+#: src/Plugin.php:209
 msgid "The Sale Badges and Product Labels plugin requires <a href=\"%1$s\">WooCommerce</a> %2$s or greater to be installed and active."
 msgstr ""
 
 #. translators: 1: URL of WordPress.org, 2: The minimum WordPress version number
-#: src/Plugin.php:217
+#: src/Plugin.php:218
 msgid "The Sale Badges and Product Labels plugin requires <a href=\"%1$s\">WordPress</a> %2$s or greater to be installed and active."
 msgstr ""
 
@@ -2021,6 +2045,138 @@ msgid "Banner"
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
+msgid "Configure"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Enable Quick View"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Enable Quick View on Mobile"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Enable Previous/Next Buttons"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Allow Navigation to Other Products Using Previous and Next in the Quick View Popup."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Quick View Text"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "On Image (Pro Version)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Position Out of Image"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "After Add to Cart"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Type"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Popup"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Sidebar (Pro Version)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Popup Theme"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Theme 1"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Theme 2 (Pro Version)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Popup Animation Effect"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Slide Top"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Bounce"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Newspaper"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Quick View Icon Style (Pro)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Description"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Short Description"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Customize"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Opening product details in a new tab"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Modal Width (Pixel)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Modal Height (Pixel)"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Modal Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Footer Text Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Footer Background Color"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Are you sure you want to reset to default settings?"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Settings reset to default."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Reset to Default"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Store Features"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
 msgid "Apps"
 msgstr ""
 
@@ -2038,4 +2194,20 @@ msgstr ""
 
 #: assets/js/admin/admin/index.js:2
 msgid "5-Star Review"
+msgstr ""
+
+#: assets/js/storeFeatures/index.js:2
+msgid "There was an error on getting active store features."
+msgstr ""
+
+#: assets/js/storeFeatures/index.js:2
+msgid "Error adding to cart."
+msgstr ""
+
+#: assets/js/storeFeatures/index.js:2
+msgid "Product cannot be purchased"
+msgstr ""
+
+#: assets/js/storeFeatures/index.js:2
+msgid "View full details"
 msgstr ""

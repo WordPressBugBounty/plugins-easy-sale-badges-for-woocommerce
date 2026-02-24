@@ -14,13 +14,15 @@ class Settings {
 	 */
 	protected $plugin_settings;
 
+	protected $store_feature_settings = [];
+
 	/**
 	 * Constructor.
 	 *
 	 * @since 1.0.0
 	 */
 	public function __construct() {
-		$this->plugin_settings = get_option( 'asnp_easy_sale_badge_settings', array() );
+		$this->plugin_settings = get_option( 'asnp_easy_sale_badge_settings', [] );
 	}
 
 	/**
@@ -45,6 +47,34 @@ class Settings {
 		$value = isset( $this->plugin_settings[ $key ] ) ? $this->plugin_settings[ $key ] : $default;
 		$value = apply_filters( 'asnp_wesb_get_setting', $value, $key, $default );
 		return apply_filters( 'asnp_wesb_get_setting_' . $key, $value, $key, $default );
+	}
+
+	/**
+	 * Getting store features setting.
+	 *
+	 * @param  string  $feature
+	 * @param  string  $key
+	 * @param  boolean $default
+	 * @return mixed
+	 */
+	public function get_store_features_setting( $feature, $key = '', $default = false ) {
+		if ( ! isset( $this->store_feature_settings[ $feature ] ) ) {
+			$this->store_feature_settings[ $feature ] = get_option( "asnp_wesb_store_features_{$feature}_settings", [] );
+		}
+
+		if ( '' === $key ) {
+			return $this->store_feature_settings[ $feature ];
+		}
+
+		$value = array_key_exists( $key, $this->store_feature_settings[ $feature ] ) ? $this->store_feature_settings[ $feature ][ $key ] : $default;
+
+		return apply_filters(
+			'asnp_wesb_get_store_features_setting',
+			$value,
+			$key,
+			$feature,
+			$default
+		);
 	}
 
 	/**

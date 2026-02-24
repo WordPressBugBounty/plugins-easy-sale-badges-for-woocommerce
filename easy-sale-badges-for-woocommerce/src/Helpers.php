@@ -76,7 +76,7 @@ function get_term_hierarchy_name( $term_id, $taxonomy, $separator = '/', $nicena
 
 	if ( $term->parent && ( $term->parent != $term->term_id ) && ! in_array( $term->parent, $visited ) ) {
 		$visited[] = $term->parent;
-		$chain     .= get_term_hierarchy_name( $term->parent, $taxonomy, $separator, $nicename, $visited );
+		$chain .= get_term_hierarchy_name( $term->parent, $taxonomy, $separator, $nicename, $visited );
 	}
 
 	$chain .= $name . $separator;
@@ -93,12 +93,12 @@ function register_polyfills() {
 	global $wp_version;
 
 	$handles = array(
-		'react'        => array( '17.0.2', array() ),
-		'react-dom'    => array( '17.0.2', array( 'react' ) ),
-		'wp-i18n'      => array( '6.0', array() ),
-		'wp-hooks'     => array( '6.0', array() ),
+		'react' => array( '17.0.2', array() ),
+		'react-dom' => array( '17.0.2', array( 'react' ) ),
+		'wp-i18n' => array( '6.0', array() ),
+		'wp-hooks' => array( '6.0', array() ),
 		'wp-api-fetch' => array( '6.0', array() ),
-		'moment'       => array( '2.29.4', array() ),
+		'moment' => array( '2.29.4', array() ),
 	);
 	foreach ( $handles as $handle => $value ) {
 		if ( ! version_compare( $wp_version, '5.9', '>=' ) && in_array( $handle, array( 'react', 'react-dom' ) ) ) {
@@ -128,7 +128,7 @@ function add_custom_style( $style, $badge = null ) {
 		return;
 	}
 
-	get_plugin()->container()->get( CustomStyles::class )->add_style( $style, $badge );
+	get_plugin()->container()->get( CustomStyles::class)->add_style( $style, $badge );
 }
 
 function display_sale_badges( $product, $hide = false, $return = false, $out_of_image = false ) {
@@ -136,7 +136,7 @@ function display_sale_badges( $product, $hide = false, $return = false, $out_of_
 		return '';
 	}
 
-	$badges = get_plugin()->container()->get( Badges::class );
+	$badges = get_plugin()->container()->get( Badges::class);
 	if ( ! $badges ) {
 		return '';
 	}
@@ -153,7 +153,7 @@ function display_sale_badge( $id, $product, $hide = false, $return = false, $out
 		return '';
 	}
 
-	$model = get_plugin()->container()->get( BadgeModel::class );
+	$model = get_plugin()->container()->get( BadgeModel::class);
 	$badge = $model->get_item( $id );
 	if ( ! $badge ) {
 		return '';
@@ -179,7 +179,7 @@ function display_sale_badge( $id, $product, $hide = false, $return = false, $out
 }
 
 function has_active_sale_badges() {
-	$model = get_plugin()->container()->get( BadgeModel::class );
+	$model = get_plugin()->container()->get( BadgeModel::class);
 	$items = $model->get_items( [ 'status' => 1 ] );
 	return ! empty( $items );
 }
@@ -230,22 +230,22 @@ function is_product_page() {
 
 function get_theme_loop_position( $stylesheet = null, $template = null ) {
 	$stylesheet = empty( $stylesheet ) ? get_stylesheet() : $stylesheet;
-	$template   = empty( $template ) ? get_template() : $template;
+	$template = empty( $template ) ? get_template() : $template;
 
 	$stylesheet = ! empty( $stylesheet ) ? strtolower( $stylesheet ) : $stylesheet;
-	$template   = ! empty( $template ) ? strtolower( $template ) : $template;
+	$template = ! empty( $template ) ? strtolower( $template ) : $template;
 
 	$themes = [
-		'avada'    	  => 'after_shop_loop_item_thumbnail',
-		'woodmart' 	  => 'after_shop_loop_item_thumbnail',
-		'oceanwp'     => 'ocean_before_archive_product_image',
-		'basel'   	  => 'after_shop_loop_item_thumbnail',
-		'thegem'      => 'after_shop_loop_item_thumbnail',
-		'uncode'      => 'uncode_entry_visual_after_image',
+		'avada' => 'after_shop_loop_item_thumbnail',
+		'woodmart' => 'after_shop_loop_item_thumbnail',
+		'oceanwp' => 'ocean_before_archive_product_image',
+		'basel' => 'after_shop_loop_item_thumbnail',
+		'thegem' => 'after_shop_loop_item_thumbnail',
+		'uncode' => 'uncode_entry_visual_after_image',
 		'rehub-theme' => 'rh_woo_thumbnail_loop',
-		'total'       => 'wpex_woocommerce_loop_thumbnail_before',
-		'enfold'      => 'post_thumbnail_html',
-		'estore'      => 'after_shop_loop_item_thumbnail',
+		'total' => 'wpex_woocommerce_loop_thumbnail_before',
+		'enfold' => 'post_thumbnail_html',
+		'estore' => 'after_shop_loop_item_thumbnail',
 	];
 
 	if ( ! empty( $stylesheet ) && isset( $themes[ $stylesheet ] ) ) {
@@ -261,15 +261,15 @@ function get_theme_loop_position( $stylesheet = null, $template = null ) {
 
 function get_theme_out_of_image_loop_position( $stylesheet = null, $template = null ) {
 	$stylesheet = empty( $stylesheet ) ? get_stylesheet() : $stylesheet;
-	$template   = empty( $template ) ? get_template() : $template;
+	$template = empty( $template ) ? get_template() : $template;
 
 	$stylesheet = ! empty( $stylesheet ) ? strtolower( $stylesheet ) : $stylesheet;
-	$template   = ! empty( $template ) ? strtolower( $template ) : $template;
+	$template = ! empty( $template ) ? strtolower( $template ) : $template;
 
 	$themes = [
-		'betheme' 	  => 'woocommerce_after_shop_loop_item_title',
-		'uncode'      => 'uncode_entry_visual_after_image',
-		'oceanwp'      => 'ocean_before_archive_product_categories',
+		'betheme' => 'woocommerce_after_shop_loop_item_title',
+		'uncode' => 'uncode_entry_visual_after_image',
+		'oceanwp' => 'ocean_before_archive_product_categories',
 	];
 
 	if ( ! empty( $stylesheet ) && isset( $themes[ $stylesheet ] ) ) {
@@ -285,16 +285,16 @@ function get_theme_out_of_image_loop_position( $stylesheet = null, $template = n
 
 function get_theme_single_position( $stylesheet = null, $template = null ) {
 	$stylesheet = empty( $stylesheet ) ? get_stylesheet() : $stylesheet;
-	$template   = empty( $template ) ? get_template() : $template;
+	$template = empty( $template ) ? get_template() : $template;
 
 	$stylesheet = ! empty( $stylesheet ) ? strtolower( $stylesheet ) : $stylesheet;
-	$template   = ! empty( $template ) ? strtolower( $template ) : $template;
+	$template = ! empty( $template ) ? strtolower( $template ) : $template;
 
 	$themes = [
-		'thegem'      => 'thegem_woocommerce_single_product_left',
+		'thegem' => 'thegem_woocommerce_single_product_left',
 		'rehub-theme' => 'rh_woo_after_single_image',
-		'woodmart'    => 'woocommerce_single_product_summary',
-		'basel'       => 'woocommerce_before_single_product_summary',
+		'woodmart' => 'woocommerce_single_product_summary',
+		'basel' => 'woocommerce_before_single_product_summary',
 	];
 
 	if ( ! empty( $stylesheet ) && isset( $themes[ $stylesheet ] ) ) {
@@ -310,10 +310,10 @@ function get_theme_single_position( $stylesheet = null, $template = null ) {
 
 function get_theme_out_of_image_single_position( $stylesheet = null, $template = null ) {
 	$stylesheet = empty( $stylesheet ) ? get_stylesheet() : $stylesheet;
-	$template   = empty( $template ) ? get_template() : $template;
+	$template = empty( $template ) ? get_template() : $template;
 
 	$stylesheet = ! empty( $stylesheet ) ? strtolower( $stylesheet ) : $stylesheet;
-	$template   = ! empty( $template ) ? strtolower( $template ) : $template;
+	$template = ! empty( $template ) ? strtolower( $template ) : $template;
 
 	$themes = [];
 
@@ -330,10 +330,10 @@ function get_theme_out_of_image_single_position( $stylesheet = null, $template =
 
 function get_theme_single_container( $stylesheet = null, $template = null ) {
 	$stylesheet = empty( $stylesheet ) ? get_stylesheet() : $stylesheet;
-	$template   = empty( $template ) ? get_template() : $template;
+	$template = empty( $template ) ? get_template() : $template;
 
 	$stylesheet = ! empty( $stylesheet ) ? strtolower( $stylesheet ) : $stylesheet;
-	$template   = ! empty( $template ) ? strtolower( $template ) : $template;
+	$template = ! empty( $template ) ? strtolower( $template ) : $template;
 
 	$themes = [
 		'thegem' => '.product-gallery-slider',
@@ -399,9 +399,9 @@ function get_saved_percent( $product ) {
 	}
 
 	if ( false !== strpos( $product->get_type(), 'variable' ) ) {
-		$prices         = $product->get_variation_prices();
+		$prices = $product->get_variation_prices();
 		$max_percentage = 0;
-		foreach( $prices['price'] as $key => $price ) {
+		foreach ( $prices['price'] as $key => $price ) {
 			// Only on sale variations
 			if ( $prices['regular_price'][ $key ] > $price ) {
 				$percentage = ( floatval( $prices['regular_price'][ $key ] ) - floatval( $price ) ) / floatval( $prices['regular_price'][ $key ] ) * 100;
@@ -415,7 +415,7 @@ function get_saved_percent( $product ) {
 		}
 	} else {
 		$regular_price = $product->get_regular_price();
-		$sale_price    = $product->get_sale_price();
+		$sale_price = $product->get_sale_price();
 		if ( '' !== $sale_price && $sale_price < $regular_price ) {
 			return ( floatval( $regular_price ) - floatval( $sale_price ) ) / floatval( $regular_price ) * 100;
 		}
@@ -436,9 +436,9 @@ function get_saved_price( $product ) {
 	}
 
 	if ( false !== strpos( $product->get_type(), 'variable' ) ) {
-		$prices     = $product->get_variation_prices();
+		$prices = $product->get_variation_prices();
 		$max_amount = 0;
-		foreach( $prices['price'] as $key => $price ) {
+		foreach ( $prices['price'] as $key => $price ) {
 			// Only on sale variations
 			if ( $prices['regular_price'][ $key ] > $price ) {
 				$amount = floatval( $prices['regular_price'][ $key ] ) - floatval( $price );
@@ -452,7 +452,7 @@ function get_saved_price( $product ) {
 		}
 	} else {
 		$regular_price = $product->get_regular_price();
-		$sale_price    = $product->get_sale_price();
+		$sale_price = $product->get_sale_price();
 		if ( '' !== $sale_price && $sale_price < $regular_price ) {
 			return wc_price( floatval( $regular_price ) - floatval( $sale_price ) );
 		}
@@ -537,7 +537,7 @@ function localize_timer_badge( $badge ) {
 		return;
 	}
 
-	$assets = get_plugin()->container()->get( Assets::class );
+	$assets = get_plugin()->container()->get( Assets::class);
 	if ( ! $assets ) {
 		return;
 	}
@@ -548,17 +548,17 @@ function localize_timer_badge( $badge ) {
 
 	$now = current_time( 'timestamp' );
 	$timer = [
-		'id'                    => absint( $badge->id ),
-		'dateFrom'              => ! empty( $badge->selectedDateFrom ) ? sanitize_text_field( $badge->selectedDateFrom ) : '',
-		'dateTo'                => ! empty( $badge->selectedDateTo ) ? sanitize_text_field( $badge->selectedDateTo ) : '',
+		'id' => absint( $badge->id ),
+		'dateFrom' => ! empty( $badge->selectedDateFrom ) ? sanitize_text_field( $badge->selectedDateFrom ) : '',
+		'dateTo' => ! empty( $badge->selectedDateTo ) ? sanitize_text_field( $badge->selectedDateTo ) : '',
 		'remainingTimeProgress' => ( $now - strtotime( $badge->selectedDateFrom, $now ) ) * 1000,
-		'remainingTime'         => ! empty( $badge->selectedDateTo ) ? ( strtotime( $badge->selectedDateTo, $now ) - $now ) * 1000 : 0,
-        'evergreen'             => ! empty( $badge->evergreen ) ? absint( $badge->evergreen ) * 60 * 1000 : 0,
-        'timerMode'             => ! empty( $badge->timerMode ) ? sanitize_text_field( $badge->timerMode ) : 'fromToDate',
-        'evergreenOption'       => ! empty( $badge->evergreenOption ) ? sanitize_text_field( $badge->evergreenOption ) : 'endClose',
-    ];
+		'remainingTime' => ! empty( $badge->selectedDateTo ) ? ( strtotime( $badge->selectedDateTo, $now ) - $now ) * 1000 : 0,
+		'evergreen' => ! empty( $badge->evergreen ) ? absint( $badge->evergreen ) * 60 * 1000 : 0,
+		'timerMode' => ! empty( $badge->timerMode ) ? sanitize_text_field( $badge->timerMode ) : 'fromToDate',
+		'evergreenOption' => ! empty( $badge->evergreenOption ) ? sanitize_text_field( $badge->evergreenOption ) : 'endClose',
+	];
 
-    if ( $timer['remainingTime'] > 0 || $timer['evergreen'] > 0 ) {
+	if ( $timer['remainingTime'] > 0 || $timer['evergreen'] > 0 ) {
 		$assets->add_timer( (object) $timer );
 	}
 }
@@ -572,7 +572,7 @@ function get_product_image_src( $product, $size = 'woocommerce_single', $placeho
 	$src = '';
 	if ( $product->get_image_id() ) {
 		$image = wp_get_attachment_image_src( $product->get_image_id(), $size );
-		$src   = ! empty( $image ) && ! empty( $image[0] ) ? $image[0] : '';
+		$src = ! empty( $image ) && ! empty( $image[0] ) ? $image[0] : '';
 	} elseif ( $product->get_parent_id() ) {
 		$parent_product = wc_get_product( $product->get_parent_id() );
 		if ( $parent_product ) {
@@ -582,7 +582,7 @@ function get_product_image_src( $product, $size = 'woocommerce_single', $placeho
 
 	if ( empty( $src ) && $placeholder ) {
 		$image = wc_placeholder_img_src( $size );
-		$src   = ! empty( $image ) && ! empty( $image[0] ) ? $image[0] : '';
+		$src = ! empty( $image ) && ! empty( $image[0] ) ? $image[0] : '';
 	}
 
 	return apply_filters( 'asnp_wesb_get_product_image_src', $src, $product, $size, $placeholder );

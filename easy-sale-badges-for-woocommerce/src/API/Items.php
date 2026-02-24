@@ -16,14 +16,14 @@ class Items extends BaseController {
 			'/' . $this->rest_base,
 			array(
 				array(
-					'methods'             => \WP_REST_Server::READABLE,
-					'callback'            => array( $this, 'search_items' ),
+					'methods' => \WP_REST_Server::READABLE,
+					'callback' => array( $this, 'search_items' ),
 					'permission_callback' => array( $this, 'get_items_permissions_check' ),
-					'args'                => $this->get_collection_params(),
+					'args' => $this->get_collection_params(),
 				),
 				array(
-					'methods'             => \WP_REST_Server::CREATABLE,
-					'callback'            => array( $this, 'get_items' ),
+					'methods' => \WP_REST_Server::CREATABLE,
+					'callback' => array( $this, 'get_items' ),
 					'permission_callback' => array( $this, 'get_items_permissions_check' ),
 				),
 			)
@@ -33,8 +33,8 @@ class Items extends BaseController {
 	/**
 	 * Search items.
 	 *
-	 * @param WP_REST_Request $request Full details about the request.
-	 * @return WP_Error|WP_REST_Response
+	 * @param \WP_REST_Request $request Full details about the request.
+	 * @return \WP_Error|\WP_REST_Response
 	 */
 	public function search_items( $request ) {
 		try {
@@ -56,7 +56,7 @@ class Items extends BaseController {
 				$items = ItemsModel::search_products(
 					array(
 						'search' => $search,
-						'type'   => array_merge( array_keys( wc_get_product_types() ), ['variation'] ),
+						'type' => array_merge( array_keys( wc_get_product_types() ), [ 'variation' ] ),
 					)
 				);
 			} elseif ( 'categories' === $request['type'] ) {
@@ -70,7 +70,7 @@ class Items extends BaseController {
 			return rest_ensure_response( [
 				'items' => $items,
 			] );
-		} catch ( \Exception $e ) {
+		} catch (\Exception $e) {
 			return new \WP_Error( 'asnp_wesb_rest_search_items_error', $e->getMessage(), array( 'status' => 400 ) );
 		}
 	}
@@ -78,8 +78,8 @@ class Items extends BaseController {
 	/**
 	 * Get items.
 	 *
-	 * @param WP_REST_Request $request Full details about the request.
-	 * @return WP_Error|WP_REST_Response
+	 * @param \WP_REST_Request $request Full details about the request.
+	 * @return \WP_Error|\WP_REST_Response
 	 */
 	public function get_items( $request ) {
 		try {
@@ -103,14 +103,14 @@ class Items extends BaseController {
 
 			if ( 'products' === $request['type'] ) {
 				$items = ItemsModel::get_products(
-				  array(
-					'type'    => array_merge( array_keys( wc_get_product_types() ), ['variation'] ),
-					'include' => array_map( 'AsanaPlugins\WooCommerce\SaleBadges\maybe_get_exact_item_id', $items ),
-				  )
+					array(
+						'type' => array_merge( array_keys( wc_get_product_types() ), [ 'variation' ] ),
+						'include' => array_map( 'AsanaPlugins\WooCommerce\SaleBadges\maybe_get_exact_item_id', $items ),
+					)
 				);
 			} elseif ( 'categories' === $request['type'] ) {
 				$items = ItemsModel::get_categories( array( 'include' => array_map( 'AsanaPlugins\WooCommerce\SaleBadges\maybe_get_exact_category_id', $items ) ) );
-			}  elseif ( 'tags' === $request['type'] ) {
+			} elseif ( 'tags' === $request['type'] ) {
 				$items = ItemsModel::get_tags( array( 'include' => array_map( 'AsanaPlugins\WooCommerce\SaleBadges\maybe_get_exact_tag_id', $items ) ) );
 			} else {
 				$items = apply_filters( 'asnp_wesb_items_api_' . __FUNCTION__, [], $items, $request );
@@ -119,7 +119,7 @@ class Items extends BaseController {
 			return rest_ensure_response( [
 				'items' => $items,
 			] );
-		} catch ( \Exception $e ) {
+		} catch (\Exception $e) {
 			return new \WP_Error( 'asnp_wesb_rest_get_items_error', $e->getMessage(), array( 'status' => 400 ) );
 		}
 	}

@@ -26,7 +26,7 @@ class Menu {
 		$this->menus['badges'] = add_menu_page(
 			__( 'Sale Booster', 'easy-sale-badges-for-woocommerce' ),
 			__( 'Sale Booster', 'easy-sale-badges-for-woocommerce' ),
-			apply_filters( 'asnp_wesb_sale_badge_menu_capability', 'manage_options' ),
+			apply_filters( 'asnp_wesb_sale_badge_menu_capability', 'manage_woocommerce' ),
 			'asnp-easy-sale-badge',
 			array( $this, 'create_menu' ),
 			ASNP_WESB_PLUGIN_URL . 'assets/images/menu-icon.png',

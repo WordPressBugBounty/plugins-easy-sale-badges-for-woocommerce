@@ -146,6 +146,7 @@ final class Plugin {
 		Hooks::init();
 		Placeholder::init();
 		Compatibility::init();
+		Ajax::init();
 
 		add_action( 'init', [ $this, 'add_shortcodes' ] );
 	}

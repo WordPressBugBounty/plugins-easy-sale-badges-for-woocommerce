@@ -8,4 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'f01f3124ff17b61f705eb8e9e7f7bd36' => $baseDir . '/src/Helpers.php',
     'e3efe5bd37f066622f2ad3e67215feff' => $baseDir . '/src/Helpers/Badges.php',
+    'e18f2fa516cedb28071b0e5959d50c1b' => $baseDir . '/src/Helpers/QuickView.php',
+    'e0da2d9fca9b62a4b3b684407cfa8253' => $baseDir . '/src/Helpers/Cart.php',
 );

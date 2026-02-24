@@ -29,10 +29,10 @@ class RestApi {
 	 */
 	public function register_rest_routes() {
 		$controllers = array(
-			'badge'    => Badge::class,
-			'items'    => Items::class,
-			'settings' => Settings::class,
-			'ch'       => Ch::class,
+			'badge' => Badge::class,
+			'items' => Items::class,
+			'settings' => Settings::class, 
+			'storeFeature' => StoreFeatures::class,
 		);
 
 		foreach ( $controllers as $name => $class ) {
