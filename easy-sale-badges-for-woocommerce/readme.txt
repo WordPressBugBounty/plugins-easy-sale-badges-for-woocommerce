@@ -5,7 +5,7 @@ Tags: woocommerce badge, product label, woocommerce, badge, sale badge, Countdow
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 5.6
-Stable tag: 7.0.0
+Stable tag: 7.1.0
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -288,10 +288,20 @@ Absolutely. All features work perfectly on all devices.
 
 == Changelog ==
 
+= 7.1.0 =
+* Added badge templates.
+* Added compatibility with WP Rocket caching plugin.
+* Added compatibility with Perfmatters caching plugin.
+* Added compatibility with Autoptimize plugin by Optimizing Matters.
+* Added compatibility with LiteSpeed Cache plugin by LiteSpeed Technologies.
+* Added compatibility with WP-Optimize plugin by David Anderson / Team Updraft.
+* Added compatibility with SG Optimizer (Speed Optimizer) plugin by SiteGround.
+* Compatibility with WooCommerce 10.7.0
+Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
+
 = 7.0.0 =
 * Added Quick View feature to the shop page.
 * Compatibility with WooCommerce 10.5.2
-Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
 
 = 6.8.0 =
 * Improved the Sale popup styling in the Pro version.

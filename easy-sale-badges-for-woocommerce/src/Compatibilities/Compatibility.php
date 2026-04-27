@@ -11,6 +11,8 @@ class Compatibility {
 		if ( function_exists( 'wpml_loaded' ) ) {
 			WPML::init();
 		}
+
+		Cache::init();
 	}
 
 }
