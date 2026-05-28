@@ -23,7 +23,7 @@ class Hooks {
 
 			if ( (int) get_plugin()->settings->get_setting( 'hideWooCommerceBadges', 0 ) ) {
 				add_filter( 'woocommerce_sale_flash', '__return_empty_string', 9999999 );
-				add_custom_style( '.onsale{display:none !important;}' );
+				add_custom_style( '.onsale, .wc-block-grid__product-onsale, .wc-block-components-product-sale-badge, .wp-block-woocommerce-product-sale-badge { display: none !important; }' );
 			}
 		}
 	}

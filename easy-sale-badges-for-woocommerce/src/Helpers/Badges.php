@@ -8,6 +8,7 @@ use function AsanaPlugins\WooCommerce\SaleBadges\add_custom_style;
 use function AsanaPlugins\WooCommerce\SaleBadges\is_pro_active;
 use function AsanaPlugins\WooCommerce\SaleBadges\translate;
 use function AsanaPlugins\WooCommerce\SaleBadges\localize_timer_badge;
+use function AsanaPlugins\WooCommerce\SaleBadges\get_plugin;
 
 function output_badges( $product, $badges, $hide = false, $return = false, $out_of_image = false ) {
 	if ( empty( $badges ) ) {
@@ -15,13 +16,123 @@ function output_badges( $product, $badges, $hide = false, $return = false, $out_
 	}
 
 	$output = '';
+
+	if ( $out_of_image ) {
+		$badgeOutofImageGroupPos = get_plugin()->settings->get_setting( 'badgeOutofImageGroupPos', 'column' );		
+		$badgeOutofImageGroupGap = get_plugin()->settings->get_setting( 'badgeOutofImageGroupGap', '23' );		
+		$group_class = 'asnp-esb-badge-group-out-of-image-row';
+		$style_attr  = '';
+		
+		if ( isset( $badgeOutofImageGroupPos ) && 'column' == $badgeOutofImageGroupPos ) { 
+			$group_class = 'asnp-esb-badge-group-out-of-image';
+		} else {
+        $style_attr = ' style="gap: ' . intval( $badgeOutofImageGroupGap ) . 'px;"';
+    	}
+
+		$output .= '<div class="' . esc_attr( $group_class ) . '"' . $style_attr . '>';		
+		foreach ( $badges as $badge ) {
+			$out = output_badge( $product, $badge, $hide, true, $out_of_image );
+			if ( ! empty( $out ) ) {
+				$output .= $out;
+			}
+		}
+		$output .= '</div>';
+		if ( $return ) {
+			return $output;
+		}
+		
+		echo $output;
+		return;
+	}
+
+	$grouped_badges = [];
+	$group_id       = 0;
+
 	foreach ( $badges as $badge ) {
-		$out = output_badge( $product, $badge, $hide, $return, $out_of_image );
-		if ( ! empty( $out ) ) {
-			$output .= $out;
+		$position_type = 'onImage';
+
+		if ( isset( $badge->useTimerBadge ) && $badge->useTimerBadge == 1 ) {
+			if ( ! empty( $badge->timerPosition ) ) {
+				$position_type = $badge->timerPosition;
+			}
+		} elseif ( ! empty( $badge->cssLabelPosition ) ) {
+			$position_type = $badge->cssLabelPosition;
+		}
+
+		$pos_key = 'outOfImage';
+		if ( 'onImage' === $position_type ) {
+			if ( isset( $badge->badgePositionY ) && isset( $badge->badgePositionX ) ) {
+				$pos_key = $badge->badgePositionY . '_' . $badge->badgePositionX;
+			}
+		}
+
+		if ( 'outOfImage' === $pos_key ) {
+			$grouped_badges[ $pos_key . '_' . $group_id ][] = $badge;
+			$group_id++;
+		} else {
+			$grouped_badges[ $pos_key ][] = $badge;
 		}
 	}
-	return $output;
+
+	foreach ( $grouped_badges as $pos_key => $group ) {
+		if ( ! $out_of_image && 'outOfImage' !== $pos_key && strpos( $pos_key, '_' ) !== false && count( $group ) > 1 ) {
+			$align_items    = strpos( $pos_key, '_right' ) !== false ? 'flex-end' : ( strpos( $pos_key, '_center' ) !== false ? 'center' : 'flex-start' );
+			$flex_direction = 'column'; 
+
+			$first_badge = $group[0];
+
+			$style = "z-index: 99; flex-direction: {$flex_direction}; align-items: {$align_items};";
+
+			if ( strpos( $pos_key, 'top_' ) === 0 ) {
+				$top    = ( isset( $first_badge->badgePositionTop ) && $first_badge->badgePositionTop !== '' ) ? $first_badge->badgePositionTop . 'px' : '0px';
+				$style .= " top: {$top};";
+			} elseif ( strpos( $pos_key, 'bottom_' ) === 0 ) {
+				$bottom = ( isset( $first_badge->badgePositionBottom ) && $first_badge->badgePositionBottom !== '' ) ? $first_badge->badgePositionBottom . 'px' : '0px';
+				$style .= " bottom: {$bottom};";
+			} elseif ( strpos( $pos_key, 'center_' ) === 0 ) {
+				$style .= " top: 70px;";
+			}
+
+			if ( strpos( $pos_key, '_left' ) !== false ) {
+				$left   = ( isset( $first_badge->badgePositionLeft ) && $first_badge->badgePositionLeft !== '' ) ? $first_badge->badgePositionLeft . 'px' : '0px';
+				$style .= " left: {$left};";
+			} elseif ( strpos( $pos_key, '_right' ) !== false ) {
+				$right  = ( isset( $first_badge->badgePositionRight ) && $first_badge->badgePositionRight !== '' ) ? $first_badge->badgePositionRight . 'px' : '0px';
+				$style .= " right: {$right};";
+			} elseif ( strpos( $pos_key, '_center' ) !== false ) {
+				$style .= " left: 55px;";
+			}
+
+			$class_names = 'asnp-esb-badge-group asnp-esb-badge-group-' . esc_attr( $pos_key );
+
+			if ( $hide ) {
+				$class_names .= ' asnp-esb-badge-hidden';
+				$style .= ' display: none;';
+			}
+
+			$output .= '<div class="' . esc_attr( $class_names ) . '" style="' . esc_attr( $style ) . '">';
+			foreach ( $group as $badge ) {
+				$out = output_badge( $product, $badge, $hide, true, $out_of_image );
+				if ( ! empty( $out ) ) {
+					$output .= $out; 
+				}
+			}
+			$output .= '</div>';
+		} else {
+			foreach ( $group as $badge ) {
+				$out = output_badge( $product, $badge, $hide, true, $out_of_image );
+				if ( ! empty( $out ) ) {
+					$output .= $out;
+				}
+			}
+		}
+	}
+
+	if ( $return ) {
+		return $output;
+	}
+
+	echo $output;
 }
 
 function output_badge( $product, $badge, $hide = false, $return = false, $out_of_image = false ) {
@@ -91,7 +202,7 @@ function output_css_badge( $product, $badge, $hide = false, $return = false, $ou
 	$class_names = 'asnp-esb-badge-element asnp-esb-productBadge asnp-esb-productBadge-'. absint( $badge->id );
 
 	if ( ! empty( $badge->cssLabelPosition ) && 'outOfImage' === $badge->cssLabelPosition ) {
-		$class_names .= ' asnp-esb-css-label-out-of-image asnp-position-css-label';
+		$class_names .= ' asnp-esb-css-label-out-of-image asnp-position-css-label-'. absint( $badge->id ) . ' ';
 		$hide = false;
 	  } else {
 		$class_names .= ' asnp-esb-css-label-on-image';
@@ -289,13 +400,17 @@ function css_badge_dynamic_styles( $badge, $hide = false, $out_of_image = false 
 		$dynamic_styles .= '.asnp-esb-badge-'. absint( $badge->id ) . ' {' . $styles . '}';
 	}
 
+	$badgeOutofImageGroupPos = get_plugin()->settings->get_setting( 'badgeOutofImageGroupPos', 'column' );		
+
 	if ( isset( $badge->cssLabelPosition ) && 'outOfImage' == $badge->cssLabelPosition) {
-		$dynamic_styles .= '.asnp-position-css-label {';
+		$dynamic_styles .= '.asnp-position-css-label-'. absint( $badge->id ) . ' {';
 		if ( isset( $badge->badgePositionOutofImage ) ) {
 			$dynamic_styles .= ' justify-content: ' . $badge->badgePositionOutofImage . ';';
-			$dynamic_styles .= ' display: flex;';
-			$dynamic_styles .= ' width: 100% !important;';
+			$dynamic_styles .= ' display: flex;';	
 		}
+		if ( isset( $badgeOutofImageGroupPos ) && 'column' == $badgeOutofImageGroupPos ) { 
+			$dynamic_styles .= ' width: 100% !important;';
+			}
 		$dynamic_styles .= '}';
 	}
 

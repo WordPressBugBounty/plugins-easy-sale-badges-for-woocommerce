@@ -32,6 +32,7 @@ class BadgeModel extends BaseModel {
 			'title' => '%s',
 			'type' => '%s',
 			'status' => '%d',
+			'ordering' => '%d',
 			'options' => '%s',
 		);
 	}

@@ -72,11 +72,13 @@ class Settings extends BaseController {
 				case 'cssSelectorEmbed':
 				case 'customHooksEmbed':
 				case 'licenseKey':
+				case 'badgeOutofImageGroupPos':
 					$data[ $key ] = sanitize_text_field( $value );
 					break;
 				
 				// Integer options.
 				case 'limitSalesPopup':
+				case 'badgeOutofImageGroupGap':
 					$data[ $key ] = absint( $value );
 					break;
 

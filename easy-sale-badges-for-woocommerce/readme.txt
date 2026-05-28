@@ -3,9 +3,9 @@ Contributors: asanaplugins
 Donate link: https://www.asanaplugins.com/
 Tags: woocommerce badge, product label, woocommerce, badge, sale badge, Countdown Timer, notification bar, label
 Requires at least: 5.0
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 5.6
-Stable tag: 7.1.0
+Stable tag: 7.2.0
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,7 @@ WooCommerce Product Badge and Label, Sale Badge, Sold Out Badge, Countdown Timer
 
 WooCommerce Product Badge and Label elevate your store's appeal with customized badges, Quick View, countdown timers and notification bar (PRO Version). Enhance your WooCommerce store with sale badges, product labels, and countdown timers to drive sales. This all-in-one plugin empowers you to create eye-catching labels and scheduled badges for products, categories, and tags. Highlighting discount values, product quantities, ratings, shipping classes, stock status, and sale status, these labels provide valuable information to your customers. Plus, leverage the power of countdown timers to create urgency and drive conversions. With an intuitive interface, easily customize labels and replace default on-sale badges. Take your WooCommerce store to new heights with visually appealing badges, labels, and countdown timers tailored to your unique offerings.
 
-[FRONT-END DEMO](https://pricing-and-discounts.asanaplugins.com/demo/shop/) | [BACK-END DEMO](https://pricing-and-discounts.asanaplugins.com/?asnp_demo_plugin=easy-sale-badges-for-woocommerce) | [Ask Questions](https://wordpress.org/support/plugin/easy-sale-badges-for-woocommerce/) | **[PRO WITH UP TO 75% DISCOUNT](https://www.asanaplugins.com/product/woocommerce-sale-badges-and-product-labels/)**
+[FRONT-END DEMO](https://pricing-and-discounts.asanaplugins.com/demo1/shop/) | [BACK-END DEMO](https://pricing-and-discounts.asanaplugins.com/?asnp_demo_plugin=easy-sale-badges-for-woocommerce) | [Ask Questions](https://wordpress.org/support/plugin/easy-sale-badges-for-woocommerce/) | **[PRO WITH UP TO 75% DISCOUNT](https://www.asanaplugins.com/product/woocommerce-sale-badges-and-product-labels/)**
 
 == Features ==
 
@@ -27,21 +27,21 @@ https://youtu.be/aTHFT3ovCaw
 
 == Examples of Product Badge, Label, Countdown Timer for WooCommerce ==
 
-* <strong>[Product Label Displaying Percentage Discount](https://pricing-and-discounts.asanaplugins.com/demo/shop/)</strong>
-* <strong>[Product Label](https://pricing-and-discounts.asanaplugins.com/demo/product/album/)</strong>
-* <strong>[Quick View](https://pricing-and-discounts.asanaplugins.com/demo/shop/)</strong>
-* <strong>[Image Badge (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/hoodie/)</strong>
-* <strong>[Countdown Timer (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/beanie/)</strong>
-* <strong>[Countdown Timer with Progress Bar (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/cooling-pc-fans/)</strong>
-* <strong>[Countdown Stock (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/beanie/)</strong>
-* <strong>[Countdown Timer Bar (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/hoodie/)</strong>
-* <strong>[Multi Bar (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/beanie/)</strong>
-* <strong>[Infinity Bar (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/belt/)</strong>
-* <strong>[Sales Popup (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/shop/)</strong>
-* <strong>[Banner (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/beanie/)</strong>
-* <strong>[Announcement (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/belt/)</strong>
-* <strong>[Payment Icons (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/cap/)</strong>
-* <strong>[Social Media Icons (PRO)](https://pricing-and-discounts.asanaplugins.com/demo/product/belt/)</strong>
+* <strong>[Product Label Displaying Percentage Discount](https://pricing-and-discounts.asanaplugins.com/demo1/shop/)</strong>
+* <strong>[Product Label](https://pricing-and-discounts.asanaplugins.com/demo1/product/album/)</strong>
+* <strong>[Quick View](https://pricing-and-discounts.asanaplugins.com/demo1/shop/)</strong>
+* <strong>[Image Badge (PRO)](https://pricing-and-discounts.asanaplugins.com/demo1/product/hoodie/)</strong>
+* <strong>[Countdown Timer (PRO)](https://pricing-and-discounts.asanaplugins.com/demo1/product/beanie/)</strong>
+* <strong>[Countdown Timer with Progress Bar (PRO)](https://pricing-and-discounts.asanaplugins.com/demo1/product/cooling-pc-fans/)</strong>
+* <strong>[Countdown Stock (PRO)](https://pricing-and-discounts.asanaplugins.com/demo1/product/beanie/)</strong>
+* <strong>[Countdown Timer Bar (PRO)](https://pricing-and-discounts.asanaplugins.com/demo1/product/hoodie/)</strong>
+* <strong>[Multi Bar (PRO)](https://pricing-and-discounts.asanaplugins.com/demo1/product/beanie/)</strong>
+* <strong>[Infinity Bar (PRO)](https://pricing-and-discounts.asanaplugins.com/demo1/product/belt/)</strong>
+* <strong>[Sales Popup (PRO)](https://pricing-and-discounts.asanaplugins.com/demo1/shop/)</strong>
+* <strong>[Banner (PRO)](https://pricing-and-discounts.asanaplugins.com/demo1/product/beanie/)</strong>
+* <strong>[Announcement (PRO)](https://pricing-and-discounts.asanaplugins.com/demo1/product/belt/)</strong>
+* <strong>[Payment Icons (PRO)](https://pricing-and-discounts.asanaplugins.com/demo1/product/cap/)</strong>
+* <strong>[Social Media Icons (PRO)](https://pricing-and-discounts.asanaplugins.com/demo1/product/belt/)</strong>
 
 == ✅ Product Badge, Label, Countdown Timer for WooCommerce Features ==
 
@@ -276,17 +276,24 @@ Absolutely. All features work perfectly on all devices.
 1. Product Badges.
 2. Product Badges with Percentage Discount.
 3. Countdown Timer.
-4. Quick View.
-5. Product Labels Out of Image.
-6. Notification Bar.
-7. Modern Badges.
-8. Image Label.
-9. Sale Popup.
-10. Countdown Timer on Product Page.
-11. Stock Countdown on Product Page.
-12. Animation.
+4. Label Groups.
+5. Badge Groups.
+6. Quick View.
+7. Notification Bar.
+8. Modern Badges.
+9. Image Label.
+10. Sale Popup.
+11. Countdown Timer on Product Page.
+12. Stock Countdown on Product Page.
+13. Animation.
 
 == Changelog ==
+
+= 7.2.0 =
+* Added new Label Group and Badge Group options.
+* Introduced new Quick Badges.
+* Fixed an issue with enabling the “Hide WooCommerce On Sale Badges” option in some themes.
+Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
 
 = 7.1.0 =
 * Added badge templates.
@@ -297,7 +304,6 @@ Absolutely. All features work perfectly on all devices.
 * Added compatibility with WP-Optimize plugin by David Anderson / Team Updraft.
 * Added compatibility with SG Optimizer (Speed Optimizer) plugin by SiteGround.
 * Compatibility with WooCommerce 10.7.0
-Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
 
 = 7.0.0 =
 * Added Quick View feature to the shop page.

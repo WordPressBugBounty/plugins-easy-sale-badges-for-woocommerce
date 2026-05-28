@@ -11,6 +11,10 @@ class Install {
 	 */
 	const VERSION_OPTION = 'asnp_wesb_version';
 
+	private static $db_updates = [
+		'7.2.0' => [ __NAMESPACE__ . '\Updates\update_720' ],
+	];
+
 	public static function init() {
 		add_action( 'init', array( __CLASS__, 'check_version' ), 5 );
 		add_filter( 'wpmu_drop_tables', array( __CLASS__, 'wpmu_drop_tables' ) );
@@ -84,6 +88,7 @@ CREATE TABLE {$wpdb->prefix}asnp_wesb_badge (
 	id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 	title varchar(200) NOT NULL DEFAULT '',
 	status TINYINT NOT NULL DEFAULT '1',
+	ordering bigint(20) unsigned NOT NULL DEFAULT 0,
 	options longtext NULL,
 	PRIMARY KEY (id)
 ) $collate;";
@@ -97,6 +102,43 @@ CREATE TABLE {$wpdb->prefix}asnp_wesb_badge (
 	private static function update_version() {
 		update_option( self::VERSION_OPTION, get_plugin()->version );
 	}
+	
+	/**
+	 * Get list of DB update callbacks.
+	 *
+	 * @since  7.2.0
+	 * @return array
+	 */
+	public static function get_db_update_callbacks() {
+		return self::$db_updates;
+	}
+
+	private static function update() {
+		$current_db_version = get_option( 'asnp_wesb_db_version' );
+
+		foreach ( self::get_db_update_callbacks() as $version => $update_callbacks ) {
+			if ( version_compare( $current_db_version, $version, '<' ) ) {
+				foreach ( $update_callbacks as $update_callback ) {
+					$update_callback();
+				}
+			}
+		}
+	}
+
+	/**
+	 * Is a DB update needed?
+	 *
+	 * @since  7.2.0
+	 * @return boolean
+	 */
+	public static function needs_db_update() {
+		$current_db_version = get_option( 'asnp_wesb_db_version', null );
+		$updates = self::get_db_update_callbacks();
+		$update_versions = array_keys( $updates );
+		usort( $update_versions, 'version_compare' );
+
+		return ! is_null( $current_db_version ) && version_compare( $current_db_version, end( $update_versions ), '<' );
+	}
 
 	/**
 	 * See if we need to show or run database updates during install.
@@ -104,6 +146,10 @@ CREATE TABLE {$wpdb->prefix}asnp_wesb_badge (
 	 * @since 1.0.0
 	 */
 	private static function maybe_update_db_version() {
+		if ( self::needs_db_update() ) {
+			self::update();
+		}
+
 		self::update_db_version();
 	}
 

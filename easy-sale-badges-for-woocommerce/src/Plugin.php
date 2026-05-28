@@ -184,7 +184,7 @@ final class Plugin {
 			Badges::class,
 			function( Container $container ) {
 				$model = $container->get( BadgeModel::class );
-				$items = $model->get_items( [ 'number' => -1, 'status' => 1 ] );
+				$items = $model->get_items( [ 'number' => -1, 'status' => 1, 'orderby' => 'ordering', 'order' => 'ASC' ] );
 				return new Badges( $items );
 			}
 		);

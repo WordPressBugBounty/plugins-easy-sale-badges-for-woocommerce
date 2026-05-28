@@ -308,11 +308,16 @@ class Badge extends BaseController {
 				$data['status'] = (int) $request['status'];
 			}
 
+			if ( isset( $request['ordering'] ) ) {
+       			$data['ordering'] = absint( $request['ordering'] );
+      		}
+
 			if ( ! empty( $request['id'] ) && 0 < (int) $request['id'] ) {
 				$data['id'] = (int) $request['id'];
 			} else {
 				$data['title'] = ! empty( $data['title'] ) ? $data['title'] : __( 'Badge', 'easy-sale-badges-for-woocommerce' );
 				$data['status'] = isset( $data['status'] ) ? $data['status'] : 1;
+				$data['ordering'] = isset( $data['ordering'] ) ? $data['ordering'] : 0;
 			}
 
 			$model = get_plugin()->container()->get( BadgeModel::class);
@@ -351,7 +356,7 @@ class Badge extends BaseController {
 
 		foreach ( $request->get_params() as $key => $value ) {
 			// Excluded fields.
-			if ( in_array( $key, array( '_locale', 'id', 'title', 'status' ) ) ) {
+			if ( in_array( $key, array( '_locale', 'id', 'title', 'status', 'ordering' ) ) ) {
 				continue;
 			}
 
