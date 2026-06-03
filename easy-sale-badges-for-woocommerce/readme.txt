@@ -5,7 +5,7 @@ Tags: woocommerce badge, product label, woocommerce, badge, sale badge, Countdow
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 5.6
-Stable tag: 7.2.0
+Stable tag: 7.2.1
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,7 @@ https://youtu.be/aTHFT3ovCaw
 == ✅ Product Badge, Label, Countdown Timer for WooCommerce Features ==
 
 - **Create Custom labels on Products**
+- **Added new Label Group and Badge Group options**
 - **Add Quick View to the Shop Page**
 - **Add 15 CSS Label**
 - **Add Countdown Timer**
@@ -289,11 +290,15 @@ Absolutely. All features work perfectly on all devices.
 
 == Changelog ==
 
+= 7.2.1 =
+* Fixed checkbox CSS compatibility issues introduced in the latest WordPress release.
+* Compatibility with WooCommerce 10.8.1
+Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
+
 = 7.2.0 =
 * Added new Label Group and Badge Group options.
 * Introduced new Quick Badges.
 * Fixed an issue with enabling the “Hide WooCommerce On Sale Badges” option in some themes.
-Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
 
 = 7.1.0 =
 * Added badge templates.
