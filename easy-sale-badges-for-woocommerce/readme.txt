@@ -5,7 +5,7 @@ Tags: woocommerce badge, product label, woocommerce, badge, sale badge, Countdow
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 5.6
-Stable tag: 7.2.1
+Stable tag: 7.2.2
 License: GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -290,10 +290,13 @@ Absolutely. All features work perfectly on all devices.
 
 == Changelog ==
 
+= 7.2.2 =
+* Fixed stock countdown logic to fix variable product visibility bugs, add grouped product support, and improve real-time variation tracking.
+Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
+
 = 7.2.1 =
 * Fixed checkbox CSS compatibility issues introduced in the latest WordPress release.
 * Compatibility with WooCommerce 10.8.1
-Note: Help us spread the word by leaving a 5-star review. ❤️😍 Feel free to share your ideas in your review, as we always value your feedback.🌹
 
 = 7.2.0 =
 * Added new Label Group and Badge Group options.
