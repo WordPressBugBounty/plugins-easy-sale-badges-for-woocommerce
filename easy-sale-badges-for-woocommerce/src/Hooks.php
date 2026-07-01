@@ -671,7 +671,15 @@ class Hooks {
 	}
 
 	public static function woocommerce_product_get_image( $image, $product ) {
-		if ( is_admin() && ! is_ajax() ) {
+		if ( did_action( 'woocommerce_email_header' ) || doing_action( 'woocommerce_email_header' ) ) {
+			return $image;
+		}
+
+		if ( function_exists( 'wp_doing_cron' ) && wp_doing_cron() ) {
+			return $image;
+		}
+
+		if ( is_admin() && ! wp_doing_ajax() ) {
 			return $image;
 		}
 
