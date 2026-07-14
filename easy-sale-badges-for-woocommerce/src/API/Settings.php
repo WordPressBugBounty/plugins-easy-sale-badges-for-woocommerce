@@ -73,6 +73,7 @@ class Settings extends BaseController {
 				case 'customHooksEmbed':
 				case 'licenseKey':
 				case 'badgeOutofImageGroupPos':
+				case 'archiveVariableDiscountDisplay':
 					$data[ $key ] = sanitize_text_field( $value );
 					break;
 				

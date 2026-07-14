@@ -6,10 +6,10 @@ defined( 'ABSPATH' ) || exit;
 
 class Placeholder {
 
-    public static function init() {
-        add_filter( 'asnp_wesb_css_badge_label', array( __CLASS__, 'css_label' ), 10, 3 );
+	public static function init() {
+		add_filter( 'asnp_wesb_css_badge_label', array( __CLASS__, 'css_label' ), 10, 3 );
 		add_filter( 'asnp_wesb_advanced_badge_label', array( __CLASS__, 'advanced_label' ), 10, 3 );
-    }
+	}
 
 	public static function css_label( $label, $badge, $product ) {
 		if ( empty( $label ) || ! $badge ) {
@@ -55,53 +55,53 @@ class Placeholder {
 
 	public static function get_placeholders() {
 		return apply_filters( 'asnp_wesb_placeholders', [
-            '{regular_price}' => 'regular_price',
-            '{sale_price}' => 'sale_price',
-            '{price}' => 'price',
-            '{saved_price}' => 'saved_price',
-            '{saved_percent}' => 'saved_percent',
-            '{sale_ends}' => 'sale_ends',
-            '{currency}' => 'currency',
-            '{qty}' => 'quantity',
-            '{br}' => 'br',
-            '{sku}' => 'sku',
-        ] );
+			'{regular_price}' => 'regular_price',
+			'{sale_price}' => 'sale_price',
+			'{price}' => 'price',
+			'{saved_price}' => 'saved_price',
+			'{saved_percent}' => 'saved_percent',
+			'{sale_ends}' => 'sale_ends',
+			'{currency}' => 'currency',
+			'{qty}' => 'quantity',
+			'{br}' => 'br',
+			'{sku}' => 'sku',
+		] );
 	}
 
-    public static function replace( $label, $product ) {
+	public static function replace( $label, $product ) {
 		if ( empty( $label ) || ! $product ) {
 			return $label;
 		}
 
-        $placeholders = static::get_placeholders();
+		$placeholders = static::get_placeholders();
 		if ( empty( $placeholders ) ) {
-            return $label;
-        }
+			return $label;
+		}
 
-        foreach ( $placeholders as $placeholder => $method ) {
-            if ( false !== stripos( $label, $placeholder ) ) {
-                if ( is_callable( [ __CLASS__, $method ] ) ) {
-                    $label = static::$method( $label, $product );
-                } else {
-                    $label = apply_filters( 'asnp_wesb_label_placeholder_replace_' . $method, $label, $product );
-                }
-            }
-        }
+		foreach ( $placeholders as $placeholder => $method ) {
+			if ( false !== stripos( $label, $placeholder ) ) {
+				if ( is_callable( [ __CLASS__, $method ] ) ) {
+					$label = static::$method( $label, $product );
+				} else {
+					$label = apply_filters( 'asnp_wesb_label_placeholder_replace_' . $method, $label, $product );
+				}
+			}
+		}
 
-        return $label;
-    }
+		return $label;
+	}
 
-    public static function price( $label, $product ) {
+	public static function price( $label, $product ) {
 		return str_ireplace( '{price}', wc_price( wc_get_price_to_display( $product ) ), $label );
-    }
+	}
 
-    public static function regular_price( $label, $product ) {
+	public static function regular_price( $label, $product ) {
 		return str_ireplace( '{regular_price}', wc_price( wc_get_price_to_display( $product, [ 'price' => $product->get_regular_price() ] ) ), $label );
-    }
+	}
 
-    public static function sale_price( $label, $product ) {
+	public static function sale_price( $label, $product ) {
 		return str_ireplace( '{sale_price}', wc_price( wc_get_price_to_display( $product ) ), $label );
-    }
+	}
 
 	public static function saved_price( $label, $product ) {
 		$price = get_saved_price( $product );
@@ -109,20 +109,23 @@ class Placeholder {
 			return str_ireplace( '{saved_price}', '', $label );
 		}
 
+		// Wrap the raw amount in the class that JS targets for dynamic updates
+		$price_html = '<span class="asnp-wesb-dynamic-saved-amount">' . $price . '</span>';
+
 		$prefix = '';
 		if ( (int) get_plugin()->settings->get_setting( 'negativeSign', 1 ) ) {
 			$prefix = apply_filters( 'asnp_wesb_sale_flash_price_discount_prefix', '<span class="asnp-wesb-sale-flash-prefix">-</span>' );
 		}
 
-		$price = apply_filters(
+		$price_html = apply_filters(
 			'asnp_wesb_saved_price_label',
-			$prefix . $price,
+			$prefix . $price_html,
 			$price,
 			$label,
 			$product
 		);
 
-		return str_ireplace( '{saved_price}', $price, $label );
+		return str_ireplace( '{saved_price}', $price_html, $label );
 	}
 
 	public static function saved_percent( $label, $product ) {
@@ -131,21 +134,30 @@ class Placeholder {
 			return str_ireplace( '{saved_percent}', '', $label );
 		}
 
+		$formatted_percent = is_numeric( $percent ) ? (int) $percent : $percent;
+		$percent_html = '<span class="asnp-wesb-dynamic-saved-percent">' . $formatted_percent . '</span>';
+
+		// Pre-formatted strings ("9% - 62%", "From 9%") already contain %;
+		// skip prefix and % symbol to avoid duplication.
+		if ( ! is_numeric( $percent ) ) {
+			$percent_html = apply_filters( 'asnp_wesb_saved_percent_label', $percent_html, $percent, $label, $product );
+			return str_ireplace( '{saved_percent}', $percent_html, $label );
+		}
+
 		$prefix = '';
 		if ( (int) get_plugin()->settings->get_setting( 'negativeSign', 1 ) ) {
 			$prefix = apply_filters( 'asnp_wesb_sale_flash_percentage_discount_prefix', '<span class="asnp-wesb-sale-flash-prefix">-</span>' );
 		}
 
-		$percent = apply_filters(
+		$percent_html = apply_filters(
 			'asnp_wesb_saved_percent_label',
-			$prefix . round( $percent ) .
-			apply_filters( 'asnp_wesb_sale_flash_percentage_symbol', '<span class="asnp-wesb-sale-flash-percentage-symbol">%</span>' ),
+			$prefix . $percent_html . apply_filters( 'asnp_wesb_sale_flash_percentage_symbol', '<span class="asnp-wesb-sale-flash-percentage-symbol">%</span>' ),
 			$percent,
 			$label,
 			$product
 		);
 
-		return str_ireplace( '{saved_percent}', $percent, $label );
+		return str_ireplace( '{saved_percent}', $percent_html, $label );
 	}
 
 	public static function sale_ends( $label, $product ) {
@@ -193,6 +205,13 @@ class Placeholder {
 			return false;
 		}
 
+		$formatted_percent = is_numeric( $percent ) ? (int) $percent : $percent;
+		$percent_html = '<span class="asnp-wesb-dynamic-saved-percent">' . $formatted_percent . '</span>';
+
+		if ( ! is_numeric( $percent ) ) {
+			return apply_filters( 'asnp_wesb_saved_percent_label', $percent_html, $percent, $label, $product );
+		}
+
 		$prefix = '';
 		if ( (int) get_plugin()->settings->get_setting( 'negativeSign', 1 ) ) {
 			$prefix = apply_filters( 'asnp_wesb_sale_flash_percentage_discount_prefix', '<span class="asnp-wesb-sale-flash-prefix">-</span>' );
@@ -200,8 +219,7 @@ class Placeholder {
 
 		return apply_filters(
 			'asnp_wesb_saved_percent_label',
-			$prefix . round( $percent ) .
-			apply_filters( 'asnp_wesb_sale_flash_percentage_symbol', '<span class="asnp-wesb-sale-flash-percentage-symbol">%</span>' ),
+			$prefix . $percent_html . apply_filters( 'asnp_wesb_sale_flash_percentage_symbol', '<span class="asnp-wesb-sale-flash-percentage-symbol">%</span>' ),
 			$percent,
 			$label,
 			$product
@@ -214,12 +232,19 @@ class Placeholder {
 			return false;
 		}
 
+		$formatted_percent = is_numeric( $percent ) ? (int) $percent : $percent;
+		$percent_html = '<span class="asnp-wesb-dynamic-saved-percent">' . $formatted_percent . '</span>';
+
+		if ( ! is_numeric( $percent ) ) {
+			return $percent_html;
+		}
+
 		$prefix = '';
 		if ( (int) get_plugin()->settings->get_setting( 'negativeSign', 1 ) ) {
 			$prefix = '-';
 		}
 
-		return $prefix . round( $percent ) . '%';
+		return $prefix . $percent_html . '%';
 	}
 
 }

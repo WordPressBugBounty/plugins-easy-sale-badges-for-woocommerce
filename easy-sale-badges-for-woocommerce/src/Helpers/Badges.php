@@ -2786,6 +2786,24 @@ function css_badge_dynamic_styles( $badge, $hide = false, $out_of_image = false 
 			break;
 	}
 
+	$display_type = get_plugin()->settings->get_setting( 'archiveVariableDiscountDisplay', 'max' );
+	$is_dynamic_pricing = in_array( $display_type, [ 'min_max', 'from_min' ] ) && ! empty( $badge->badgeLabel ) && ( strpos( $badge->badgeLabel, '{saved_percent}' ) !== false || strpos( $badge->badgeLabel, '{saved_price}' ) !== false );
+	$dynamic_width_badges = [ 'badge1', 'badge2', 'badge3', 'badge4', 'badge19', 'badge20' ];
+	
+	if ( $is_dynamic_pricing && isset( $badge->badgeStyles ) && in_array( $badge->badgeStyles, $dynamic_width_badges ) ) {
+		$dynamic_styles .= '.asnp-esb-productBadge-'. absint( $badge->id ) .', ';
+		$dynamic_styles .= '.asnp-esb-badge-'. absint( $badge->id ) .', ';
+		$dynamic_styles .= '.single .asnp-esb-badge-'. absint( $badge->id ) .', ';
+		$dynamic_styles .= '.related .asnp-esb-badge-'. absint( $badge->id ) .' {';
+		$dynamic_styles .= ' width: max-content !important;';
+		
+		$dynamic_styles .= ' min-width: ' . ( isset( $badge->widthBadge ) ? absint( $badge->widthBadge ) . 'px' : 'auto' ) . ' !important;';
+		$dynamic_styles .= ' padding-left: 10px !important;';
+		$dynamic_styles .= ' padding-right: 10px !important;';
+		$dynamic_styles .= ' box-sizing: border-box !important;';
+		$dynamic_styles .= '}';
+	}
+
 	$extra_data = [
 		'hide'              => $hide,
 		'inset_property'    => $inset_property,

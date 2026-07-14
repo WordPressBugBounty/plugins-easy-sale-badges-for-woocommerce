@@ -399,25 +399,44 @@ function get_saved_percent( $product ) {
 	}
 
 	if ( false !== strpos( $product->get_type(), 'variable' ) ) {
-		$prices = $product->get_variation_prices();
+		$display_type = get_plugin()->settings->get_setting( 'archiveVariableDiscountDisplay', 'max' );
+		$prices = apply_filters( 'asnp_wesb_variation_prices', $product->get_variation_prices(), $product );
+
 		$max_percentage = 0;
+		$min_percentage = null;
+
 		foreach ( $prices['price'] as $key => $price ) {
-			// Only on sale variations
 			if ( $prices['regular_price'][ $key ] > $price ) {
 				$percentage = ( floatval( $prices['regular_price'][ $key ] ) - floatval( $price ) ) / floatval( $prices['regular_price'][ $key ] ) * 100;
+
 				if ( $percentage > $max_percentage ) {
 					$max_percentage = $percentage;
 				}
+
+				if ( is_null( $min_percentage ) || $percentage < $min_percentage ) {
+					$min_percentage = $percentage;
+				}
 			}
 		}
+
 		if ( 0 < $max_percentage ) {
-			return $max_percentage;
+			$min = round( $min_percentage );
+			$max = round( $max_percentage );
+
+			if ( 'min_max' === $display_type && $min < $max ) {
+				return $min . '% - ' . $max . '%'; // pre-formatted string, keep as-is
+			}
+			if ( 'from_min' === $display_type ) {
+				return __( 'From', 'easy-sale-badges-for-woocommerce' ) . ' ' . $min . '%'; // pre-formatted string, keep as-is
+			}
+
+			return (int) $max; // ← CHANGED: return int, not "$max%"
 		}
 	} else {
-		$regular_price = $product->get_regular_price();
-		$sale_price = $product->get_sale_price();
+		$regular_price = apply_filters( 'asnp_wesb_product_get_regular_price', $product->get_regular_price(), $product );
+		$sale_price = apply_filters( 'asnp_wesb_product_get_price', $product->get_price(), $product );
 		if ( '' !== $sale_price && $sale_price < $regular_price ) {
-			return ( floatval( $regular_price ) - floatval( $sale_price ) ) / floatval( $regular_price ) * 100;
+			return (int) round( ( floatval( $regular_price ) - floatval( $sale_price ) ) / floatval( $regular_price ) * 100 ); // ← CHANGED: return int, not "X%"
 		}
 	}
 
@@ -425,34 +444,45 @@ function get_saved_percent( $product ) {
 }
 
 function get_saved_price( $product ) {
-	// Calculate saved price amount from product sale and regular price.
 	$product = is_numeric( $product ) ? wc_get_product( $product ) : $product;
-	if ( ! $product ) {
-		return false;
-	}
-
-	if ( ! $product->is_on_sale() ) {
+	if ( ! $product || ! $product->is_on_sale() ) {
 		return false;
 	}
 
 	if ( false !== strpos( $product->get_type(), 'variable' ) ) {
-		$prices = $product->get_variation_prices();
+		$display_type = get_plugin()->settings->get_setting( 'archiveVariableDiscountDisplay', 'max' );
+		$prices = apply_filters( 'asnp_wesb_variation_prices', $product->get_variation_prices(), $product );
+
 		$max_amount = 0;
+		$min_amount = null;
+
 		foreach ( $prices['price'] as $key => $price ) {
-			// Only on sale variations
 			if ( $prices['regular_price'][ $key ] > $price ) {
 				$amount = floatval( $prices['regular_price'][ $key ] ) - floatval( $price );
+
 				if ( $amount > $max_amount ) {
 					$max_amount = $amount;
 				}
+
+				if ( is_null( $min_amount ) || $amount < $min_amount ) {
+					$min_amount = $amount;
+				}
 			}
 		}
+
 		if ( 0 < $max_amount ) {
+			if ( 'min_max' === $display_type && $min_amount < $max_amount ) {
+				return wc_price( $min_amount ) . ' - ' . wc_price( $max_amount );
+			}
+			if ( 'from_min' === $display_type ) {
+				return __( 'From', 'easy-sale-badges-for-woocommerce' ) . ' ' . wc_price( $min_amount );
+			}
+
 			return wc_price( $max_amount );
 		}
 	} else {
-		$regular_price = $product->get_regular_price();
-		$sale_price = $product->get_sale_price();
+		$regular_price = apply_filters( 'asnp_wesb_product_get_regular_price', $product->get_regular_price(), $product );
+		$sale_price = apply_filters( 'asnp_wesb_product_get_price', $product->get_price(), $product );
 		if ( '' !== $sale_price && $sale_price < $regular_price ) {
 			return wc_price( floatval( $regular_price ) - floatval( $sale_price ) );
 		}

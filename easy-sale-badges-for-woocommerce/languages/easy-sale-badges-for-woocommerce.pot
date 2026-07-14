@@ -2,14 +2,14 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sale Badges and Product Labels for WooCommerce 7.3.0\n"
+"Project-Id-Version: Sale Badges and Product Labels for WooCommerce 7.3.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/easy-sale-badges-for-woocommerce\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-06-30T21:25:26+00:00\n"
+"POT-Creation-Date: 2026-07-13T22:19:58+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: easy-sale-badges-for-woocommerce\n"
@@ -162,7 +162,7 @@ msgid "Items are required."
 msgstr ""
 
 #: src/API/Settings.php:54
-#: src/API/Settings.php:101
+#: src/API/Settings.php:102
 #: src/API/StoreFeatures.php:72
 #: src/API/StoreFeatures.php:129
 msgid "Settings data is required."
@@ -172,6 +172,11 @@ msgstr ""
 #: src/API/StoreFeatures.php:77
 #: assets/js/admin/admin/index.js:2
 msgid "Feature is required."
+msgstr ""
+
+#: src/Helpers.php:430
+#: src/Helpers.php:478
+msgid "From"
 msgstr ""
 
 #: src/Helpers/Cart.php:17
@@ -190,11 +195,11 @@ msgstr ""
 msgid "Quick View"
 msgstr ""
 
-#: src/Placeholder.php:157
+#: src/Placeholder.php:169
 msgid "%d day"
 msgstr ""
 
-#: src/Placeholder.php:159
+#: src/Placeholder.php:171
 msgid "%d days"
 msgstr ""
 
@@ -1242,6 +1247,26 @@ msgstr ""
 
 #: assets/js/admin/admin/index.js:2
 msgid "Set the gap (in pixels) between individual badges when they are arranged horizontally in a row."
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Archive Variable Discounts"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Show Maximum Discount"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Show min/max Discount"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Show from min Discount"
+msgstr ""
+
+#: assets/js/admin/admin/index.js:2
+msgid "Choose how discount values are displayed for variable products on archive pages. You can display the highest discount, a range, or a starting value."
 msgstr ""
 
 #: assets/js/admin/admin/index.js:2
