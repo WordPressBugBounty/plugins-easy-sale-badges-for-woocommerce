@@ -100,6 +100,17 @@ class StoreFeatures extends BaseController {
 					case 'quick_view_on_image_type':
 					case 'quick_view_btn_positionY':
 					case 'quick_view_btn_mob_positionY':
+					case 'theme':
+					case 'add_to_cart_btn_text':
+					case 'sold_out_btn_text':
+					case 'action_click':
+					case 'display_btn':
+					case 'position':
+					case 'size':
+					case 'widthBtn':
+					case 'custom_add_to_cart_selector':
+					case 'custom_quantity_selector':
+					case 'sticky_cart_animation':
 						$data[ $key ] = sanitize_text_field( wp_unslash( $value ) );
 						break;
 
@@ -114,7 +125,19 @@ class StoreFeatures extends BaseController {
 					case 'quick_view_next_before':
 					case 'quick_view_show_hover':
 					case 'quick_view_button_icon':
+					case 'sticky_cart':
+					case 'display_desktop':
+					case 'display_mobile':
+					case 'display_sold_out_product':
 						$data[ $key ] = SaleBadges\string_to_bool( $value ) ? 1 : 0;
+						break;
+
+					case 'items':
+					case 'styles':
+					case 'options':
+						if ( isset( $value ) ) {
+							$data[ $key ] = wp_kses_post_deep( $value );
+						}
 						break;
 
 					default:
@@ -147,7 +170,7 @@ class StoreFeatures extends BaseController {
 	 */
 	public function get_active_store_features( $request ) {
 		try {
-			$features = [ 'quick_view' ];
+			$features = [ 'quick_view', 'sticky_cart' ];
 			$data = [];
 
 			foreach ( $features as $feature ) {

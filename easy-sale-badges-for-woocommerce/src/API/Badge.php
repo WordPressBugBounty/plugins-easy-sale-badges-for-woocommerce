@@ -100,6 +100,17 @@ class Badge extends BaseController {
 				),
 			)
 		);
+		register_rest_route(
+			$this->namespace,
+			'/' . $this->rest_base . '/bulk-status',
+			array(
+				array(
+					'methods' => \WP_REST_Server::EDITABLE,
+					'callback' => array( $this, 'bulk_update_status' ),
+					'permission_callback' => array( $this, 'update_item_permissions_check' ),
+				),
+			)
+		);
 	}
 
 	/**
@@ -246,6 +257,33 @@ class Badge extends BaseController {
 		}
 	}
 
+	public function bulk_update_status( $request ) {
+		try {
+			$ids = isset( $request['ids'] ) ? (array) wp_unslash( $request['ids'] ) : [];
+			$status = isset( $request['status'] ) ? absint( wp_unslash( $request['status'] ) ) : 0;
+			$ids = array_filter( array_map( 'absint', $ids ) );
+
+			if ( empty( $ids ) ) {
+				throw new \Exception( __( 'Invalid IDs.', 'easy-sale-badges-for-woocommerce' ) );
+			}
+
+			$model = get_plugin()->container()->get( BadgeModel::class);
+
+			$updated_count = $model->bulk_update_status( $ids, $status );
+
+			if ( false === $updated_count ) {
+				throw new \Exception( __( 'Error updating campaigns.', 'easy-sale-badges-for-woocommerce' ) );
+			}
+
+			return rest_ensure_response( [
+				'success' => 1,
+				'updated' => $ids,
+			] );
+		} catch (\Exception $e) {
+			return new \WP_Error( 'asnp_weuc_rest_upsell_cross_sell_error', $e->getMessage(), [ 'status' => 400 ] );
+		}
+	}
+
 	public function duplicate_item( $request ) {
 		try {
 			$id = isset( $request['id'] ) ? (int) $request['id'] : 0;
@@ -309,8 +347,8 @@ class Badge extends BaseController {
 			}
 
 			if ( isset( $request['ordering'] ) ) {
-       			$data['ordering'] = absint( $request['ordering'] );
-      		}
+				$data['ordering'] = absint( $request['ordering'] );
+			}
 
 			if ( ! empty( $request['id'] ) && 0 < (int) $request['id'] ) {
 				$data['id'] = (int) $request['id'];

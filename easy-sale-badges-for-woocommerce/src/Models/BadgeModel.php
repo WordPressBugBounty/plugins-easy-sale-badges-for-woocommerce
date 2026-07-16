@@ -202,6 +202,29 @@ class BadgeModel extends BaseModel {
 		return $result;
 	}
 
+	public function bulk_update_status( array $ids, $status ) {
+		global $wpdb;
+
+		$ids = array_filter( array_map( 'absint', $ids ) );
+		if ( empty( $ids ) ) {
+			return 0;
+		}
+
+		$status = absint( $status );
+		$placeholders = implode( ',', array_fill( 0, count( $ids ), '%d' ) );
+
+		$args = array_merge( [ $status ], $ids );
+
+		$result = $wpdb->query(
+			$wpdb->prepare(
+				"UPDATE {$this->table_name} SET status = %d WHERE id IN ($placeholders)",
+				$args
+			)
+		);
+
+		return $result;
+	}
+
 	public function duplicate( $id ) {
 		$id = absint( $id );
 		if ( ! $id ) {

@@ -15,14 +15,14 @@ class ComposerStaticInit853a2847bad9f52783cabb6a081e1105
     );
 
     public static $prefixLengthsPsr4 = array (
-        'A' => 
+        'A' =>
         array (
             'AsanaPlugins\\WooCommerce\\SaleBadges\\' => 36,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'AsanaPlugins\\WooCommerce\\SaleBadges\\' => 
+        'AsanaPlugins\\WooCommerce\\SaleBadges\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
